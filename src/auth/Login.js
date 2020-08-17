@@ -26,8 +26,8 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+      <Link color="inherit" href="https://material-uihttps://trello.com/b/eSyuGWjB/amigos-mema-app.com/">
+        Amigos MeMa
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -53,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  welcome: {
+      color: 'pink',
+  }
 }));
 
 const Login = props => {
@@ -67,6 +70,9 @@ const Login = props => {
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
+        <Typography className={classes.welcome} component="h1" variant="h5">
+          WELCOME
+        </Typography>
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
