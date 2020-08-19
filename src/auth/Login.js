@@ -21,6 +21,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import img from '../assets/img/logodemo.png';
 
 function Copyright() {
   return (
@@ -52,9 +53,10 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    color: 'black',
   },
   welcome: {
-      color: 'pink',
+      color: '#BF8487',
   }
 }));
 
@@ -67,9 +69,10 @@ const Login = props => {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
+        <Typography>
+          {/* <LockOutlinedIcon /> */}
+          <img src={img} />
+        </Typography>
         <Typography className={classes.welcome} component="h1" variant="h5">
           WELCOME
         </Typography>
@@ -82,10 +85,10 @@ const Login = props => {
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
+            id="username"
+            label="Username"
+            name="username"
+            autoComplete="username"
             autoFocus
           />
           <TextField
@@ -107,10 +110,11 @@ const Login = props => {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
+            // backgroundColor="#ffb5b6"
+            color= "secondary"
             className={classes.submit}
           >
-            Sign In
+            Login
           </Button>
           <Grid container>
             <Grid item xs>
