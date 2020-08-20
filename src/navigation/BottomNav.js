@@ -28,16 +28,12 @@ const useStyles = makeStyles({
     return (
    
       <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
-        <Link to="/home">
-            <BottomNavigationAction label="Home" value="home" icon={<HomeIcon />} />
-        </Link>
-        
+    
+        <BottomNavigationAction label="Home" value="home" icon={<HomeIcon />} component={Link} to="/home" /> 
         <BottomNavigationAction label="Learn" value="Learn" icon={<TranslateIcon />} />
         <BottomNavigationAction label="Discover" value="Discover" icon={<GamesIcon />} />
-        <Link to="/profile">
-            <BottomNavigationAction label="Account" value="account" icon={<AccountCircleIcon />} />
-        </Link>   
-     
+        <BottomNavigationAction label="Account" value="account" icon={<AccountCircleIcon />} component={Link} to="/profile" />
+
       </BottomNavigation>
    
     );
