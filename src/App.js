@@ -3,6 +3,7 @@ import Routes from './routes/Routes';
 // import logo from './logo.svg';
 import './App.css';
 import TopNav from './navigation/TopNav';
+import BottomNav from './navigation/BottomNav';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <div> 
       <TopNav />
       <Routes />
+      <BottomNav />
     </div>
 
     // <div className="App">
