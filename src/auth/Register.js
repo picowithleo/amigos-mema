@@ -1,6 +1,5 @@
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -12,6 +11,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import SignupButton from '../ui/SignupButton';
 
 function Copyright() {
   return (
@@ -51,7 +51,7 @@ export default function SignUp() {
 
   return (
     <Container component="main" maxWidth="xs">
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
@@ -114,15 +114,15 @@ export default function SignUp() {
               />
             </Grid>
           </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
+          <SignupButton
+            // type="submit"
+            // fullWidth
+            // variant="contained"
+            // color="primary"
             className={classes.submit}
           >
-            Sign Up
-          </Button>
+            {/* Sign Up */}
+          </SignupButton>
           <Grid container justify="flex-end">
             <Grid item>
               <Link href="#" variant="body2">
