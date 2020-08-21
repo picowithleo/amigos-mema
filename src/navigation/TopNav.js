@@ -24,7 +24,7 @@ const TopNav = () => {
 
     
 
-
+// 暂时放在top的连接到登陆跟注册的导航，等到时候找到地方放的就改
     return (
         <nav>
             {/* <ul className="nav"> */}
