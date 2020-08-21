@@ -8,7 +8,7 @@ import BottomNav from './navigation/BottomNav';
 
 function App() {
   return (
-    <div> 
+    <div className="App"> 
       <TopNav />
       <Routes />
       <BottomNav />
