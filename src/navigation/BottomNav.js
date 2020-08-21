@@ -30,7 +30,7 @@ const useStyles = makeStyles({
       <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
     
         <BottomNavigationAction label="Home" value="home" icon={<HomeIcon />} component={Link} to="/home" /> 
-        <BottomNavigationAction label="Learn" value="Learn" icon={<TranslateIcon />} />
+        <BottomNavigationAction label="Learn" value="Learn" icon={<TranslateIcon />} component={Link} to="/learn" />
         <BottomNavigationAction label="Discover" value="Discover" icon={<GamesIcon />} />
         <BottomNavigationAction label="Account" value="account" icon={<AccountCircleIcon />} component={Link} to="/profile" />
 
