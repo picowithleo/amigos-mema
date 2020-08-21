@@ -9,7 +9,6 @@
 
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -22,6 +21,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import img from '../assets/img/logo1.png';
+import LoginButton from '../ui/LoginButton';
 
 function Copyright() {
   return (
@@ -67,7 +67,7 @@ const Login = props => {
 
   return (
     <Container component="main" maxWidth="xs">
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       <div className={classes.paper}>
         <Typography>
           {/* <LockOutlinedIcon /> */}
@@ -106,16 +106,17 @@ const Login = props => {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            // backgroundColor="#ffb5b6"
-            color= "secondary"
+
+          <LoginButton
+            // type="submit"
+            // fullWidth
+            // variant="contained"
+            // color= "secondary"
             className={classes.submit}
           >
-            Login
-          </Button>
+            {/* Login */}
+          </LoginButton>
+
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
