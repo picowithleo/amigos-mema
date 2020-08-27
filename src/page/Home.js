@@ -7,8 +7,8 @@ import { Container, Grid } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import MicIcon from '@material-ui/icons/Mic';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import img from '../assets/img/logodemo.png';
 import Typography from '@material-ui/core/Typography';
+import '../page/Home.css';
 
 
 
@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     },
     micbutton: {
         position: 'relative',
-        marginTop: "-15px",
+        marginTop: "-15px",    
 
     },
 
@@ -109,7 +109,7 @@ export default function CustomizedInputBase() {
                 </Box>
                 <Typography>
                     {/* <LockOutlinedIcon /> */}
-                    <img src={img} />
+                    <img className="mema" />
                 </Typography>
                 <IconButton  type="speech" className={classes.micbutton} aria-label="speech" >
                     <MicIcon />
