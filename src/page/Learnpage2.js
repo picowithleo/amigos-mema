@@ -16,6 +16,11 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import ShareIcon from '@material-ui/icons/Share';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
 
@@ -96,17 +101,10 @@ const useStyles = makeStyles((theme) => ({
     height: '300px',
   },
   progress: {
-    width: '80%',
-    top: '40%',
+    width: '95%',
+    top: '25%',
     height: '20%',
-    left: '10%',
-    barColorPrimary: 'black',
-  },
-  colorprimary: {
-    backgroundColor: '#e0e0e0',
-  },
-  colorsecondary: {
-    backgroundColor: '#424242',
+
   },
   
 }));
@@ -114,17 +112,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Learnpage1() {
   const classes = useStyles();
-  const [progress, setProgress] = React.useState(0);
-  
-
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((oldProgress) => {
-        return 40;
-      });
-    }, 500);
-  }, []);
-
 
   return (
     <List>
@@ -181,13 +168,39 @@ export default function Learnpage1() {
       <BottomNavigationAction label="Share" icon={<ShareIcon />} />
     </BottomNavigation>
     <Box className={classes.separate}></Box>
-    <div className={classes.progressbar}>
-      <LinearProgress variant="determinate" value={progress} className={classes.progress} 
-      classes={{
-        colorPrimary: classes.colorprimary, 
-        barColorPrimary: classes.colorsecondary,
-      }}
-      />
-    </div>
+    <Box className={classes.progressbar}>
+    <FormControl component="fieldset" className={classes.progress}>
+    <Typography variant="h6">
+        Level
+      </Typography>
+      <RadioGroup row aria-label="position" name="position" defaultValue="level1">
+        <FormControlLabel
+          value="level0"
+          control={<Radio color="primary" />}
+          label="level 1"
+          labelPlacement="bottom"
+        />
+        <FormControlLabel
+          value="level1"
+          control={<Radio color="primary" />}
+          label="level 2"
+          labelPlacement="bottom"
+        />
+        <FormControlLabel
+          value="level2"
+          control={<Radio color="primary" />}
+          label="level 3"
+          labelPlacement="bottom"
+        />
+        <FormControlLabel
+          value="level3"
+          control={<Radio color="primary" />}
+          label="level 4"
+          labelPlacement="bottom"
+        />
+        <FormControlLabel value="level4" control={<Radio color="primary" />} label="level 5" labelPlacement='bottom' />
+      </RadioGroup>
+    </FormControl>
+    </Box>
       </List>
 );}
