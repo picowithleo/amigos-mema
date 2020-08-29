@@ -9,7 +9,8 @@ import MicIcon from '@material-ui/icons/Mic';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Typography from '@material-ui/core/Typography';
 import '../page/Home.css';
-
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -112,7 +113,8 @@ export default function CustomizedInputBase() {
                     <img className="mema" />
                 </Typography>
                 <IconButton  type="speech" className={classes.micbutton} aria-label="speech" >
-                    <MicIcon />
+
+                    <BottomNavigationAction label="Discover" value="Discover" icon={<MicIcon />} component={Link} to="/Mema" />
                 </IconButton>
             </div>
             <List className={classes.content2}>
