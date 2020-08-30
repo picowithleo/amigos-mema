@@ -43,7 +43,7 @@ const useStyles = makeStyles({
       
           <BottomNavigationAction label="Home" value="home" icon={<HomeIcon />} component={Link} to="/home" /> 
           <BottomNavigationAction label="Learn" value="Learn" icon={<TranslateIcon />} component={Link} to="/learn" />
-          <BottomNavigationAction label="Discover" value="Discover" icon={<GamesIcon />} />
+          <BottomNavigationAction label="Discover" value="Discover" icon={<GamesIcon />} component={Link} to="/discover" />
           <BottomNavigationAction label="Account" value="account" icon={<AccountCircleIcon />} component={Link} to="/profile" />
 
         </BottomNavigation>
