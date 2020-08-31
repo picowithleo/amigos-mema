@@ -13,6 +13,12 @@ import Avatar from '@material-ui/core/Avatar';
 import ImageIcon from '@material-ui/icons/Image';
 import WorkIcon from '@material-ui/icons/Work';
 import BeachAccessIcon from '@material-ui/icons/BeachAccess';
+import germany from '../assets/img/germany.png';
+import china from '../assets/img/china.png';
+import korea from '../assets/img/korea.png';
+import japan from '../assets/img/japan.png';
+import france from '../assets/img/france.png';
+import russia from '../assets/img/russia.png';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -62,17 +68,16 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '2%',
     marginRight: '2%',
     display: 'flex',
-    height: '250px',
+    height: '150px',
     flexDirection: 'column',
     backgroundColor: theme.palette.background.paper,
   },
   langicon: {
-    bottom: '30%',
-    left: '5%',
+    bottom: '20%',
     position: 'relative',
   },
   langtxt:{
-    top: '30%',
+    top: '20%',
     position: 'relative',
   },
 }));
@@ -102,19 +107,31 @@ export default function CustomizedInputBase() {
       <ListItem className={classes.langbox}>
         <ListItemText primary="Chinese" className={classes.langtxt}/>
         <ListItemAvatar className={classes.langicon}>
-          <Avatar>
-            <ImageIcon />
-          </Avatar>
+        <img src={china}/>
         </ListItemAvatar>
       </ListItem>
       <ListItem className={classes.langbox}>
         <ListItemText primary="Japanese" className={classes.langtxt}/>
         <ListItemAvatar className={classes.langicon}>
-          <Avatar>
-            <WorkIcon />
-          </Avatar>
+        <img src={japan}/>
         </ListItemAvatar>
       </ListItem>
+    </List>
+    </Box>
+    <Box>
+      <List className={classes.langlist}>
+    <ListItem className={classes.langbox}>
+    <ListItemText primary="Russia" className={classes.langtxt}/>
+        <ListItemAvatar className={classes.langicon}>
+        <img src={russia}/>
+        </ListItemAvatar>
+      </ListItem>
+      <ListItem className={classes.langbox}>
+      <ListItemText primary="German" className={classes.langtxt}/>
+        <ListItemAvatar className={classes.langicon}>
+          <img src={germany}/>
+          </ListItemAvatar>
+          </ListItem>
     </List>
     </Box>
       <Box>
@@ -122,17 +139,13 @@ export default function CustomizedInputBase() {
     <ListItem className={classes.langbox}>
     <ListItemText primary="French" className={classes.langtxt}/>
         <ListItemAvatar className={classes.langicon}>
-          <Avatar>
-            <BeachAccessIcon />
-          </Avatar>
+        <img src={france}/>
         </ListItemAvatar>
       </ListItem>
       <ListItem className={classes.langbox}>
-      <ListItemText primary="etc" className={classes.langtxt}/>
+      <ListItemText primary="Korean" className={classes.langtxt}/>
         <ListItemAvatar className={classes.langicon}>
-          <Avatar>
-            <BeachAccessIcon />
-          </Avatar>
+        <img src={korea}/>
         </ListItemAvatar>
       </ListItem>
     </List>
