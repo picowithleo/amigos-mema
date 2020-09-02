@@ -10,6 +10,8 @@ import Learnpage1 from '../page/Learnpage1';
 import Learnpage2 from '../page/Learnpage2';
 import Mema from '../page/Mema';
 import Translatepage from '../page/Translatepage';
+import Discover1 from '../page/Discover1';
+import Discover2 from '../page/Discover2';
 
 const Routes = () => {
   return (
@@ -24,6 +26,8 @@ const Routes = () => {
         <Route exact path="/learnpage2" component={Learnpage2} />
         <Route exact path="/Mema" component={Mema} />
         <Route exact path="/Translatepage" component={Translatepage} />
+        <Route exact path="/Discover1" component={Discover1} />
+        <Route exact path="/Discover2" component={Discover2} />
         
       </Switch>
 
