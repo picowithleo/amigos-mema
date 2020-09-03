@@ -12,6 +12,7 @@ import Mema from '../page/Mema';
 import Translatepage from '../page/Translatepage';
 import Discover1 from '../page/Discover1';
 import Discover2 from '../page/Discover2';
+import Information from '../page/Information';
 
 const Routes = () => {
   return (
@@ -28,7 +29,7 @@ const Routes = () => {
         <Route exact path="/Translatepage" component={Translatepage} />
         <Route exact path="/Discover1" component={Discover1} />
         <Route exact path="/Discover2" component={Discover2} />
-        
+        <Route exact path="/Information" component={Information} />
       </Switch>
 
   );
