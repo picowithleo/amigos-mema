@@ -1,14 +1,12 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
-import List from '@material-ui/core/List';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import IconButton from '@material-ui/core/IconButton';
+import List from '@material-ui/core/List';
+import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Toolbar from '@material-ui/core/Toolbar';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -19,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         position: 'relative',
         bottom: '30%',
-    
+
     },
     appbar: {
         position: 'relative',
@@ -39,16 +37,13 @@ const useStyles = makeStyles((theme) => ({
     },
 
     word: {
-            '& > *': {
-              margin: theme.spacing(1),
-              width: '25ch',
-              padding: '60px'
-            },
-            
+        '& > *': {
+            margin: theme.spacing(1),
+            width: '25ch',
+            padding: '60px'
+        },
 
     },
-
-    
 
     button1: {
         position: 'relative',
@@ -61,16 +56,16 @@ const useStyles = makeStyles((theme) => ({
     },
 
     time: {
-        padding:"80px"
+        padding: "80px"
     }
 
 
-  }));
+}));
 
 
-  export default function Discover2() {
+export default function Discover2() {
     const classes = useStyles();
-  
+
     return (
         <List>
             <Box className={classes.root}>
@@ -79,26 +74,25 @@ const useStyles = makeStyles((theme) => ({
                 </Box>
             </Box>
             <AppBar className={classes.appbar}>
-            <Toolbar>
-                <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos">
-                <ArrowBackIosIcon />
-                </IconButton>
-            </Toolbar>
+                <Toolbar>
+                    <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos">
+                        <ArrowBackIosIcon />
+                    </IconButton>
+                </Toolbar>
             </AppBar>
 
-           <Box className={classes.time}> 
-            <label>Timer:</label>    
-            <span id='sid'>00:00:00</span>
-                
-           </Box>
-           
-         
-            <Box className={classes.word} noValidate autoComplete="off">
-            <TextField id="standard-basic"/>
-            </Box>
-            
+            <Box className={classes.time}>
+                <label>Timer:</label>
+                <span id='sid'>00:00:00</span>
 
-            
+            </Box>
+
+
+            <Box className={classes.word} noValidate autoComplete="off">
+                <TextField id="standard-basic" />
+            </Box>
+
         </List>
 
-  );}
+    );
+}

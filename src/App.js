@@ -1,14 +1,14 @@
 import React from 'react';
-import Routes from './routes/Routes';
 // import logo from './logo.svg';
 import './App.css';
-import TopNav from './navigation/TopNav';
 import BottomNav from './navigation/BottomNav';
+import TopNav from './navigation/TopNav';
+import Routes from './routes/Routes';
 
 
 function App() {
   return (
-    <div className="App"> 
+    <div className="App">
       <TopNav />
       <Routes />
       <BottomNav />
