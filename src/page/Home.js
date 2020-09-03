@@ -1,16 +1,15 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import Box from '@material-ui/core/Box';
-import List from '@material-ui/core/List';
-import { Container, Grid } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
-import MicIcon from '@material-ui/icons/Mic';
-import SvgIcon from '@material-ui/core/SvgIcon';
-import Typography from '@material-ui/core/Typography';
-import '../page/Home.css';
+import { Grid } from '@material-ui/core';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import List from '@material-ui/core/List';
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import MicIcon from '@material-ui/icons/Mic';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import '../page/Home.css';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -44,8 +43,6 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         fontSize: "40px",
         color: '#A9A9A9',
-
-
     },
     content1: {
         marginTop: "20px",
@@ -78,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     },
     micbutton: {
         position: 'relative',
-        marginTop: "-15px",    
+        marginTop: "-15px",
 
     },
 
@@ -104,15 +101,12 @@ export default function CustomizedInputBase() {
             <div className={classes.content1}>
                 <Box className={classes.title}>
                     <h><b>talk to MEMA</b></h>
-
-
-
                 </Box>
                 <Typography>
                     {/* <LockOutlinedIcon /> */}
                     <img className="mema" />
                 </Typography>
-                <IconButton  type="speech" className={classes.micbutton} aria-label="speech" >
+                <IconButton type="speech" className={classes.micbutton} aria-label="speech" >
 
                     <BottomNavigationAction label="Discover" value="Discover" icon={<MicIcon />} component={Link} to="/Mema" />
                 </IconButton>
@@ -126,10 +120,6 @@ export default function CustomizedInputBase() {
                 <Button variant="outlined" className={classes.button2}>review</Button>
             </List>
         </Box>
-
-
-
-
 
     )
 
