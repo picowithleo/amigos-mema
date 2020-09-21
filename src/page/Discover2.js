@@ -70,7 +70,7 @@ export default function Discover2() {
         <List>
             <Box className={classes.root}>
                 <Box className={classes.tittle}>
-                    <h><b>Challenge Page</b></h>
+                    <b>Challenge Page</b>
                 </Box>
             </Box>
             <AppBar className={classes.appbar}>
