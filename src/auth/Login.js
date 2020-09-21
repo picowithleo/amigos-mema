@@ -68,7 +68,7 @@ const Login = props => {
       <div className={classes.paper}>
         <Typography>
           {/* <LockOutlinedIcon /> */}
-          <img src={img} />
+          <img src={img} alt="logo" />
         </Typography>
         <Typography className={classes.welcome} component="h1" variant="h5">
           WELCOME

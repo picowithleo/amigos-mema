@@ -104,7 +104,7 @@ export default function CustomizedInputBase() {
                 </Box>
                 <Typography>
                     {/* <LockOutlinedIcon /> */}
-                    <img className="mema" />
+                    <img className="mema" alt="Mema"/>
                 </Typography>
                 <IconButton type="speech" className={classes.micbutton} aria-label="speech" >
 

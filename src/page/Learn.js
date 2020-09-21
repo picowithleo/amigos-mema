@@ -102,13 +102,13 @@ export default function CustomizedInputBase() {
           <ListItem className={classes.langbox}>
             <ListItemText primary="Chinese" className={classes.langtxt} />
             <ListItemAvatar className={classes.langicon}>
-              <img src={china} />
+              <img src={china} alt="chinese"/>
             </ListItemAvatar>
           </ListItem>
           <ListItem className={classes.langbox}>
             <ListItemText primary="Japanese" className={classes.langtxt} />
             <ListItemAvatar className={classes.langicon}>
-              <img src={japan} />
+              <img src={japan} alt="japanese"/>
             </ListItemAvatar>
           </ListItem>
         </List>
@@ -118,13 +118,13 @@ export default function CustomizedInputBase() {
           <ListItem className={classes.langbox}>
             <ListItemText primary="Russia" className={classes.langtxt} />
             <ListItemAvatar className={classes.langicon}>
-              <img src={russia} />
+              <img src={russia} alt="russian"/>
             </ListItemAvatar>
           </ListItem>
           <ListItem className={classes.langbox}>
             <ListItemText primary="German" className={classes.langtxt} />
             <ListItemAvatar className={classes.langicon}>
-              <img src={germany} />
+              <img src={germany} alt="germany"/>
             </ListItemAvatar>
           </ListItem>
         </List>
@@ -134,13 +134,13 @@ export default function CustomizedInputBase() {
           <ListItem className={classes.langbox}>
             <ListItemText primary="French" className={classes.langtxt} />
             <ListItemAvatar className={classes.langicon}>
-              <img src={france} />
+              <img src={france} alt="france"/>
             </ListItemAvatar>
           </ListItem>
           <ListItem className={classes.langbox}>
             <ListItemText primary="Korean" className={classes.langtxt} />
             <ListItemAvatar className={classes.langicon}>
-              <img src={korea} />
+              <img src={korea} alt="korean"/>
             </ListItemAvatar>
           </ListItem>
         </List>

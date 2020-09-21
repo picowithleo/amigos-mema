@@ -71,7 +71,7 @@ export default function CustomizedInputBase() {
             <div>
                 <Typography className={classes.memaicon}>
                     {/* <LockOutlinedIcon /> */}
-                    <img className="mema" />
+                    <img className="mema" alt="meama" />
                 </Typography>
             </div>
             <div className={classes.questionground}>
