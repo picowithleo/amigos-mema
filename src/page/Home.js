@@ -10,6 +10,8 @@ import MicIcon from '@material-ui/icons/Mic';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../page/Home.css';
+import picture1 from '../assets/img/learning.jpg';
+import picture2 from '../assets/img/review.jpg';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -64,14 +66,21 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         marginTop: "20px",
         marginRight: "20px",
-
         width: '40%',
-        height: "160px"
+        height: "160px",
+        backgroundImage: 'url(' + picture1 + ')',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
     },
     button2: {
         width: '40%',
         marginTop: "20px",
-        height: "160px"
+        height: "160px",
+        backgroundImage: 'url(' + picture2 + ')',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
     },
     micbutton: {
         position: 'relative',
@@ -104,10 +113,9 @@ export default function CustomizedInputBase() {
                 </Box>
                 <Typography>
                     {/* <LockOutlinedIcon /> */}
-                    <img className="mema" alt="Mema" />
+                    <img className="mema" alt="Mema" component={Link} to="/Mema" />
                 </Typography>
                 <IconButton type="speech" className={classes.micbutton} aria-label="speech" >
-
                     <BottomNavigationAction label="Discover" value="Discover" icon={<MicIcon />} component={Link} to="/Mema" />
                 </IconButton>
             </div>
@@ -116,8 +124,8 @@ export default function CustomizedInputBase() {
                     <h><b>vocabulary book</b></h>
 
                 </Box>
-                <Button variant="outlined" className={classes.button1} component={Link} to="/learning">learning</Button>
-                <Button variant="outlined" className={classes.button2} component={Link} to="/review">review</Button>
+                <Button variant="outlined" className={classes.button1} component={Link} to="/learning"></Button>
+                <Button variant="outlined" className={classes.button2} component={Link} to="/review">s</Button>
             </List>
         </Box>
 
