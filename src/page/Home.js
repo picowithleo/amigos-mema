@@ -1,4 +1,5 @@
 import { Grid } from '@material-ui/core';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
@@ -110,7 +111,9 @@ export default function CustomizedInputBase() {
                     {/* <img className="mema" alt="Mema" component={Link} to="/Mema" /> */}
                 </Typography>
                 <IconButton type="speech" className={classes.micbutton} aria-label="speech" >
-                    <BottomNavigationAction label="Discover" value="Discover" icon={<MicIcon />} component={Link} to="/Mema" />
+                    <BottomNavigation>
+                        <BottomNavigationAction icon={<MicIcon />} component={Link} to="/Mema" />
+                    </BottomNavigation>
                 </IconButton>
             </div>
             <List className={classes.content2}>
