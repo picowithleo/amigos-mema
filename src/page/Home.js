@@ -98,13 +98,13 @@ export default function CustomizedInputBase() {
                     </Box>
                 </Grid>
             </List>
-            <div className={classes.content1}>
+            <div className={classes.content1} component={Link} to="/Mema">
                 <Box className={classes.title}>
                     <h><b>talk to MEMA</b></h>
                 </Box>
                 <Typography>
                     {/* <LockOutlinedIcon /> */}
-                    <img className="mema" alt="Mema"/>
+                    <img className="mema" alt="Mema" />
                 </Typography>
                 <IconButton type="speech" className={classes.micbutton} aria-label="speech" >
 
@@ -116,8 +116,8 @@ export default function CustomizedInputBase() {
                     <h><b>vocabulary book</b></h>
 
                 </Box>
-                <Button variant="outlined" className={classes.button1}>learning</Button>
-                <Button variant="outlined" className={classes.button2}>review</Button>
+                <Button variant="outlined" className={classes.button1} component={Link} to="/learning">learning</Button>
+                <Button variant="outlined" className={classes.button2} component={Link} to="/review">review</Button>
             </List>
         </Box>
 

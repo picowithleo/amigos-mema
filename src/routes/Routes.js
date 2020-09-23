@@ -8,10 +8,12 @@ import Discover2 from '../page/Discover2';
 import Home from '../page/Home';
 import Information from '../page/Information';
 import Learn from '../page/Learn';
+import Learning from '../page/Learning';
 import Learnpage1 from '../page/Learnpage1';
 import Learnpage2 from '../page/Learnpage2';
 import Mema from '../page/Mema';
 import Profile from '../page/Profile';
+import Reviewpage from '../page/Reviewpage';
 import Translatepage from '../page/Translatepage';
 
 const Routes = () => {
@@ -24,6 +26,8 @@ const Routes = () => {
       <Route exact path="/discover" component={Discover} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
+      <Route exact path="/review" component={Reviewpage}/>
+      <Route exact path="/learning" component={Learning} />
       <Route exact path="/learnpage1" component={Learnpage1} />
       <Route exact path="/learnpage2" component={Learnpage2} />
       <Route exact path="/Mema" component={Mema} />
