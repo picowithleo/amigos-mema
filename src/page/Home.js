@@ -117,7 +117,6 @@ export default function CustomizedInputBase() {
                     </BottomNavigation>
                     {/* navigation color have problem */}
                     {/* 麦克风size可以改大一点 */}
-
                 </IconButton>
             </div>
             <List className={classes.content2}>
