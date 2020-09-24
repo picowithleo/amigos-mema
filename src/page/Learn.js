@@ -99,6 +99,8 @@ export default function CustomizedInputBase() {
             </IconButton>
           </Box>
         </List>
+      </Box>
+      <Box style={{ marginTop: '10px' }}>
         <List className={classes.langlist}>
           <ListItem className={classes.langbox} component={Link} to="/learnpage1">
             <ListItemText primary="Chinese" className={classes.langtxt} />
