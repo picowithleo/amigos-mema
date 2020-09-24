@@ -1,4 +1,5 @@
 import { Grid } from '@material-ui/core';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
@@ -9,9 +10,9 @@ import Typography from '@material-ui/core/Typography';
 import MicIcon from '@material-ui/icons/Mic';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../page/Home.css';
 import picture1 from '../assets/img/learning.jpg';
 import picture2 from '../assets/img/review.jpg';
+import '../page/Home.css';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -19,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
     learnbackground: {
         marginTop: "24px",
         width: '100%',
-
         position: 'relative',
         height: '100px',
         backgroundColor: '#9CCC9D',
@@ -31,20 +31,17 @@ const useStyles = makeStyles((theme) => ({
         width: '80%',
         height: '90px',
         backgroundColor: '#FFFFFF',
-
     },
     title: {
-
         textAlign: 'left',
         color: '#A9A9A9',
-
     },
     wenzi: {
-
         textAlign: 'center',
         position: 'relative',
-        fontSize: "40px",
-        color: '#A9A9A9',
+        fontSize: "30px",
+        // color: '#A9A9A9',
+        color: "#505050",
     },
     content1: {
         marginTop: "20px",
@@ -85,9 +82,7 @@ const useStyles = makeStyles((theme) => ({
     micbutton: {
         position: 'relative',
         marginTop: "-15px",
-
     },
-
 
 }));
 
@@ -100,32 +95,36 @@ export default function CustomizedInputBase() {
 
                 <Grid className={classes.wordbackground}>
                     <Box className={classes.title}>
-                        <h><b>word of today</b></h>
+                        <h><b>Word of Today</b></h>
                     </Box>
-                    <Box className={classes.wenzi}>
-                        <h><b>中文</b></h>
+                    <Box className={classes.wenzi} style={{ marginTop: "-5px" }}>
+                        <h><b style={{ fontSize: "15px" }}>Pin Yin</b></h>
+                        <br></br>
+                        <h><b>拼音</b></h>
                     </Box>
                 </Grid>
             </List>
             <div className={classes.content1} component={Link} to="/Mema">
                 <Box className={classes.title}>
-                    <h><b>talk to MEMA</b></h>
+                    <h><b>Talk to MEMA</b></h>
                 </Box>
                 <Typography>
-                    {/* <LockOutlinedIcon /> */}
-                    <img className="mema" alt="Mema" component={Link} to="/Mema" />
+                    <img className="mema" alt="" component={Link} to="/Mema" />
                 </Typography>
                 <IconButton type="speech" className={classes.micbutton} aria-label="speech" >
-                    <BottomNavigationAction label="Discover" value="Discover" icon={<MicIcon />} component={Link} to="/Mema" />
+                    <BottomNavigation>   
+                        <BottomNavigationAction icon={<MicIcon />} component={Link} to="/Mema" />
+                    </BottomNavigation>
+                    {/* navigation color have problem */}
+                    {/* 麦克风size可以改大一点 */}
                 </IconButton>
             </div>
             <List className={classes.content2}>
                 <Box className={classes.title}>
-                    <h><b>vocabulary book</b></h>
-
+                    <h><b>Vocabulary Book</b></h>
                 </Box>
                 <Button variant="outlined" className={classes.button1} component={Link} to="/learning"></Button>
-                <Button variant="outlined" className={classes.button2} component={Link} to="/review">s</Button>
+                <Button variant="outlined" className={classes.button2} component={Link} to="/review"></Button>
             </List>
         </Box>
 
