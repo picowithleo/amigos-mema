@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import Toolbar from '@material-ui/core/Toolbar';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -73,7 +74,7 @@ export default function Discover2() {
                     <b>Challenge Page</b>
                 </Box>
             </Box>
-            <AppBar className={classes.appbar}>
+            <AppBar className={classes.appbar} component={Link} to="/Discover1">
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos">
                         <ArrowBackIosIcon />
