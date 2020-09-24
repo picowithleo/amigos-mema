@@ -1,17 +1,12 @@
 import { Grid } from '@material-ui/core';
-import Avatar from '@material-ui/core/Avatar';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import { makeStyles } from '@material-ui/core/styles';
-import ForumIcon from '@material-ui/icons/Forum';
-import HelpIcon from '@material-ui/icons/Help';
-import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
 import React from 'react';
 import challenge from '../assets/img/challenge.jpg';
-import information from '../assets/img/information.jpg';
 import community from '../assets/img/community.jpg';
+import information from '../assets/img/information.jpg';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -119,20 +114,9 @@ export default function CustomizedInputBase() {
             <List className={classes.content2}>
 
                 <Button variant="outlined" className={classes.button2}></Button>
-                {/* <ListItemAvatar >
-                    <Avatar className={classes.disIcon}>
-                        <HelpIcon />
-                    </Avatar>
-                </ListItemAvatar> */}
-
             </List>
             <List className={classes.content3}>
                 <Button variant="outlined" className={classes.button3}></Button>
-                {/* <ListItemAvatar >
-                    <Avatar className={classes.disIcon}>
-                        <ForumIcon />
-                    </Avatar>
-                </ListItemAvatar> */}
             </List>
 
         </Box>

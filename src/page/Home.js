@@ -112,7 +112,7 @@ export default function CustomizedInputBase() {
                     <img className="mema" alt="" component={Link} to="/Mema" />
                 </Typography>
                 <IconButton type="speech" className={classes.micbutton} aria-label="speech" >
-                    <BottomNavigation>   
+                    <BottomNavigation>
                         <BottomNavigationAction icon={<MicIcon />} component={Link} to="/Mema" />
                     </BottomNavigation>
                     {/* navigation color have problem */}
@@ -121,7 +121,9 @@ export default function CustomizedInputBase() {
             </div>
             <List className={classes.content2}>
                 <Box className={classes.title}>
+
                     <h><b>Vocabulary Book</b></h>
+
                 </Box>
                 <Button variant="outlined" className={classes.button1} component={Link} to="/learning"></Button>
                 <Button variant="outlined" className={classes.button2} component={Link} to="/review"></Button>
