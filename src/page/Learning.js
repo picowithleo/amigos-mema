@@ -9,6 +9,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import CloseIcon from '@material-ui/icons/Close';
@@ -81,14 +82,15 @@ export default function Learning() {
   return (
     <List>
       <Box className={classes.root}>
-        <Box className={classes.learn}>
-          <h><b>Learning Page</b></h>
-        </Box>
-        <AppBar className={classes.appbar} component={Link} to="/Home">
+        <AppBar className={classes.appbar} >
           <Toolbar>
-            <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos">
+            <IconButton edge="start" className={classes.menuButton}
+              aria-label="ArrowBackIos" component={Link} to="/Home">
               <ArrowBackIosIcon />
             </IconButton>
+            <Typography style={{ fontSize: '2rem', fontWeight: 'bold', marginLeft: '5px' }}>
+              Learning words
+             </Typography>
           </Toolbar>
         </AppBar>
         <Box className={classes.searchbar}>
