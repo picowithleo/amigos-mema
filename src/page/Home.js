@@ -113,7 +113,7 @@ export default function CustomizedInputBase() {
                 </Typography>
                 <IconButton type="speech" className={classes.micbutton} aria-label="speech" >
                     <BottomNavigation>
-                        <BottomNavigationAction icon={<MicIcon />} component={Link} to="/Mema" />
+                        <BottomNavigationAction icon={<MicIcon />} component={Link} to="/Mema"/>
                     </BottomNavigation>
                     {/* navigation color have problem */}
                     {/* 麦克风size可以改大一点 */}
