@@ -9,6 +9,9 @@ import ForumIcon from '@material-ui/icons/Forum';
 import HelpIcon from '@material-ui/icons/Help';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
 import React from 'react';
+import challenge from '../assets/img/challenge.jpg';
+import information from '../assets/img/information.jpg';
+import community from '../assets/img/community.jpg';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: '#9CCC9D',
         fontSize: '12px',
     },
-
     wordbackground: {
         position: 'relative',
         marginTop: "5px",
@@ -30,8 +32,6 @@ const useStyles = makeStyles((theme) => ({
         color: '#FFFFFF',
 
     },
-
-
     content1: {
         marginTop: "20px",
         position: 'relative',
@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
         width: '80%',
         height: '150px',
         backgroundColor: '#FFFFFF',
-
     },
     content2: {
         marginTop: "30px",
@@ -57,28 +56,38 @@ const useStyles = makeStyles((theme) => ({
         height: '150px',
         backgroundColor: '#FFFFFF',
     },
-
     button1: {
         position: 'relative',
-        width: '40%',
-        marginTop: "20px",
+        width: '80%',
+        marginTop: "5px",
         marginRight: "-5px",
-        height: "80px"
+        height: "140px",
+        backgroundImage: 'url(' + information + ')',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
     },
     button2: {
-        position: 'relative',
-        width: '40%',
-        marginTop: "20px",
+        width: '80%',
+        marginTop: "5px",
         marginRight: "-5px",
-        height: "80px"
+        height: "140px",
+        backgroundImage: 'url(' + challenge + ')',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
     },
     button3: {
-        width: '40%',
-        marginTop: "20px",
+        position: 'relative',
+        width: '80%',
+        marginTop: "5px",
         marginRight: "-5px",
-        height: "80px"
+        height: "140px",
+        backgroundImage: 'url(' + community + ')',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
     },
-
     disIcon: {
         left: '130px',
     },
@@ -95,35 +104,35 @@ export default function CustomizedInputBase() {
 
                 <Grid className={classes.wordbackground}>
                     <Box className={classes.title}>
-                        <h><b>Discover</b></h>
+                        <h ><b>Discover</b></h>
                     </Box>
                 </Grid>
             </List>
             <div className={classes.content1}>
-                <Button variant="outlined" className={classes.button2}>Information</Button>
-                <ListItemAvatar >
+                <Button variant="outlined" className={classes.button1}></Button>
+                {/* <ListItemAvatar >
                     <Avatar className={classes.disIcon}>
                         <SportsEsportsIcon />
                     </Avatar>
-                </ListItemAvatar>
+                </ListItemAvatar> */}
             </div>
             <List className={classes.content2}>
 
-                <Button variant="outlined" className={classes.button3}>Challenge</Button>
-                <ListItemAvatar >
+                <Button variant="outlined" className={classes.button2}></Button>
+                {/* <ListItemAvatar >
                     <Avatar className={classes.disIcon}>
                         <HelpIcon />
                     </Avatar>
-                </ListItemAvatar>
+                </ListItemAvatar> */}
 
             </List>
             <List className={classes.content3}>
-                <Button variant="outlined" className={classes.button1}>Community</Button>
-                <ListItemAvatar >
+                <Button variant="outlined" className={classes.button3}></Button>
+                {/* <ListItemAvatar >
                     <Avatar className={classes.disIcon}>
                         <ForumIcon />
                     </Avatar>
-                </ListItemAvatar>
+                </ListItemAvatar> */}
             </List>
 
         </Box>
