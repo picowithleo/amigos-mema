@@ -50,7 +50,6 @@ const useStyles = makeStyles((theme) => ({
     width: '40px',
     height: '70px',
   },
-
   input: {
     marginLeft: theme.spacing(1),
     flex: 1,
@@ -73,8 +72,8 @@ const useStyles = makeStyles((theme) => ({
     border: "2px solid #9CCC9D",
     backgroundColor: '#e0e0e0',
   },
-}));
 
+}));
 
 export default function Learning() {
   const classes = useStyles();
@@ -112,7 +111,7 @@ export default function Learning() {
       </Box>
       <List className={classes.index}>
         <ListItem className={classes.indexbar}>
-          <ListItemText primary="ZiXing 字形" secondary="font" />
+          <ListItemText primary="zì tǐ 字体" secondary="font" />
           <ListItemAvatar>
             <Avatar>
               <ArrowForwardIosIcon />
@@ -120,7 +119,7 @@ export default function Learning() {
           </ListItemAvatar>
         </ListItem>
         <ListItem className={classes.indexbar}>
-          <ListItemText primary="CanYin 餐饮" secondary="food" />
+          <ListItemText primary="shí wù 食物" secondary="food" />
           <ListItemAvatar>
             <Avatar>
               <ArrowForwardIosIcon />

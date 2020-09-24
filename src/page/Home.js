@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "30px",
         // color: '#A9A9A9',
         color: "#505050",
+        marginTop: "-10px" 
     },
     content1: {
         marginTop: "20px",
@@ -97,8 +98,8 @@ export default function CustomizedInputBase() {
                     <Box className={classes.title}>
                         <h><b>Word of Today</b></h>
                     </Box>
-                    <Box className={classes.wenzi} style={{ marginTop: "-5px" }}>
-                        <h><b style={{ fontSize: "15px" }}>Pin Yin</b></h>
+                    <Box className={classes.wenzi}>
+                        <h><b style={{ fontSize: "15px" }}>pīn yīn</b></h>
                         <br></br>
                         <h><b>拼音</b></h>
                     </Box>

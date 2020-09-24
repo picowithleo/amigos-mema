@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -56,7 +57,7 @@ export default function Discover1() {
                     <h><b>Challenge Totorial Page</b></h>
                 </Box>
             </Box>
-            <AppBar className={classes.appbar}>
+            <AppBar className={classes.appbar} component={Link} to="/Discover">
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos">
                         <ArrowBackIosIcon />
@@ -74,7 +75,7 @@ export default function Discover1() {
                 <h>Translate as many words as you can in the 1 minute time limit!</h>
             </Box>
 
-            <Button variant="outlined" className={classes.button1}>Start</Button>
+            <Button variant="outlined" className={classes.button1} component={Link} to="/Discover2">Start</Button>
 
         </List>
 

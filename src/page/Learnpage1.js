@@ -14,6 +14,7 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import CloseIcon from '@material-ui/icons/Close';
 import SearchIcon from '@material-ui/icons/Search';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   search: {
@@ -84,7 +85,7 @@ export default function Learnpage1() {
         <Box className={classes.learn}>
           <h><b>My Words Page</b></h>
         </Box>
-        <AppBar className={classes.appbar}>
+        <AppBar className={classes.appbar} component={Link} to="/learn">
           <Toolbar>
             <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos">
               <ArrowBackIosIcon />
@@ -118,8 +119,8 @@ export default function Learnpage1() {
             </Avatar>
           </ListItemAvatar>
         </ListItem>
-        <ListItem className={classes.indexbar}>
-          <ListItemText primary="CanYin 餐饮" secondary="food" />
+        <ListItem className={classes.indexbar} component={Link} to="/learnpage2">
+          <ListItemText primary="shí wù 食物" secondary="food" />
           <ListItemAvatar>
             <Avatar>
               <ArrowForwardIosIcon />

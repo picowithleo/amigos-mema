@@ -20,6 +20,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShareIcon from '@material-ui/icons/Share';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -117,7 +118,7 @@ export default function Learnpage1() {
         <Box className={classes.learn}>
           <h><b>Selected Word Page</b></h>
         </Box>
-        <AppBar className={classes.appbar}>
+        <AppBar className={classes.appbar} component={Link} to="/learnpage1">
           <Toolbar>
             <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos">
               <ArrowBackIosIcon />
@@ -145,10 +146,10 @@ export default function Learnpage1() {
       <List className={classes.index}>
         <ListItem className={classes.indexbar}>
           <Typography variant="h5" color='textSecondary'>
-            Can Yin
+            shí wù
       </Typography>
           <Typography variant="h3">
-            餐 饮
+            食物
       </Typography>
         </ListItem>
         <ListItem className={classes.indexbar}>
