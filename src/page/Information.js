@@ -13,6 +13,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -41,12 +42,15 @@ export default function Information() {
 
   return (
     <List>
-      <AppBar className={classes.appbar}>
+      <AppBar className={classes.appbar} >
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos">
+          <IconButton edge="start" className={classes.menuButton}
+            aria-label="ArrowBackIos" component={Link} to="/Discover">
             <ArrowBackIosIcon />
           </IconButton>
-          <Box>Information</Box>
+          <Typography style={{ fontSize: '2rem', fontWeight: 'bold', marginLeft: '5px' }}>
+            Information
+          </Typography>
         </Toolbar>
       </AppBar>
 

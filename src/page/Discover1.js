@@ -5,6 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -52,16 +53,15 @@ export default function Discover1() {
 
     return (
         <List>
-            <Box className={classes.root}>
-                <Box className={classes.tittle}>
-                    <h><b>Challenge Totorial Page</b></h>
-                </Box>
-            </Box>
-            <AppBar className={classes.appbar} component={Link} to="/Discover">
+            <AppBar className={classes.appbar} >
                 <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos">
+                    <IconButton edge="start" className={classes.menuButton}
+                        aria-label="ArrowBackIos" component={Link} to="/Discover">
                         <ArrowBackIosIcon />
                     </IconButton>
+                    <Typography style={{ fontSize: '2rem', fontWeight: 'bold', marginLeft: '5px' }}>
+                        Challenge
+                    </Typography>
                 </Toolbar>
             </AppBar>
 
