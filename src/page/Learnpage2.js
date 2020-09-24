@@ -114,15 +114,16 @@ export default function Learnpage1() {
 
   return (
     <List>
-      <Box className={classes.root}>
-        <Box className={classes.learn}>
-          <h><b>Selected Word Page</b></h>
-        </Box>
-        <AppBar className={classes.appbar} component={Link} to="/learnpage1">
+      <Box className={classes.root}>Í
+        <AppBar className={classes.appbar} >
           <Toolbar>
-            <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos">
+            <IconButton edge="start" className={classes.menuButton}
+              aria-label="ArrowBackIos" component={Link} to="/learnpage1">
               <ArrowBackIosIcon />
             </IconButton>
+            <Typography style={{ fontSize: '2rem', fontWeight: 'bold', marginLeft: '5px' }}>
+              Words
+             </Typography>
           </Toolbar>
         </AppBar>
         <Box className={classes.searchbar}>
