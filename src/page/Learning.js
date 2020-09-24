@@ -89,7 +89,7 @@ export default function Learning() {
               <ArrowBackIosIcon />
             </IconButton>
             <Typography style={{ fontSize: '2rem', fontWeight: 'bold', marginLeft: '5px' }}>
-              Learning words
+              I'm learning
              </Typography>
           </Toolbar>
         </AppBar>
@@ -120,7 +120,7 @@ export default function Learning() {
             </Avatar>
           </ListItemAvatar>
         </ListItem>
-        <ListItem className={classes.indexbar}>
+        <ListItem className={classes.indexbar} component={Link} to="/learnpage2">
           <ListItemText primary="shí wù 食物" secondary="food" />
           <ListItemAvatar>
             <Avatar>
