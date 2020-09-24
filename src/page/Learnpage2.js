@@ -114,7 +114,7 @@ export default function Learnpage1() {
 
   return (
     <List>
-      <Box className={classes.root}>Í
+      <Box className={classes.root}>
         <AppBar className={classes.appbar} >
           <Toolbar>
             <IconButton edge="start" className={classes.menuButton}
