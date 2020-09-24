@@ -39,8 +39,9 @@ const useStyles = makeStyles((theme) => ({
     wenzi: {
         textAlign: 'center',
         position: 'relative',
-        fontSize: "40px",
-        color: '#A9A9A9',
+        fontSize: "30px",
+        // color: '#A9A9A9',
+        color: "#505050",
     },
     content1: {
         marginTop: "20px",
@@ -83,7 +84,6 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "-15px",
     },
 
-
 }));
 
 export default function CustomizedInputBase() {
@@ -95,30 +95,33 @@ export default function CustomizedInputBase() {
 
                 <Grid className={classes.wordbackground}>
                     <Box className={classes.title}>
-                        <h><b>word of today</b></h>
+                        <h><b>Word of Today</b></h>
                     </Box>
-                    <Box className={classes.wenzi}>
-                        <h><b>中文</b></h>
+                    <Box className={classes.wenzi} style={{ marginTop: "-5px" }}>
+                        <h><b style={{ fontSize: "15px" }}>Pin Yin</b></h>
+                        <br></br>
+                        <h><b>拼音</b></h>
                     </Box>
                 </Grid>
             </List>
             <div className={classes.content1} component={Link} to="/Mema">
                 <Box className={classes.title}>
-                    <h><b>talk to MEMA</b></h>
+                    <h><b>Talk to MEMA</b></h>
                 </Box>
                 <Typography>
-                    <img className="mema" component={Link} to="/Mema" />
-                    {/* <img className="mema" alt="Mema" component={Link} to="/Mema" /> */}
+                    <img className="mema" alt="" component={Link} to="/Mema" />
                 </Typography>
                 <IconButton type="speech" className={classes.micbutton} aria-label="speech" >
-                    <BottomNavigation>
+                    <BottomNavigation>   
                         <BottomNavigationAction icon={<MicIcon />} component={Link} to="/Mema" />
                     </BottomNavigation>
+                    {/* navigation color have problem */}
+                    {/* 麦克风size可以改大一点 */}
                 </IconButton>
             </div>
             <List className={classes.content2}>
                 <Box className={classes.title}>
-                    <h><b>vocabulary book</b></h>
+                    <h><b>Vocabulary Book</b></h>
                 </Box>
                 <Button variant="outlined" className={classes.button1} component={Link} to="/learning"></Button>
                 <Button variant="outlined" className={classes.button2} component={Link} to="/review"></Button>
