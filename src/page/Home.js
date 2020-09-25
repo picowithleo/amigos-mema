@@ -1,6 +1,4 @@
 import { Grid } from '@material-ui/core';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
@@ -42,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "30px",
         // color: '#A9A9A9',
         color: "#505050",
-        marginTop: "-10px" 
+        marginTop: "-10px"
     },
     content1: {
         marginTop: "20px",
@@ -57,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         left: "10%",
         width: '80%',
-        height: '240px',
+        height: '210px',
         backgroundColor: '#FFFFFF',
     },
     button1: {
@@ -82,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     },
     micbutton: {
         position: 'relative',
-        marginTop: "-15px",
+        marginTop: "-10px",
     },
 
 }));
@@ -112,12 +110,8 @@ export default function CustomizedInputBase() {
                 <Typography>
                     <img className="mema" alt="" component={Link} to="/Mema" />
                 </Typography>
-                <IconButton type="speech" className={classes.micbutton} aria-label="speech" >
-                    <BottomNavigation>
-                        <BottomNavigationAction icon={<MicIcon />} component={Link} to="/Mema"/>
-                    </BottomNavigation>
-                    {/* navigation color have problem */}
-                    {/* 麦克风size可以改大一点 */}
+                <IconButton type="speech" className={classes.micbutton} aria-label="speech" component={Link} to="/Mema" >
+                    <MicIcon style={{ fontSize: 40 }}/>
                 </IconButton>
             </div>
             <List className={classes.content2}>
