@@ -62,7 +62,7 @@ export default function CustomizedInputBase() {
             <List className={classes.learnbackground}>
                 <Grid className={classes.wordbackground}>
                     <Box className={classes.title}>
-                        <h style={{ fontSize: '2rem' }}><b>Discover</b></h>
+                        <h style={{ fontSize: '2.5rem' }}><b>Discover</b></h>
                     </Box>
                 </Grid>
             </List>

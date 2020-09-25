@@ -89,7 +89,7 @@ export default function Reviewpage() {
               aria-label="ArrowBackIos" component={Link} to="/Home">
               <ArrowBackIosIcon />
             </IconButton>
-            <Typography style={{ fontSize: '2rem', fontWeight: 'bold', marginLeft: '5px' }}>
+            <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
               Review words
              </Typography>
           </Toolbar>
