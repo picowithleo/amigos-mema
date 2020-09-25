@@ -86,7 +86,7 @@ export default function CustomizedInputBase() {
       <Box className={classes.root}>
         <List className={classes.searchbackground}>
           <Box className={classes.learn}>
-            <h style={{ fontSize: '2rem' }}><b>Learn</b></h>
+            <h style={{ fontSize: '2.5rem' }}><b>Learn</b></h>
           </Box>
           <Box component="form" className={classes.search}>
             <InputBase

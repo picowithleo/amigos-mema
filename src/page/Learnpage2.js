@@ -121,7 +121,7 @@ export default function Learnpage1() {
               aria-label="ArrowBackIos" component={Link} to="/learnpage1">
               <ArrowBackIosIcon />
             </IconButton>
-            <Typography style={{ fontSize: '2rem', fontWeight: 'bold', marginLeft: '5px' }}>
+            <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
               Words
              </Typography>
           </Toolbar>

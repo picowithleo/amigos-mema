@@ -16,18 +16,17 @@ import '../page/Home.css';
 const useStyles = makeStyles((theme) => ({
 
     learnbackground: {
-        marginTop: "24px",
         width: '100%',
         position: 'relative',
-        height: '100px',
+        height: '130px',
         backgroundColor: '#9CCC9D',
     },
     wordbackground: {
         position: 'relative',
-        marginTop: "5px",
+        marginTop: "10px",
         left: "10%",
         width: '80%',
-        height: '90px',
+        height: '110px',
         backgroundColor: '#FFFFFF',
     },
     title: {
@@ -37,10 +36,11 @@ const useStyles = makeStyles((theme) => ({
     wenzi: {
         textAlign: 'center',
         position: 'relative',
-        fontSize: "30px",
+        fontSize: "35px",
         // color: '#A9A9A9',
         color: "#505050",
-        marginTop: "-10px"
+        // marginTop: "-10px"
+        marginBottom: '5px',
     },
     content1: {
         marginTop: "20px",
@@ -97,7 +97,7 @@ export default function CustomizedInputBase() {
                         <h><b>Word of Today</b></h>
                     </Box>
                     <Box className={classes.wenzi}>
-                        <h><b style={{ fontSize: "15px" }}>pīn yīn</b></h>
+                        <h><b style={{ fontSize: "25px" }}>pīn yīn</b></h>
                         <br></br>
                         <h><b>拼音</b></h>
                     </Box>
@@ -111,14 +111,12 @@ export default function CustomizedInputBase() {
                     <img className="mema" alt="" component={Link} to="/Mema" />
                 </Typography>
                 <IconButton type="speech" className={classes.micbutton} aria-label="speech" component={Link} to="/Mema" >
-                    <MicIcon style={{ fontSize: 40 }}/>
+                    <MicIcon style={{ fontSize: 40 }} />
                 </IconButton>
             </div>
             <List className={classes.content2}>
                 <Box className={classes.title}>
-
                     <h><b>Vocabulary Book</b></h>
-
                 </Box>
                 <Button variant="outlined" className={classes.button1} component={Link} to="/learning"></Button>
                 <Button variant="outlined" className={classes.button2} component={Link} to="/review"></Button>

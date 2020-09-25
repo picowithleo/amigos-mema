@@ -40,10 +40,10 @@ const BottomNav = () => {
     <ThemeProvider theme={navTheme}>
       <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
 
-        <BottomNavigationAction label="Home" value="home" icon={<HomeIcon />} component={Link} to="/home" />
-        <BottomNavigationAction label="Learn" value="Learn" icon={<MenuBookIcon />} component={Link} to="/learn" />
-        <BottomNavigationAction label="Discover" value="Discover" icon={<WidgetsIcon />} component={Link} to="/discover" />
-        <BottomNavigationAction label="Account" value="account" icon={<AccountCircleIcon />} component={Link} to="/account" />
+        <BottomNavigationAction label="Home" value="home" icon={<HomeIcon fontSize="large" />} component={Link} to="/home" />
+        <BottomNavigationAction label="Learn" value="Learn" icon={<MenuBookIcon fontSize="large" />} component={Link} to="/learn" />
+        <BottomNavigationAction label="Discover" value="Discover" icon={<WidgetsIcon fontSize="large" />} component={Link} to="/discover" />
+        <BottomNavigationAction label="Account" value="account" icon={<AccountCircleIcon fontSize="large" />} component={Link} to="/account" />
 
       </BottomNavigation>
     </ThemeProvider>

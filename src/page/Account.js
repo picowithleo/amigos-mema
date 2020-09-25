@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         width: theme.spacing(15),
         height: theme.spacing(15),
         marginLeft: '60%',
-        marginTop: '-120px',
+        marginTop: '-130px',
     },
     info: {
         color: '#000000',
@@ -76,9 +76,9 @@ export default function CustomizedInputBase() {
             <Box className={classes.root}>
                 <List className={classes.avatararea}>
                     <Box className={classes.title}>
-                        <h style={{ fontSize: '2rem' }}><b>Account</b></h>
+                        <h style={{ fontSize: '2.5rem' }}><b>Account</b></h>
                         <div className={classes.info}>
-                            <h style={{ fontWeight: "bold", fontSize: '22px' }}>Frank Baker</h>
+                            <h style={{ fontWeight: "bold", fontSize: '25px' }}>Frank Baker</h>
                             <br></br>
                             <h>Joined on July 2020</h>
                         </div>

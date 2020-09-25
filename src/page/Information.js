@@ -48,7 +48,7 @@ export default function Information() {
             aria-label="ArrowBackIos" component={Link} to="/Discover">
             <ArrowBackIosIcon />
           </IconButton>
-          <Typography style={{ fontSize: '2rem', fontWeight: 'bold', marginLeft: '5px' }}>
+          <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
             Information
           </Typography>
         </Toolbar>

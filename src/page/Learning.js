@@ -88,7 +88,7 @@ export default function Learning() {
               aria-label="ArrowBackIos" component={Link} to="/Home">
               <ArrowBackIosIcon />
             </IconButton>
-            <Typography style={{ fontSize: '2rem', fontWeight: 'bold', marginLeft: '5px' }}>
+            <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
               I'm learning
              </Typography>
           </Toolbar>
