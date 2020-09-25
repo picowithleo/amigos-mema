@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     title: {
         textAlign: 'left',
         fontSize: '20px',
-        top: '12%',
+        top: '5%',
         color: '#FFFFFF',
         position: 'relative',
         left: '10%',
@@ -24,14 +24,14 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         right: '0%',
         position: 'relative',
-        height: '160px',
+        height: '145px',
         backgroundColor: '#9CCC9D',
     },
     large: {
         width: theme.spacing(15),
         height: theme.spacing(15),
         marginLeft: '60%',
-        marginTop: '-130px',
+        marginTop: '-125px',
     },
     info: {
         color: '#000000',
