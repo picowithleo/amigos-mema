@@ -15,6 +15,7 @@ import Mema from '../page/Mema';
 import Profile from '../page/Profile';
 import Reviewpage from '../page/Reviewpage';
 import Translatepage from '../page/Translatepage';
+import Account from '../page/Account';
 
 const Routes = () => {
   return (
@@ -44,6 +45,7 @@ const Routes = () => {
 
       {/* Account page related */}
       <Route exact path="/profile" component={Profile} />
+      <Route exact path="/account" component={Account} />
 
     </Switch>
 
