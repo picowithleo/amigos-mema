@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "35px",
         // color: '#A9A9A9',
         color: "#505050",
-        // marginTop: "-10px"
+        marginTop: "-5px",
         marginBottom: '5px',
     },
     content1: {
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: '#FFFFFF',
     },
     content2: {
-        marginTop: "30px",
+        marginTop: "20px",
         position: 'relative',
         left: "10%",
         width: '80%',
@@ -89,7 +89,7 @@ export default function CustomizedInputBase() {
     const classes = useStyles();
 
     return (
-        <Box>
+        <Box style={{ marginBottom: '15%' }}>
             <List className={classes.learnbackground}>
 
                 <Grid className={classes.wordbackground}>

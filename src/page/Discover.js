@@ -58,7 +58,7 @@ export default function CustomizedInputBase() {
 
     return (
 
-        <Box>
+        <Box style={{ marginBottom: '15%' }}>
             <List className={classes.learnbackground}>
                 <Grid className={classes.wordbackground}>
                     <Box className={classes.title}>

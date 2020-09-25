@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   learn: {
     textAlign: 'left',
     fontSize: '20px',
-    top: '12%',
+    top: '5%',
     color: '#FFFFFF',
     position: 'relative',
     fontStyle: 'bold',
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     right: '0%',
     position: 'relative',
-    height: '100px',
+    height: '110px',
     backgroundColor: '#9CCC9D',
   },
   input: {
@@ -82,7 +82,7 @@ export default function CustomizedInputBase() {
   const classes = useStyles();
 
   return (
-    <List>
+    <List style={{ marginBottom: '15%' }}>
       <Box className={classes.root}>
         <List className={classes.searchbackground}>
           <Box className={classes.learn}>
