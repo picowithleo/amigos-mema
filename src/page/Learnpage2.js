@@ -97,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
   },
   progressbar: {
     width: '100%',
-    height: '300px',
+    height: '180px',
   },
   progress: {
     width: '95%',
@@ -173,7 +173,8 @@ export default function Learnpage1() {
           <Typography variant="h6">
             Level
       </Typography>
-          <RadioGroup row aria-label="position" name="position" defaultValue="level1">
+          <RadioGroup row aria-label="position" name="position" defaultValue="level1"
+            style={{ marginLeft: '5%' }}>
             <FormControlLabel
               value="level0"
               control={<Radio color="primary" />}
@@ -185,20 +186,28 @@ export default function Learnpage1() {
               control={<Radio color="primary" />}
               label="level 2"
               labelPlacement="bottom"
+              style={{ marginLeft: '-2px' }}
             />
             <FormControlLabel
               value="level2"
               control={<Radio color="primary" />}
               label="level 3"
               labelPlacement="bottom"
+              style={{ marginLeft: '-2px' }}
             />
             <FormControlLabel
               value="level3"
               control={<Radio color="primary" />}
               label="level 4"
               labelPlacement="bottom"
+              style={{ marginLeft: '-2px' }}
             />
-            <FormControlLabel value="level4" control={<Radio color="primary" />} label="level 5" labelPlacement='bottom' />
+            <FormControlLabel
+              value="level4"
+              control={<Radio color="primary" />}
+              label="level 5"
+              labelPlacement='bottom'
+              style={{ marginLeft: '-2px' }} />
           </RadioGroup>
         </FormControl>
       </Box>
