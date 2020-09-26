@@ -2,9 +2,12 @@ import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Login from '../auth/Login';
 import Register from '../auth/Register';
+import About from '../page/About';
+import Account from '../page/Account';
 import Discover from '../page/Discover';
 import Discover1 from '../page/Discover1';
 import Discover2 from '../page/Discover2';
+import Help from '../page/Help';
 import Home from '../page/Home';
 import Information from '../page/Information';
 import Learn from '../page/Learn';
@@ -13,9 +16,10 @@ import Learnpage1 from '../page/Learnpage1';
 import Learnpage2 from '../page/Learnpage2';
 import Mema from '../page/Mema';
 import Profile from '../page/Profile';
+import Rate from '../page/Rate';
 import Reviewpage from '../page/Reviewpage';
+import Setting from '../page/Setting';
 import Translatepage from '../page/Translatepage';
-import Account from '../page/Account';
 
 const Routes = () => {
   return (
@@ -46,6 +50,10 @@ const Routes = () => {
       {/* Account page related */}
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/account" component={Account} />
+      <Route exact path="/setting" component={Setting} />
+      <Route exact path="/about" component={About} />
+      <Route exact path="/help" component={Help} />
+      <Route exact path="/rate" component={Rate} />
 
     </Switch>
 

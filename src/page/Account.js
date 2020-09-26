@@ -2,12 +2,18 @@ import Avatar from '@material-ui/core/Avatar';
 import Box from '@material-ui/core/Box';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles } from '@material-ui/core/styles';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import HelpIcon from '@material-ui/icons/Help';
+import InfoIcon from '@material-ui/icons/Info';
+import RateReviewIcon from '@material-ui/icons/RateReview';
+import SettingsIcon from '@material-ui/icons/Settings';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import user from '../assets/img/user.jpg';
-
 
 const useStyles = makeStyles((theme) => ({
 
@@ -100,23 +106,38 @@ export default function CustomizedInputBase() {
             </Box>
             <Box>
                 <List component="nav" aria-label="main mailbox folders" className={classes.index}>
-                    <ListItem button className={classes.indexrow}>
+                    <ListItem button className={classes.indexrow} component={Link} to="/setting">
+                        <ListItemIcon>
+                            <SettingsIcon />
+                        </ListItemIcon>
                         <ListItemText primary="Setting" />
                         <ChevronRightIcon />
                     </ListItem>
-                    <ListItem button className={classes.indexrow} >
+                    <ListItem button className={classes.indexrow} component={Link} to="/about">
+                        <ListItemIcon>
+                            <InfoIcon />
+                        </ListItemIcon>
                         <ListItemText primary="About" />
                         <ChevronRightIcon />
                     </ListItem>
-                    <ListItem button className={classes.indexrow} >
+                    <ListItem button className={classes.indexrow} component={Link} to="/help">
+                        <ListItemIcon>
+                            <HelpIcon />
+                        </ListItemIcon>
                         <ListItemText primary="Help" />
                         <ChevronRightIcon />
                     </ListItem>
-                    <ListItem button className={classes.indexrow} >
+                    <ListItem button className={classes.indexrow} component={Link} to="/rate">
+                        <ListItemIcon>
+                            <RateReviewIcon />
+                        </ListItemIcon>
                         <ListItemText primary="Rate this app" />
                         <ChevronRightIcon />
                     </ListItem>
                     <ListItem button className={classes.indexrow} >
+                        <ListItemIcon>
+                            <ExitToAppIcon />
+                        </ListItemIcon>
                         <ListItemText primary="Log out" />
                         <ChevronRightIcon />
                     </ListItem>
