@@ -57,9 +57,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Login = props => {
+// const Login = props => {
 
-  // export default function SignIn() {
+export default function SignIn() {
   const classes = useStyles();
 
   return (
@@ -135,4 +135,4 @@ const Login = props => {
   );
 }
 
-export default Login;
+// export default Login;

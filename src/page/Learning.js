@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
   searchbackground: {
     width: '100%',
-    right: '0%',
+    // right: '0%',
     position: 'relative',
     height: '50px',
   },
@@ -65,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
   appbar: {
     position: 'relative',
     backgroundColor:'#8bc38c',
+    marginTop: '-8px',
   },
   index: {
     top: '70%',

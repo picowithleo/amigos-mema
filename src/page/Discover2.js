@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     appbar: {
         position: 'relative',
         backgroundColor:'#8bc38c',
+        marginTop: '-8px',
     },
     text: {
         color: "grey",

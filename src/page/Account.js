@@ -28,11 +28,11 @@ const useStyles = makeStyles((theme) => ({
     },
     avatararea: {
         width: '100%',
-        right: '0%',
+        // right: '0%',
         position: 'relative',
         height: '145px',
         backgroundColor: '#8bc38c',
-        marginTop: '-6px',
+        marginTop: '-10px',
     },
     large: {
         width: theme.spacing(15),

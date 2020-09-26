@@ -36,9 +36,9 @@ const useStyles = makeStyles((theme) => ({
     width: '80%',
   },
   searchbackground: {
-    marginTop: '-6px',
+    marginTop: '-10px',
     width: '100%',
-    right: '0%',
+    // right: '0%',
     position: 'relative',
     height: '110px',
     backgroundColor:'#8bc38c',

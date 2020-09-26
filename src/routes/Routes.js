@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Login from '../auth/Login';
 import Register from '../auth/Register';
+import Welcome from '../auth/Welcome';
 import About from '../page/About';
 import Account from '../page/Account';
 import Discover from '../page/Discover';
@@ -28,6 +29,7 @@ const Routes = () => {
       <Redirect exact from="/" to="/login" />
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
+      <Route exact path="/welcome" component={Welcome} />
 
       {/* Home page related*/}
       <Route exact path="/home" component={Home} />
