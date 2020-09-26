@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 const navTheme = createMuiTheme({
   palette: {
     primary: {
-      main: '#9CCC9D'
+      main: '#8bc38c'
     },
     text: {
       secondary: '#757575'
