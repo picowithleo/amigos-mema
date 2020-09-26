@@ -1,4 +1,3 @@
-import Avatar from '@material-ui/core/Avatar';
 import Box from '@material-ui/core/Box';
 import Checkbox from '@material-ui/core/Checkbox';
 import Container from '@material-ui/core/Container';
@@ -8,8 +7,8 @@ import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import React from 'react';
+import logo from '../assets/img/logo1.png';
 import SignupButton from '../ui/SignupButton';
 
 function Copyright() {
@@ -49,12 +48,12 @@ export default function SignUp() {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" style={{ marginBottom: '15%' }}>
       {/* <CssBaseline /> */}
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
+        <Typography>
+          <img src={logo} alt="logo" />
+        </Typography>
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
