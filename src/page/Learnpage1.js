@@ -85,8 +85,7 @@ export default function Learnpage1() {
       <Box className={classes.root}>
         <AppBar className={classes.appbar} >
           <Toolbar>
-            <IconButton edge="start" className={classes.menuButton}
-              aria-label="ArrowBackIos" component={Link} to="/learn">
+            <IconButton edge="start" aria-label="ArrowBackIos" component={Link} to="/learn">
               <ArrowBackIosIcon />
             </IconButton>
             <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
