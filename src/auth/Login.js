@@ -1,12 +1,3 @@
-// import React from 'react';
-
-// const Login = props => {
-//     return <div> This is Login page</div>;
-
-// };
-
-// export default Login;
-
 import Box from '@material-ui/core/Box';
 import Checkbox from '@material-ui/core/Checkbox';
 import Container from '@material-ui/core/Container';
@@ -17,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
-import img from '../assets/img/logo1.png';
+import logo from '../assets/img/logo.jpg';
 import LoginButton from '../ui/LoginButton';
 
 function Copyright() {
@@ -68,7 +59,7 @@ export default function SignIn() {
       <div className={classes.paper}>
         <Typography>
           {/* <LockOutlinedIcon /> */}
-          <img src={img} alt="logo" />
+          <img src={logo} alt="logo" style={{ height: '150px' }} />
         </Typography>
         {/* <Typography className={classes.welcome} component="h1" variant="h5">
           WELCOME

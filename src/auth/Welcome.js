@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/img/logo1.png';
+import logo from '../assets/img/logo2.jpg';
 
 function Copyright() {
     return (
@@ -44,7 +44,7 @@ const Welcome = props => {
                 {/* <h4>Welcome to MeMa!</h4> */}
                 <div>
                     <Typography>
-                        <img src={logo} alt="logo" style={{ marginTop: '20%' }} />
+                        <img src={logo} alt="logo" style={{ marginTop: '20%', height: '150px' }} />
                     </Typography>
                 </div>
                 <div>
