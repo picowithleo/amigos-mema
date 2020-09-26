@@ -47,11 +47,10 @@ const Welcome = props => {
                         <img src={logo} alt="logo" style={{ marginTop: '20%' }} />
                     </Typography>
                 </div>
-                <div style={{ justifyContent: 'center' }} >
-                    <h1 style={{ color: '#ac54a0', marginTop: '60px' }}>Welcome to MeMa!</h1>
-                    <h4 style={{ marginTop: '-20px' }}>An efficient language education application.</h4>
-                    <br />
-                    <h4 style={{ marginTop: '-38px' }}>Let's learn new languages and improve memory together！</h4>
+                <div>
+                    <h1 style={{ textAlign: 'center', fontSize: '2.5em', color: '#ac54a0', marginTop: '60px' }}>Welcome to MeMa!</h1>
+                    <h4 style={{ marginLeft: '5%', marginRight: '5%', textAlign: 'justify', fontSize: '1.3em', marginTop: '-20px' }}>
+                        An efficient language education application. Let's learn languages and improve memory together！</h4>
                 </div>
                 <Box mt={8} style={{ marginTop: '100%' }}>
                     <Copyright />
