@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     // },
     appbar: {
         position: 'relative',
-        backgroundColor:'#8bc38c',
+        backgroundColor: '#8bc38c',
     },
     // 小黄人图标
     memaicon: {
@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
 export default function CustomizedInputBase() {
     const classes = useStyles();
     return (
-        <Box>
+        <Box style={{ marginBottom: '25%' }}>
             <AppBar className={classes.appbar} >
                 <Toolbar>
                     <IconButton edge="start"
@@ -78,7 +78,7 @@ export default function CustomizedInputBase() {
                         <ArrowBackIosIcon />
                     </IconButton>
                     <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
-                       Talking
+                        Talking
                     </Typography>
                 </Toolbar>
             </AppBar>
