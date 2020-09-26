@@ -1,15 +1,14 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import BottomNav from './navigation/BottomNav';
-import TopNav from './navigation/TopNav';
+// import TopNav from './navigation/TopNav';
 import Routes from './routes/Routes';
 
 
 function App() {
   return (
     <div className="App">
-      <TopNav />
+      {/* <TopNav /> */}
       <Routes />
       <BottomNav />
     </div>
