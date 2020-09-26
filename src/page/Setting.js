@@ -69,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
     submit: {
         width: '90%',
         marginTop: '5px',
+        height: '43px',
     }
 
 }));
