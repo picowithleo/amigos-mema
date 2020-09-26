@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
     //     position: 'relative',
     //     height: '50px',
-    //     backgroundColor: '#9CCC9D',
+    //     backgroundColor:'#8bc38c',
     // },
     // 返回图标
     // backicon: {
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     // },
     appbar: {
         position: 'relative',
-        backgroundColor: '#9CCC9D',
+        backgroundColor:'#8bc38c',
     },
     // 小黄人图标
     memaicon: {

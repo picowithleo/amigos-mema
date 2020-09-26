@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         right: '0%',
         position: 'relative',
         height: '145px',
-        backgroundColor: '#9CCC9D',
+        backgroundColor:'#8bc38c',
         marginTop: '-6px',
     },
     large: {

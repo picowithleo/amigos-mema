@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appbar: {
     position: 'relative',
-    backgroundColor: '#9CCC9D',
+    backgroundColor:'#8bc38c',
   },
   index: {
     top: '70%',

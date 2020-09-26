@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     appbar: {
         position: 'relative',
-        backgroundColor: '#9CCC9D',
+        backgroundColor:'#8bc38c',
     },
     text: {
         color: "grey",
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "200px",
         marginRight: "-5px",
         height: "80px",
-        backgroundColor: '#9CCC9D',
+        backgroundColor:'#8bc38c',
         fontSize: "20px",
     },
 
