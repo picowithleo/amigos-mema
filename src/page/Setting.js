@@ -1,5 +1,6 @@
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 import Collapse from '@material-ui/core/Collapse';
 import FormControl from '@material-ui/core/FormControl';
 import IconButton from '@material-ui/core/IconButton';
@@ -10,7 +11,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
-import { makeStyles } from '@material-ui/core/styles';
+import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -64,8 +65,21 @@ const useStyles = makeStyles((theme) => ({
     selectEmpty: {
         marginTop: theme.spacing(2),
     },
+
+    submit: {
+        width: '90%',
+        marginTop: '5px',
+    }
+
 }));
 
+const navTheme = createMuiTheme({
+    palette: {
+        primary: {
+            main: '#9CCC9D'
+        },
+    }
+})
 
 export default function CustomizedInputBase() {
     const classes = useStyles();
@@ -111,6 +125,7 @@ export default function CustomizedInputBase() {
     };
 
     return (
+
         <List>
             <Box className={classes.root}>
                 <AppBar className={classes.appbar} >
@@ -222,6 +237,12 @@ export default function CustomizedInputBase() {
                     </Collapse>
                 </List>
             </Box>
+            <ThemeProvider theme={navTheme}>
+                <Button variant="contained" color="primary" disableElevation className={classes.submit} >
+                    Submit
+                </Button>
+            </ThemeProvider>
         </List >
+
     );
 }
