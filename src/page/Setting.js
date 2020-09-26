@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     },
     appbar: {
         position: 'relative',
-        backgroundColor:'#8bc38c',
+        backgroundColor: '#8bc38c',
     },
     index: {
         width: '90%',
@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
 const navTheme = createMuiTheme({
     palette: {
         primary: {
-            main:'#8bc38c'
+            main: '#8bc38c'
         },
     }
 })
@@ -127,7 +127,7 @@ export default function CustomizedInputBase() {
 
     return (
 
-        <List>
+        <List style={{ marginBottom: '15%' }}>
             <Box className={classes.root}>
                 <AppBar className={classes.appbar} >
                     <Toolbar>
