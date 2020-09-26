@@ -135,7 +135,7 @@ export default function CustomizedInputBase() {
                         <ListItemText primary="Rate this app" />
                         <ChevronRightIcon />
                     </ListItem>
-                    <ListItem button className={classes.indexrow} >
+                    <ListItem button className={classes.indexrow} component={Link} to="/login">
                         <ListItemIcon>
                             <ExitToAppIcon />
                         </ListItemIcon>
