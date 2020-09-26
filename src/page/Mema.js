@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     // 小黄人图标
     memaicon: {
         position: 'relative',
-        marginTop: "107px",
+        marginTop: "80px",
     },
     // 需要翻译的文字背景
     wordbackground: {
@@ -46,13 +46,13 @@ export default function CustomizedInputBase() {
         <Box>
             <AppBar className={classes.appbar} >
                 <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton}
-                        aria-label="ArrowBackIos" component={Link} to="/learn">
+                    <IconButton edge="start"
+                        aria-label="ArrowBackIos" component={Link} to="/home">
                         <ArrowBackIosIcon />
                     </IconButton>
                     <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
-                        Mema
-             </Typography>
+                        MeMa
+                    </Typography>
                 </Toolbar>
             </AppBar>
             <div>
@@ -62,7 +62,7 @@ export default function CustomizedInputBase() {
             </div>
             <div className={classes.wordbackground}>
                 <text className={classes.instrction} >
-                    Tap on the button below and speak to talk to MeMa !
+                    Tap on the button below and talk to MeMa !
                 </text>
             </div>
             <div>
