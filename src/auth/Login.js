@@ -70,9 +70,9 @@ const Login = props => {
           {/* <LockOutlinedIcon /> */}
           <img src={img} alt="logo" />
         </Typography>
-        <Typography className={classes.welcome} component="h1" variant="h5">
+        {/* <Typography className={classes.welcome} component="h1" variant="h5">
           WELCOME
-        </Typography>
+        </Typography> */}
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
@@ -121,7 +121,7 @@ const Login = props => {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href={'/register'} variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
