@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         position: 'relative',
         height: '130px',
-        backgroundColor: '#9CCC9D',
+        backgroundColor: '#8bc38c',
     },
     wordbackground: {
         position: 'relative',

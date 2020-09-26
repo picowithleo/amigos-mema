@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     },
     appbar: {
         position: 'relative',
-        backgroundColor: '#9CCC9D',
+        backgroundColor:'#8bc38c',
     },
     index: {
         width: '90%',
@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
 const navTheme = createMuiTheme({
     palette: {
         primary: {
-            main: '#9CCC9D'
+            main:'#8bc38c'
         },
     }
 })

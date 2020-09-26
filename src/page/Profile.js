@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "24px",
         width: '100%',
         position: 'relative',
-        backgroundColor: '#9CCC9D',
+        backgroundColor:'#8bc38c',
         fontSize: '12px',
     },
 

@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     right: '0%',
     position: 'relative',
     height: '110px',
-    backgroundColor: '#9CCC9D',
+    backgroundColor:'#8bc38c',
   },
   input: {
     marginLeft: theme.spacing(1),
