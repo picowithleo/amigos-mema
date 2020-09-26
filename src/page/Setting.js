@@ -1,37 +1,37 @@
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
+import Collapse from '@material-ui/core/Collapse';
+import FormControl from '@material-ui/core/FormControl';
 import IconButton from '@material-ui/core/IconButton';
+import InputLabel from '@material-ui/core/InputLabel';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import HelpIcon from '@material-ui/icons/Help';
-import InfoIcon from '@material-ui/icons/Info';
-import RateReviewIcon from '@material-ui/icons/RateReview';
-import SettingsIcon from '@material-ui/icons/Settings';
+import AssessmentIcon from '@material-ui/icons/Assessment';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import EmailIcon from '@material-ui/icons/Email';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import GTranslateIcon from '@material-ui/icons/GTranslate';
+import PublicIcon from '@material-ui/icons/Public';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const useStyles = makeStyles((theme) => ({
 
-    // title: {
-    //     textAlign: 'left',
-    //     fontSize: '20px',
-    //     top: '5%',
-    //     color: '#FFFFFF',
-    //     position: 'relative',
-    //     left: '10%',
-    //     width: '80%',
-    // },
     root: {
         position: 'relative',
         bottom: '30%',
+
     },
     appbar: {
         position: 'relative',
@@ -40,15 +40,75 @@ const useStyles = makeStyles((theme) => ({
     index: {
         width: '90%',
         marginLeft: '5%',
+        marginTop: '10px',
     },
     indexrow: {
         border: "1px solid #e0e0e0",
         fontSize: '2rem',
     },
+
+    input: {
+        '& > *': {
+            margin: theme.spacing(1),
+            width: '100%',
+            marginLeft: '-1px',
+        },
+    },
+
+    formControl: {
+        margin: theme.spacing(1),
+        // minWidth: 120,
+        width: '100%',
+        marginLeft: '-1px',
+    },
+    selectEmpty: {
+        marginTop: theme.spacing(2),
+    },
 }));
+
 
 export default function CustomizedInputBase() {
     const classes = useStyles();
+
+    const [open, setOpen] = React.useState(false);
+    const handleClick = () => {
+        setOpen(!open);
+    };
+
+    const [open2, setOpen2] = React.useState(false);
+    const handleClick2 = () => {
+        setOpen2(!open2);
+    };
+
+    const [open3, setOpen3] = React.useState(false);
+    const handleClick3 = () => {
+        setOpen3(!open3);
+    };
+
+    const [open4, setOpen4] = React.useState(false);
+    const handleClick4 = () => {
+        setOpen4(!open4);
+    };
+
+    const [open5, setOpen5] = React.useState(false);
+    const handleClick5 = () => {
+        setOpen5(!open5);
+    };
+
+    const [country, setcountry] = React.useState('');
+    const handleChange = (event) => {
+        setcountry(event.target.value);
+    };
+
+    const [language, setlang] = React.useState('');
+    const handleChange1 = (event) => {
+        setlang(event.target.value);
+    };
+
+    const [level, setlevel] = React.useState('');
+    const handleChange2 = (event) => {
+        setlevel(event.target.value);
+    };
 
     return (
         <List>
@@ -67,43 +127,101 @@ export default function CustomizedInputBase() {
             </Box>
             <Box>
                 <List component="nav" aria-label="main mailbox folders" className={classes.index}>
-                    <ListItem button className={classes.indexrow}>
+                    <ListItem button className={classes.indexrow} onClick={handleClick}>
                         <ListItemIcon>
-                            <SettingsIcon />
+                            <AssignmentIndIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Setting" />
-                        <ChevronRightIcon />
+                        <ListItemText primary="Name" />
+                        {open ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
-                    <ListItem button className={classes.indexrow} >
+                    <Collapse in={open} timeout="auto" unmountOnExit>
+                        <form className={classes.input} noValidate autoComplete="off">
+                            <TextField id="filled-basic" label="Input your name" variant="filled" />
+                        </form>
+                    </Collapse>
+                    <ListItem button className={classes.indexrow} onClick={handleClick2}>
                         <ListItemIcon>
-                            <InfoIcon />
+                            <EmailIcon />
                         </ListItemIcon>
-                        <ListItemText primary="About" />
-                        <ChevronRightIcon />
+                        <ListItemText primary="Email" />
+                        {open2 ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
-                    <ListItem button className={classes.indexrow} >
+                    <Collapse in={open2} timeout="auto" unmountOnExit>
+                        <form className={classes.input} noValidate autoComplete="off">
+                            <TextField id="filled-basic" label="Input your email" variant="filled" />
+                        </form>
+                    </Collapse>
+                    <ListItem button className={classes.indexrow} onClick={handleClick3}>
                         <ListItemIcon>
-                            <HelpIcon />
+                            <PublicIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Help" />
-                        <ChevronRightIcon />
+                        <ListItemText primary="Country" />
+                        {open3 ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
-                    <ListItem button className={classes.indexrow} >
+                    <Collapse in={open3} timeout="auto" unmountOnExit>
+                        <FormControl variant="filled" className={classes.formControl}>
+                            <InputLabel id="demo-simple-select-filled-label">Select your country</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-filled-label"
+                                id="demo-simple-select-filled"
+                                value={country}
+                                onChange={handleChange}
+                            >
+                                <MenuItem value={10}>Australia</MenuItem>
+                                <MenuItem value={20}>China</MenuItem>
+                                <MenuItem value={30}>New Zealand</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </Collapse>
+                    <ListItem button className={classes.indexrow} onClick={handleClick4}>
                         <ListItemIcon>
-                            <RateReviewIcon />
+                            <GTranslateIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Rate this app" />
-                        <ChevronRightIcon />
+                        <ListItemText primary="Language" />
+                        {open4 ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
-                    <ListItem button className={classes.indexrow} >
+                    <Collapse in={open4} timeout="auto" unmountOnExit>
+                        <FormControl variant="filled" className={classes.formControl}>
+                            <InputLabel id="demo-simple-select-filled-label">Select your language</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-filled-label"
+                                id="demo-simple-select-filled"
+                                value={language}
+                                onChange={handleChange1}
+                            >
+                                <MenuItem value={10}>Chinese</MenuItem>
+                                <MenuItem value={20}>English</MenuItem>
+                                <MenuItem value={30}>Korean</MenuItem>
+                                <MenuItem value={40}>Japanese</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </Collapse>
+                    <ListItem button className={classes.indexrow} onClick={handleClick5}>
                         <ListItemIcon>
-                            <ExitToAppIcon />
+                            <AssessmentIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Log out" />
-                        <ChevronRightIcon />
+                        <ListItemText primary="Proficiency level" />
+                        {open5 ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
+                    <Collapse in={open5} timeout="auto" unmountOnExit>
+                        <FormControl variant="filled" className={classes.formControl}>
+                            <InputLabel id="demo-simple-select-filled-label">Select your level</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-filled-label"
+                                id="demo-simple-select-filled"
+                                value={level}
+                                onChange={handleChange2}
+                            >
+                                <MenuItem value={10}>Level 1</MenuItem>
+                                <MenuItem value={20}>Level 2</MenuItem>
+                                <MenuItem value={30}>Level 3</MenuItem>
+                                <MenuItem value={40}>Level 4</MenuItem>
+                                <MenuItem value={50}>Level 5</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </Collapse>
                 </List>
             </Box>
-        </List>
+        </List >
     );
 }
