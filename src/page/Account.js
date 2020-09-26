@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         right: '0%',
         position: 'relative',
         height: '145px',
-        backgroundColor:'#8bc38c',
+        backgroundColor: '#8bc38c',
         marginTop: '-6px',
     },
     large: {
@@ -79,7 +79,7 @@ export default function CustomizedInputBase() {
     const classes = useStyles();
 
     return (
-        <List>
+        <List style={{ marginBottom: '15%' }}>
             <Box className={classes.root}>
                 <List className={classes.avatararea}>
                     <Box className={classes.title}>
