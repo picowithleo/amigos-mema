@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
-import logo from '../assets/img/logo1.png';
+import logo from '../assets/img/logo.jpg';
 import SignupButton from '../ui/SignupButton';
 
 function Copyright() {
@@ -52,7 +52,7 @@ export default function SignUp() {
       {/* <CssBaseline /> */}
       <div className={classes.paper}>
         <Typography>
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" style={{ height: '150px' }} />
         </Typography>
         <Typography component="h1" variant="h5">
           Sign up
