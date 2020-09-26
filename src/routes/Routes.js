@@ -26,7 +26,7 @@ const Routes = () => {
   return (
     <Switch>
 
-      <Redirect exact from="/" to="/login" />
+      <Redirect exact from="/" to="/welcome" />
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/welcome" component={Welcome} />
