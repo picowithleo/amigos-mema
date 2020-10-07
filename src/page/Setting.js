@@ -71,6 +71,7 @@ const useStyles = makeStyles((theme) => ({
         width: '90%',
         marginTop: '5px',
         height: '43px',
+        fontSize: '1.5rem',
     }
 
 }));
@@ -80,8 +81,18 @@ const navTheme = createMuiTheme({
         primary: {
             main: '#8bc38c'
         },
-    }
+    },
 })
+
+const fontTheme = createMuiTheme({
+    overrides: {
+        MuiTypography: {
+            body1: {
+                fontSize: '1.5rem'
+            },
+        },
+    },
+});
 
 export default function CustomizedInputBase() {
     const classes = useStyles();
@@ -127,124 +138,125 @@ export default function CustomizedInputBase() {
     };
 
     return (
-
-        <List style={{ marginBottom: '15%' }}>
-            <Box className={classes.root}>
-                <AppBar className={classes.appbar} >
-                    <Toolbar>
-                        <IconButton edge="start" className={classes.menuButton}
-                            aria-label="ArrowBackIos" component={Link} to="/account">
-                            <ArrowBackIosIcon />
-                        </IconButton>
-                        <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
-                            Setting
+        <ThemeProvider theme={fontTheme}>
+            <List style={{ marginBottom: '15%' }}>
+                <Box className={classes.root}>
+                    <AppBar className={classes.appbar} >
+                        <Toolbar>
+                            <IconButton edge="start" className={classes.menuButton}
+                                aria-label="ArrowBackIos" component={Link} to="/account">
+                                <ArrowBackIosIcon />
+                            </IconButton>
+                            <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
+                                Setting
                         </Typography>
-                    </Toolbar>
-                </AppBar>
-            </Box>
-            <Box>
-                <List component="nav" aria-label="main mailbox folders" className={classes.index}>
-                    <ListItem button className={classes.indexrow} onClick={handleClick}>
-                        <ListItemIcon>
-                            <AssignmentIndIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Name" />
-                        {open ? <ExpandLess /> : <ExpandMore />}
-                    </ListItem>
-                    <Collapse in={open} timeout="auto" unmountOnExit>
-                        <form className={classes.input} noValidate autoComplete="off">
-                            <TextField id="filled-basic" label="Input your name" variant="filled" />
-                        </form>
-                    </Collapse>
-                    <ListItem button className={classes.indexrow} onClick={handleClick2}>
-                        <ListItemIcon>
-                            <EmailIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Email" />
-                        {open2 ? <ExpandLess /> : <ExpandMore />}
-                    </ListItem>
-                    <Collapse in={open2} timeout="auto" unmountOnExit>
-                        <form className={classes.input} noValidate autoComplete="off">
-                            <TextField id="filled-basic" label="Input your email" variant="filled" />
-                        </form>
-                    </Collapse>
-                    <ListItem button className={classes.indexrow} onClick={handleClick3}>
-                        <ListItemIcon>
-                            <PublicIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Country" />
-                        {open3 ? <ExpandLess /> : <ExpandMore />}
-                    </ListItem>
-                    <Collapse in={open3} timeout="auto" unmountOnExit>
-                        <FormControl variant="filled" className={classes.formControl}>
-                            <InputLabel id="demo-simple-select-filled-label">Select your country</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-filled-label"
-                                id="demo-simple-select-filled"
-                                value={country}
-                                onChange={handleChange}
-                            >
-                                <MenuItem value={10}>Australia</MenuItem>
-                                <MenuItem value={20}>China</MenuItem>
-                                <MenuItem value={30}>New Zealand</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Collapse>
-                    <ListItem button className={classes.indexrow} onClick={handleClick4}>
-                        <ListItemIcon>
-                            <GTranslateIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Language" />
-                        {open4 ? <ExpandLess /> : <ExpandMore />}
-                    </ListItem>
-                    <Collapse in={open4} timeout="auto" unmountOnExit>
-                        <FormControl variant="filled" className={classes.formControl}>
-                            <InputLabel id="demo-simple-select-filled-label">Select your language</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-filled-label"
-                                id="demo-simple-select-filled"
-                                value={language}
-                                onChange={handleChange1}
-                            >
-                                <MenuItem value={10}>Chinese</MenuItem>
-                                <MenuItem value={20}>English</MenuItem>
-                                <MenuItem value={30}>Korean</MenuItem>
-                                <MenuItem value={40}>Japanese</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Collapse>
-                    <ListItem button className={classes.indexrow} onClick={handleClick5}>
-                        <ListItemIcon>
-                            <AssessmentIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Proficiency level" />
-                        {open5 ? <ExpandLess /> : <ExpandMore />}
-                    </ListItem>
-                    <Collapse in={open5} timeout="auto" unmountOnExit>
-                        <FormControl variant="filled" className={classes.formControl}>
-                            <InputLabel id="demo-simple-select-filled-label">Select your level</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-filled-label"
-                                id="demo-simple-select-filled"
-                                value={level}
-                                onChange={handleChange2}
-                            >
-                                <MenuItem value={10}>Level 1</MenuItem>
-                                <MenuItem value={20}>Level 2</MenuItem>
-                                <MenuItem value={30}>Level 3</MenuItem>
-                                <MenuItem value={40}>Level 4</MenuItem>
-                                <MenuItem value={50}>Level 5</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Collapse>
-                </List>
-            </Box>
-            <ThemeProvider theme={navTheme}>
-                <Button variant="contained" color="primary" disableElevation className={classes.submit} >
-                    Submit
+                        </Toolbar>
+                    </AppBar>
+                </Box>
+                <Box>
+                    <List component="nav" aria-label="main mailbox folders" className={classes.index}>
+                        <ListItem button className={classes.indexrow} onClick={handleClick}>
+                            <ListItemIcon>
+                                <AssignmentIndIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Name" />
+                            {open ? <ExpandLess /> : <ExpandMore />}
+                        </ListItem>
+                        <Collapse in={open} timeout="auto" unmountOnExit>
+                            <form className={classes.input} noValidate autoComplete="off">
+                                <TextField id="filled-basic" label="Input your name" variant="filled" />
+                            </form>
+                        </Collapse>
+                        <ListItem button className={classes.indexrow} onClick={handleClick2}>
+                            <ListItemIcon>
+                                <EmailIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Email" />
+                            {open2 ? <ExpandLess /> : <ExpandMore />}
+                        </ListItem>
+                        <Collapse in={open2} timeout="auto" unmountOnExit>
+                            <form className={classes.input} noValidate autoComplete="off">
+                                <TextField id="filled-basic" label="Input your email" variant="filled" />
+                            </form>
+                        </Collapse>
+                        <ListItem button className={classes.indexrow} onClick={handleClick3}>
+                            <ListItemIcon>
+                                <PublicIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Country" />
+                            {open3 ? <ExpandLess /> : <ExpandMore />}
+                        </ListItem>
+                        <Collapse in={open3} timeout="auto" unmountOnExit>
+                            <FormControl variant="filled" className={classes.formControl}>
+                                <InputLabel id="demo-simple-select-filled-label">Select your country</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-filled-label"
+                                    id="demo-simple-select-filled"
+                                    value={country}
+                                    onChange={handleChange}
+                                >
+                                    <MenuItem value={10}>Australia</MenuItem>
+                                    <MenuItem value={20}>China</MenuItem>
+                                    <MenuItem value={30}>New Zealand</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Collapse>
+                        <ListItem button className={classes.indexrow} onClick={handleClick4}>
+                            <ListItemIcon>
+                                <GTranslateIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Language" />
+                            {open4 ? <ExpandLess /> : <ExpandMore />}
+                        </ListItem>
+                        <Collapse in={open4} timeout="auto" unmountOnExit>
+                            <FormControl variant="filled" className={classes.formControl}>
+                                <InputLabel id="demo-simple-select-filled-label">Select your language</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-filled-label"
+                                    id="demo-simple-select-filled"
+                                    value={language}
+                                    onChange={handleChange1}
+                                >
+                                    <MenuItem value={10}>Chinese</MenuItem>
+                                    <MenuItem value={20}>English</MenuItem>
+                                    <MenuItem value={30}>Korean</MenuItem>
+                                    <MenuItem value={40}>Japanese</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Collapse>
+                        <ListItem button className={classes.indexrow} onClick={handleClick5}>
+                            <ListItemIcon>
+                                <AssessmentIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Proficiency level" />
+                            {open5 ? <ExpandLess /> : <ExpandMore />}
+                        </ListItem>
+                        <Collapse in={open5} timeout="auto" unmountOnExit>
+                            <FormControl variant="filled" className={classes.formControl}>
+                                <InputLabel id="demo-simple-select-filled-label">Select your level</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-filled-label"
+                                    id="demo-simple-select-filled"
+                                    value={level}
+                                    onChange={handleChange2}
+                                >
+                                    <MenuItem value={10}>Level 1</MenuItem>
+                                    <MenuItem value={20}>Level 2</MenuItem>
+                                    <MenuItem value={30}>Level 3</MenuItem>
+                                    <MenuItem value={40}>Level 4</MenuItem>
+                                    <MenuItem value={50}>Level 5</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Collapse>
+                    </List>
+                </Box>
+                <ThemeProvider theme={navTheme}>
+                    <Button variant="contained" color="primary" disableElevation className={classes.submit} >
+                        Submit
                 </Button>
-            </ThemeProvider>
-        </List >
+                </ThemeProvider>
+            </List >
+        </ThemeProvider>
 
     );
 }

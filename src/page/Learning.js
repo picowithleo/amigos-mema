@@ -7,7 +7,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
-import { makeStyles } from '@material-ui/core/styles';
+import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appbar: {
     position: 'relative',
-    backgroundColor:'#8bc38c',
+    backgroundColor: '#8bc38c',
     marginTop: '-8px',
   },
   index: {
@@ -77,59 +77,74 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+const fontTheme = createMuiTheme({
+  overrides: {
+    MuiTypography: {
+      body1: {
+        fontSize: '1.75rem'
+      },
+      body2: {
+        fontSize: '1.5rem'
+      }
+    },
+  },
+});
+
 export default function Learning() {
   const classes = useStyles();
 
   return (
-    <List>
-      <Box className={classes.root}>
-        <AppBar className={classes.appbar} >
-          <Toolbar>
-            <IconButton edge="start" className={classes.menuButton}
-              aria-label="ArrowBackIos" component={Link} to="/Home">
-              <ArrowBackIosIcon />
-            </IconButton>
-            <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
-              I'm learning
-             </Typography>
-          </Toolbar>
-        </AppBar>
-        <Box className={classes.searchbar}>
-          <List className={classes.searchbackground}>
-            <Box component="form" className={classes.search}>
-              <IconButton type="submit" className={classes.iconButton} aria-label="search">
-                <SearchIcon />
+    <ThemeProvider theme={fontTheme}>
+      <List >
+        <Box className={classes.root}>
+          <AppBar className={classes.appbar} >
+            <Toolbar>
+              <IconButton edge="start" className={classes.menuButton}
+                aria-label="ArrowBackIos" component={Link} to="/Home">
+                <ArrowBackIosIcon />
               </IconButton>
-              <InputBase
-                className={classes.input}
-                placeholder="Search"
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </Box>
-          </List>
-          <IconButton className={classes.closeButton} aria-label="Close">
-            <CloseIcon />
-          </IconButton>
+              <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
+                I'm learning
+             </Typography>
+            </Toolbar>
+          </AppBar>
+          <Box className={classes.searchbar}>
+            <List className={classes.searchbackground}>
+              <Box component="form" className={classes.search}>
+                <IconButton type="submit" className={classes.iconButton} aria-label="search">
+                  <SearchIcon />
+                </IconButton>
+                <InputBase
+                  className={classes.input}
+                  placeholder="Search"
+                  inputProps={{ 'aria-label': 'search' }}
+                />
+              </Box>
+            </List>
+            <IconButton className={classes.closeButton} aria-label="Close">
+              <CloseIcon />
+            </IconButton>
+          </Box>
         </Box>
-      </Box>
-      <List className={classes.index}>
-        <ListItem className={classes.indexbar}>
-          <ListItemText primary="zì tǐ 字体" secondary="font" />
-          <ListItemAvatar>
-            <Avatar>
-              <ArrowForwardIosIcon />
-            </Avatar>
-          </ListItemAvatar>
-        </ListItem>
-        <ListItem className={classes.indexbar} component={Link} to="/learnpage2">
-          <ListItemText primary="shí wù 食物" secondary="food" />
-          <ListItemAvatar>
-            <Avatar>
-              <ArrowForwardIosIcon />
-            </Avatar>
-          </ListItemAvatar>
-        </ListItem>
+        <List className={classes.index}>
+          <ListItem className={classes.indexbar}>
+            <ListItemText primary="zì tǐ 字体" secondary="font" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className={classes.indexbar} component={Link} to="/learnpage2">
+            <ListItemText primary="shí wù 食物" secondary="food" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </List>
       </List>
-    </List>
+    </ThemeProvider>
   );
 }
