@@ -28,7 +28,8 @@ const LoginButton = props => {
           fullWidth
           variant="contained"
           color="primary"
-          className={classes.margin}>
+          className={classes.margin}
+          >
           Login
         </Button>
       </ThemeProvider>

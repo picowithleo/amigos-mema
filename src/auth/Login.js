@@ -1,11 +1,3 @@
-// import React from 'react';
-
-// const Login = props => {
-//     return <div> This is Login page</div>;
-
-// };
-
-// export default Login;
 
 import Box from '@material-ui/core/Box';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -19,6 +11,9 @@ import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import img from '../assets/img/logo1.png';
 import LoginButton from '../ui/LoginButton';
+import { login } from '../api/auth';
+import {storeToken} from '../utils/auth';
+import './login.css';
 
 function Copyright() {
   return (
@@ -33,60 +28,90 @@ function Copyright() {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-    color: 'black',
-  },
-  welcome: {
-    color: '#BF8487',
+// const useStyles = makeStyles((theme) => ({
+//   paper: {
+//     marginTop: theme.spacing(8),
+//     display: 'flex',
+//     flexDirection: 'column',
+//     alignItems: 'center',
+//   },
+//   avatar: {
+//     margin: theme.spacing(1),
+//     backgroundColor: theme.palette.secondary.main,
+//   },
+//   form: {
+//     width: '100%', // Fix IE 11 issue.
+//     marginTop: theme.spacing(1),
+//   },
+//   submit: {
+//     margin: theme.spacing(3, 0, 2),
+//     color: 'black',
+//   },
+//   welcome: {
+//     color: '#BF8487',
+//   }
+// }));
+
+class Login extends React.Component {
+  
+  constructor(props) {
+      super(props);
+
+      this.state = {
+          email: '',
+          error: null,
+          isLoading: false,
+          password: ''
+      };
   }
-}));
 
-const Login = props => {
+  handleChange = event => {
+    const key = event.target.name;
+    const value = event.target.value;
+    this.setState({ [key]: value } );
+}
+  handlelogin = () => {
+    const { email, password } = this.state;
+    login(email, password).then(token => {
+      storeToken(token);
+      const locationState = this.props.location.state;
+      const redirectTo = (locationState && locationState.from) || '/home';
+      this.props.history.replace(redirectTo);
+    })
+  };
 
-  // export default function SignIn() {
-  const classes = useStyles();
 
-  return (
+  
+  render() {
+    // const classes = useStyles();
+    return (
+      
     <Container component="main" maxWidth="xs">
       {/* <CssBaseline /> */}
-      <div className={classes.paper}>
+      <div className="paper">
         <Typography>
           {/* <LockOutlinedIcon /> */}
           <img src={img} alt="logo" />
         </Typography>
-        <Typography className={classes.welcome} component="h1" variant="h5">
+        <Typography className="welcome" component="h1" variant="h5">
           WELCOME
         </Typography>
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className="form" noValidate>
           <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            id="username"
-            label="Username"
-            name="username"
-            autoComplete="username"
+            id="email"
+            label="Email"
+            name="email"
+            autoComplete="email"
             autoFocus
+            onChange={this.handleChange}
+            value={ this.state.email}
           />
           <TextField
             variant="outlined"
@@ -98,6 +123,8 @@ const Login = props => {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={this.handleChange}
+            value={this.state.password}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -109,7 +136,8 @@ const Login = props => {
             // fullWidth
             // variant="contained"
             // color= "secondary"
-            className={classes.submit}
+            onClick={this.handlelogin}
+            className="submit"
           >
             {/* Login */}
           </LoginButton>
@@ -133,6 +161,6 @@ const Login = props => {
       </Box>
     </Container>
   );
-}
+}}
 
 export default Login;
