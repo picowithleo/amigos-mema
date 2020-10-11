@@ -3,17 +3,16 @@ import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import React from 'react';
-import china from '../assets/img/china.png';
-import france from '../assets/img/france.png';
-import germany from '../assets/img/germany.png';
-import japan from '../assets/img/japan.png';
-import korea from '../assets/img/korea.png';
-import russia from '../assets/img/russia.png';
+import { Link } from 'react-router-dom';
+import China from '../assets/img/China.jpg';
+import France from '../assets/img/France.jpg';
+import Germany from '../assets/img/Germany.jpg';
+import Italy from '../assets/img/Italy.jpg';
+import Japan from '../assets/img/Japan.jpg';
+import Korea from '../assets/img/Korea.jpg';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -29,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   learn: {
     textAlign: 'left',
     fontSize: '20px',
-    top: '12%',
+    top: '5%',
     color: '#FFFFFF',
     position: 'relative',
     fontStyle: 'bold',
@@ -37,11 +36,12 @@ const useStyles = makeStyles((theme) => ({
     width: '80%',
   },
   searchbackground: {
+    marginTop: '-10px',
     width: '100%',
-    right: '0%',
+    // right: '0%',
     position: 'relative',
-    height: '100px',
-    backgroundColor: '#9CCC9D',
+    height: '110px',
+    backgroundColor:'#8bc38c',
   },
   input: {
     marginLeft: theme.spacing(1),
@@ -55,17 +55,21 @@ const useStyles = makeStyles((theme) => ({
     bottom: '30%',
   },
   langlist: {
-    width: '100%',
+    width: '90%',
     display: 'flex',
+    marginLeft: '5%',
   },
   langbox: {
     width: '47%',
-    marginLeft: '2%',
-    marginRight: '2%',
+    marginLeft: '2.5%',
+    marginRight: '2.5%',
     display: 'flex',
     height: '150px',
     flexDirection: 'column',
-    backgroundColor: theme.palette.background.paper,
+    // backgroundColor: theme.palette.background.paper,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat'
   },
   langicon: {
     bottom: '20%',
@@ -81,11 +85,11 @@ export default function CustomizedInputBase() {
   const classes = useStyles();
 
   return (
-    <List>
+    <List style={{ marginBottom: '15%' }}>
       <Box className={classes.root}>
         <List className={classes.searchbackground}>
           <Box className={classes.learn}>
-            <h><b>Learn</b></h>
+            <h style={{ fontSize: '2.5rem' }}><b>Learn</b></h>
           </Box>
           <Box component="form" className={classes.search}>
             <InputBase
@@ -98,50 +102,29 @@ export default function CustomizedInputBase() {
             </IconButton>
           </Box>
         </List>
+      </Box>
+      <Box style={{ marginTop: '10px' }}>
         <List className={classes.langlist}>
-          <ListItem className={classes.langbox}>
-            <ListItemText primary="Chinese" className={classes.langtxt} />
-            <ListItemAvatar className={classes.langicon}>
-              <img src={china} alt="chinese"/>
-            </ListItemAvatar>
+          <ListItem className={classes.langbox} component={Link} to="/learnpage1"
+            style={{ backgroundImage: 'url(' + China + ')' }}>
           </ListItem>
-          <ListItem className={classes.langbox}>
-            <ListItemText primary="Japanese" className={classes.langtxt} />
-            <ListItemAvatar className={classes.langicon}>
-              <img src={japan} alt="japanese"/>
-            </ListItemAvatar>
+          <ListItem className={classes.langbox} style={{ backgroundImage: 'url(' + Japan + ')' }}>
           </ListItem>
         </List>
       </Box>
       <Box>
         <List className={classes.langlist}>
-          <ListItem className={classes.langbox}>
-            <ListItemText primary="Russia" className={classes.langtxt} />
-            <ListItemAvatar className={classes.langicon}>
-              <img src={russia} alt="russian"/>
-            </ListItemAvatar>
+          <ListItem className={classes.langbox} style={{ backgroundImage: 'url(' + Korea + ')' }}>
           </ListItem>
-          <ListItem className={classes.langbox}>
-            <ListItemText primary="German" className={classes.langtxt} />
-            <ListItemAvatar className={classes.langicon}>
-              <img src={germany} alt="germany"/>
-            </ListItemAvatar>
+          <ListItem className={classes.langbox} style={{ backgroundImage: 'url(' + France + ')' }}>
           </ListItem>
         </List>
       </Box>
       <Box>
         <List className={classes.langlist}>
-          <ListItem className={classes.langbox}>
-            <ListItemText primary="French" className={classes.langtxt} />
-            <ListItemAvatar className={classes.langicon}>
-              <img src={france} alt="france"/>
-            </ListItemAvatar>
+          <ListItem className={classes.langbox} style={{ backgroundImage: 'url(' + Italy + ')' }}>
           </ListItem>
-          <ListItem className={classes.langbox}>
-            <ListItemText primary="Korean" className={classes.langtxt} />
-            <ListItemAvatar className={classes.langicon}>
-              <img src={korea} alt="korean"/>
-            </ListItemAvatar>
+          <ListItem className={classes.langbox} style={{ backgroundImage: 'url(' + Germany + ')' }}>
           </ListItem>
         </List>
       </Box>

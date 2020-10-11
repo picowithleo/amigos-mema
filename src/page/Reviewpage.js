@@ -78,19 +78,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Learnpage1() {
+export default function Reviewpage() {
   const classes = useStyles();
 
   return (
     <List>
       <Box className={classes.root}>
-        <AppBar className={classes.appbar} >
+        <AppBar className={classes.appbar} Í>
           <Toolbar>
-            <IconButton edge="start" aria-label="ArrowBackIos" component={Link} to="/learn">
+            <IconButton edge="start" className={classes.menuButton}
+              aria-label="ArrowBackIos" component={Link} to="/Home">
               <ArrowBackIosIcon />
             </IconButton>
             <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
-              Chinese
+              Review words
              </Typography>
           </Toolbar>
         </AppBar>
@@ -121,8 +122,8 @@ export default function Learnpage1() {
             </Avatar>
           </ListItemAvatar>
         </ListItem>
-        <ListItem className={classes.indexbar} component={Link} to="/learnpage2">
-          <ListItemText primary="shí wù 食物" secondary="food" />
+        <ListItem className={classes.indexbar}>
+          <ListItemText primary="CanYin 餐饮" secondary="food" />
           <ListItemAvatar>
             <Avatar>
               <ArrowForwardIosIcon />

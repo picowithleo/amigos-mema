@@ -5,8 +5,10 @@ import List from '@material-ui/core/List';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -21,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
     },
     appbar: {
         position: 'relative',
-        backgroundColor: '#9CCC9D',
+        backgroundColor:'#8bc38c',
+        marginTop: '-8px',
     },
     text: {
         color: "grey",
@@ -51,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "200px",
         marginRight: "-5px",
         height: "80px",
-        backgroundColor: '#9CCC9D',
+        backgroundColor:'#8bc38c',
         fontSize: "20px",
     },
 
@@ -68,16 +71,14 @@ export default function Discover2() {
 
     return (
         <List>
-            <Box className={classes.root}>
-                <Box className={classes.tittle}>
-                    <b>Challenge Page</b>
-                </Box>
-            </Box>
-            <AppBar className={classes.appbar}>
+            <AppBar className={classes.appbar} >
                 <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos">
+                    <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos" component={Link} to="/Discover1">
                         <ArrowBackIosIcon />
                     </IconButton>
+                    <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
+                        Challenge
+                    </Typography>
                 </Toolbar>
             </AppBar>
 

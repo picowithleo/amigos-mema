@@ -1,76 +1,74 @@
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
+import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
+import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import TranslateOutlinedIcon from '@material-ui/icons/TranslateOutlined';
+import MicIcon from '@material-ui/icons/Mic';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../page/Home.css';
 
 const useStyles = makeStyles((theme) => ({
     // mema 导航
-    memabackground: {
-        marginTop: "24px",
-        width: '100%',
 
+    appbar: {
         position: 'relative',
-        height: '50px',
-        backgroundColor: '#9CCC9D',
+        backgroundColor:'#8bc38c',
+    },
 
-    },
-    // 返回图标
-    backicon: {
-        position: 'relative',
-        right: "43%",
-    },
     // 小黄人图标
     memaicon: {
         position: 'relative',
-        marginTop: "107px",
+        marginTop: "80px",
     },
     // 需要翻译的文字背景
     wordbackground: {
         position: 'relative',
-        marginTop: "107px",
+        marginTop: "30px",
         width: "80%",
         marginLeft: "10%",
+        marginBottom: "10px"
 
     },
     // 需要翻译的文字设置
     instrction: {
-        position: 'relative',
-        marginTop: "107px",
+        // position: 'relative',
         fontSize: '30px',
 
     },
-    // 转化图标
-    translateicon: {
-        position: 'relative',
-        marginTop: "50px",
-    }
 }));
 
 export default function CustomizedInputBase() {
     const classes = useStyles();
     return (
         <Box>
-            <div className={classes.memabackground}>
-                <BottomNavigationAction label="home" className={classes.backicon} icon={<ArrowBackIosIcon />} component={Link} to="/Home" />
-            </div>
+            <AppBar className={classes.appbar} >
+                <Toolbar>
+                    <IconButton edge="start"
+                        aria-label="ArrowBackIos" component={Link} to="/home">
+                        <ArrowBackIosIcon />
+                    </IconButton>
+                    <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
+                        MeMa
+                    </Typography>
+                </Toolbar>
+            </AppBar>
             <div>
                 <Typography className={classes.memaicon}>
-                    {/* <LockOutlinedIcon /> */}
-                    <img className="mema" alt="mema"/>
+                    <img className="mema" alt="" component={Link} to="/Mema" />
                 </Typography>
             </div>
             <div className={classes.wordbackground}>
                 <text className={classes.instrction} >
-                    Tap on the button below or speak to talk to MeMa !
+                    Tap on the button below and talk to MeMa !
                 </text>
             </div>
             <div>
-                <BottomNavigationAction label="Translatepage" className={classes.translateicon} icon={<TranslateOutlinedIcon />} component={Link} to="/Translatepage" />
+                <IconButton type="speech" className={classes.micbutton} aria-label="speech" component={Link} to="/Translatepage" >
+                    <MicIcon style={{ fontSize: 40 }} />
+                </IconButton>
             </div>
         </Box>
 

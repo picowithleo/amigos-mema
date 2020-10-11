@@ -13,6 +13,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -23,9 +24,10 @@ const useStyles = makeStyles((theme) => ({
 
   appbar: {
     position: 'relative',
-    backgroundColor: '#9CCC9D',
+    backgroundColor:'#8bc38c',
     color: '#FFFFFF',
     fontSize: "30px",
+    marginTop: '-8px',
   },
   title: {
     padding: "20px",
@@ -41,12 +43,15 @@ export default function Information() {
 
   return (
     <List>
-      <AppBar className={classes.appbar}>
+      <AppBar className={classes.appbar} >
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos">
+          <IconButton edge="start" className={classes.menuButton}
+            aria-label="ArrowBackIos" component={Link} to="/Discover">
             <ArrowBackIosIcon />
           </IconButton>
-          <Box>Information</Box>
+          <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
+            Information
+          </Typography>
         </Toolbar>
       </AppBar>
 

@@ -5,8 +5,10 @@ import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -20,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
     },
     appbar: {
         position: 'relative',
-        backgroundColor: '#9CCC9D',
+        backgroundColor:'#8bc38c',
+        marginTop: '-8px',
     },
     text: {
         color: "grey",
@@ -39,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "200px",
         marginRight: "-5px",
         height: "80px",
-        backgroundColor: '#9CCC9D',
+        backgroundColor:'#8bc38c',
         fontSize: "20px",
     }
 
@@ -51,16 +54,15 @@ export default function Discover1() {
 
     return (
         <List>
-            <Box className={classes.root}>
-                <Box className={classes.tittle}>
-                    <h><b>Challenge Totorial Page</b></h>
-                </Box>
-            </Box>
-            <AppBar className={classes.appbar}>
+            <AppBar className={classes.appbar} >
                 <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos">
+                    <IconButton edge="start" className={classes.menuButton}
+                        aria-label="ArrowBackIos" component={Link} to="/Discover">
                         <ArrowBackIosIcon />
                     </IconButton>
+                    <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
+                        Challenge
+                    </Typography>
                 </Toolbar>
             </AppBar>
 
@@ -74,7 +76,7 @@ export default function Discover1() {
                 <h>Translate as many words as you can in the 1 minute time limit!</h>
             </Box>
 
-            <Button variant="outlined" className={classes.button1}>Start</Button>
+            <Button variant="outlined" className={classes.button1} component={Link} to="/Discover2">Start</Button>
 
         </List>
 

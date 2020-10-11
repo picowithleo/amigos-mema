@@ -20,6 +20,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShareIcon from '@material-ui/icons/Share';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -70,7 +71,8 @@ const useStyles = makeStyles((theme) => ({
   },
   appbar: {
     position: 'relative',
-    backgroundColor: '#9CCC9D',
+    backgroundColor:'#8bc38c',
+    marginTop: '-8px',
   },
   index: {
     display: 'flex',
@@ -96,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
   },
   progressbar: {
     width: '100%',
-    height: '300px',
+    height: '180px',
   },
   progress: {
     width: '95%',
@@ -114,14 +116,15 @@ export default function Learnpage1() {
   return (
     <List>
       <Box className={classes.root}>
-        <Box className={classes.learn}>
-          <h><b>Selected Word Page</b></h>
-        </Box>
-        <AppBar className={classes.appbar}>
+        <AppBar className={classes.appbar} >
           <Toolbar>
-            <IconButton edge="start" className={classes.menuButton} aria-label="ArrowBackIos">
+            <IconButton edge="start" className={classes.menuButton}
+              aria-label="ArrowBackIos" component={Link} to="/learnpage1">
               <ArrowBackIosIcon />
             </IconButton>
+            <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
+              Words
+             </Typography>
           </Toolbar>
         </AppBar>
         <Box className={classes.searchbar}>
@@ -145,10 +148,10 @@ export default function Learnpage1() {
       <List className={classes.index}>
         <ListItem className={classes.indexbar}>
           <Typography variant="h5" color='textSecondary'>
-            Can Yin
+            shí wù
       </Typography>
           <Typography variant="h3">
-            餐 饮
+            食物
       </Typography>
         </ListItem>
         <ListItem className={classes.indexbar}>
@@ -171,7 +174,8 @@ export default function Learnpage1() {
           <Typography variant="h6">
             Level
       </Typography>
-          <RadioGroup row aria-label="position" name="position" defaultValue="level1">
+          <RadioGroup row aria-label="position" name="position" defaultValue="level1"
+            style={{ marginLeft: '5%' }}>
             <FormControlLabel
               value="level0"
               control={<Radio color="primary" />}
@@ -183,20 +187,28 @@ export default function Learnpage1() {
               control={<Radio color="primary" />}
               label="level 2"
               labelPlacement="bottom"
+              style={{ marginLeft: '-2px' }}
             />
             <FormControlLabel
               value="level2"
               control={<Radio color="primary" />}
               label="level 3"
               labelPlacement="bottom"
+              style={{ marginLeft: '-2px' }}
             />
             <FormControlLabel
               value="level3"
               control={<Radio color="primary" />}
               label="level 4"
               labelPlacement="bottom"
+              style={{ marginLeft: '-2px' }}
             />
-            <FormControlLabel value="level4" control={<Radio color="primary" />} label="level 5" labelPlacement='bottom' />
+            <FormControlLabel
+              value="level4"
+              control={<Radio color="primary" />}
+              label="level 5"
+              labelPlacement='bottom'
+              style={{ marginLeft: '-2px' }} />
           </RadioGroup>
         </FormControl>
       </Box>
