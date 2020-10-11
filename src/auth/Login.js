@@ -1,4 +1,3 @@
-
 import Box from '@material-ui/core/Box';
 import Checkbox from '@material-ui/core/Checkbox';
 import Container from '@material-ui/core/Container';
@@ -9,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
-import img from '../assets/img/logo1.png';
+import logo from '../assets/img/logo.jpg';
 import LoginButton from '../ui/LoginButton';
 import { login } from '../api/auth';
 import {storeToken} from '../utils/auth';
@@ -80,6 +79,10 @@ class Login extends React.Component {
     })
   };
 
+// const Login = props => {
+
+// export default function SignIn() {
+//   const classes = useStyles();
 
   
   render() {
@@ -91,11 +94,11 @@ class Login extends React.Component {
       <div className="paper">
         <Typography>
           {/* <LockOutlinedIcon /> */}
-          <img src={img} alt="logo" />
+          <img src={logo} alt="logo" style={{ height: '150px' }} />
         </Typography>
-        <Typography className="welcome" component="h1" variant="h5">
+        {/* <Typography className={classes.welcome} component="h1" variant="h5">
           WELCOME
-        </Typography>
+        </Typography> */}
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
@@ -149,14 +152,14 @@ class Login extends React.Component {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href={'/register'} variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
           </Grid>
         </form>
       </div>
-      <Box mt={8}>
+      <Box mt={8} style={{ marginTop: '115px' }}>
         <Copyright />
       </Box>
     </Container>
