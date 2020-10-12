@@ -12,6 +12,8 @@ import logo from '../assets/img/logo.jpg';
 import LoginButton from '../ui/LoginButton';
 import { login } from '../api/auth';
 import {storeToken} from '../utils/auth';
+
+import { Button, Message } from 'semantic-ui-react';
 import './login.css';
 
 function Copyright() {
@@ -68,7 +70,7 @@ class Login extends React.Component {
     const key = event.target.name;
     const value = event.target.value;
     this.setState({ [key]: value } );
-}
+};
   handlelogin = () => {
     const { email, password } = this.state;
     login(email, password).then(token => {
@@ -77,6 +79,12 @@ class Login extends React.Component {
       const redirectTo = (locationState && locationState.from) || '/home';
       this.props.history.replace(redirectTo);
     })
+    .catch(error => {
+      if (error.token) {
+        const { message } = error.token.data;
+        this.setState({ err: message, isLoading: false });
+      }
+    });
   };
 
 // const Login = props => {
@@ -102,7 +110,9 @@ class Login extends React.Component {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className="form" noValidate>
+        <form className="form" noValidate        
+          error={!!this.state.error}         
+          loading={this.state.isLoading}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -133,7 +143,13 @@ class Login extends React.Component {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-
+          {!!this.state.error && (
+            <Message
+                error
+                header="Login failed"
+                content="Please check your email and password"
+            />
+          )}
           <LoginButton
             // type="submit"
             // fullWidth
@@ -144,6 +160,14 @@ class Login extends React.Component {
           >
             {/* Login */}
           </LoginButton>
+          <Button
+              size="large"
+              fluid
+              primary
+              onClick={this.login}
+          >
+              Login
+          </Button>
 
           <Grid container>
             <Grid item xs>
