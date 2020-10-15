@@ -29,18 +29,21 @@ const appendAuthToken = config => {
   };
 
  
-  export const get = (url, config = {}) => {
-    return axios.get(url, appendAuthToken(config));
-  };
+export const get = (url, config = {}) => 
+    axios.get(url, appendAuthToken(config));
   
-  export const post = (url, data, config = {}) => {
-    return axios.post(url, data, appendAuthToken(config));
-  };
   
-  export const put = (url, data, config = {}) => {
-    return axios.put(url, data, appendAuthToken(config));
-  };
+//   export const post = (url, data, config = {}) => 
+//      axios.post(url, data);
+//   export const post = (url, data, config = {}) =>
+//     axios.post(url, data, config); 
+export const post = (url, data, config = {}) =>
+    axios.post({url: url, baseURL: 'http://memaserver-env.eba-hgvg3c3g.ap-southeast-2.elasticbeanstalk.com'}, data, appendAuthToken(config));
   
-  export const del = (url, config = {}) => {
-    return axios.delete(url, appendAuthToken(config));
-  };
+  export const put = (url, data, config = {}) => 
+     axios.put(url, data, appendAuthToken(config));
+  
+  
+  export const del = (url, config = {}) => 
+     axios.delete(url, appendAuthToken(config));
+  

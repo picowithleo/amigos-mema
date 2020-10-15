@@ -17,7 +17,7 @@ const theme = createMuiTheme({
   },
 });
 
-const LoginButton = props => {
+const LoginButton = ({ handleOnClick }) => {
   const classes = useStyles();
 
   return (
@@ -29,6 +29,7 @@ const LoginButton = props => {
           variant="contained"
           color="primary"
           className={classes.margin}
+          onClick={handleOnClick}
           >
           Login
         </Button>

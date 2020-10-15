@@ -11,7 +11,7 @@ import React from 'react';
 import logo from '../assets/img/logo.jpg';
 import LoginButton from '../ui/LoginButton';
 import { login } from '../api/auth';
-import {storeToken} from '../utils/auth';
+import {setToken} from '../utils/auth';
 
 import { Button, Message } from 'semantic-ui-react';
 import './login.css';
@@ -62,7 +62,7 @@ class Login extends React.Component {
           email: '',
           error: null,
           isLoading: false,
-          password: ''
+          password: '',
       };
   }
 
@@ -71,21 +71,86 @@ class Login extends React.Component {
     const value = event.target.value;
     this.setState({ [key]: value } );
 };
-  handlelogin = () => {
-    const { email, password } = this.state;
-    login(email, password).then(token => {
-      storeToken(token);
-      const locationState = this.props.location.state;
-      const redirectTo = (locationState && locationState.from) || '/home';
-      this.props.history.replace(redirectTo);
-    })
-    .catch(error => {
-      if (error.token) {
-        const { message } = error.token.data;
-        this.setState({ err: message, isLoading: false });
-      }
-    });
-  };
+  // handlelogin = async () => {
+  //   const { email, password } = this.state;
+  //   debugger;
+  //   login(email, password).then(response => {
+  //     console.log(response);
+  
+  //     // setToken(token);
+  //     const locationState = this.props.location.state;
+  //     const redirectTo = (locationState && locationState.from) || '/home';
+  //     this.props.history.replace(redirectTo);
+  //   })
+  //   .catch(error => {
+  //     debugger;
+  //     if (error.token) {
+  //       const { message } = error.token.data;
+  //       this.setState({ err: message, isLoading: false });
+  //     }
+  //   });
+
+  handlelogin =  ()  => {
+
+    login(this.state.email, this.state.password)
+            .then(res => {
+              const jwtToken = res.data.data.token;
+              debugger;
+              console.log(jwtToken.token);
+              console.log(jwtToken);
+                this.setState({ isLoading: false }, () => {
+                  debugger;
+                    setToken(jwtToken);
+                    const locationState = this.props.location.state;
+                    const redirectTo = (locationState && locationState.from) || '/home';
+                    this.props.history.replace(redirectTo);
+                });
+            })
+                    .catch(error =>   
+                  {
+                    debugger;
+                  this.setState({ error, isLoading: false })
+                });
+      
+    };
+
+
+    // handlelogin =  ()  => {
+    // this.setState({ error: null, isLoading: true }, async () => {
+    //   debugger;
+    //         try {
+    //             const { email, password } = this.state;
+    //             const res = await login(email, password);
+    //             const jwtToken = res.data.data.token;
+    //             console.log(res);
+    //             console.log(jwtToken);
+    //             debugger
+    //             setToken(jwtToken);
+    //             const locationState = this.props.location.state;
+    //             const redirectTo = (locationState && locationState.from) || '/home';
+    //             this.props.history.replace(redirectTo);
+    //           }
+
+    //        catch (error) {
+    //           console.error(error);
+    //           debugger
+    //         }
+    //       })
+
+
+
+
+    // try {
+    //   const res = await login(email, password);
+    //   console.log(res);
+    //   // debugger
+    // } catch (error) {
+    //   console.error(error);
+    //   // debugger
+    // }
+
+
+  // };
 
 // const Login = props => {
 
@@ -112,7 +177,8 @@ class Login extends React.Component {
         </Typography>
         <form className="form" noValidate        
           error={!!this.state.error}         
-          loading={this.state.isLoading}>
+          loading={this.state.isLoading}
+          >
           <TextField
             variant="outlined"
             margin="normal"
@@ -155,7 +221,8 @@ class Login extends React.Component {
             // fullWidth
             // variant="contained"
             // color= "secondary"
-            onClick={this.handlelogin}
+            handleOnClick={() => {this.handlelogin()}}
+            // handleOnClick={this.handlelogin}
             className="submit"
           >
             {/* Login */}
@@ -164,10 +231,14 @@ class Login extends React.Component {
               size="large"
               fluid
               primary
-              onClick={this.login}
+              // onClick={() => {this.handlelogin}}
+              onClick={this.handlelogin}
           >
               Login
           </Button>
+
+            <button onClick={this.handlelogin} >login</button>
+
 
           <Grid container>
             <Grid item xs>
