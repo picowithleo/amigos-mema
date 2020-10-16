@@ -4,7 +4,7 @@ import Container from '@material-ui/core/Container';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
@@ -12,8 +12,7 @@ import logo from '../assets/img/logo.jpg';
 import LoginButton from '../ui/LoginButton';
 import { login } from '../api/auth';
 import { setToken } from '../utils/auth';
-
-import { Button, Message } from 'semantic-ui-react';
+import { Message } from 'semantic-ui-react';
 import './login.css';
 
 function Copyright() {
