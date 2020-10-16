@@ -7,6 +7,7 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 import WidgetsIcon from '@material-ui/icons/Widgets';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { isLoggedIn } from '../utils/auth';
 
 
 const useStyles = makeStyles({
@@ -28,14 +29,16 @@ const navTheme = createMuiTheme({
   }
 })
 
-const BottomNav = () => {
+const BottomNav = props => {
+  
+
   const classes = useStyles();
   const [value, setValue] = React.useState('recents');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  if (!isLoggedIn()) return null;
   return (
     <ThemeProvider theme={navTheme}>
       <BottomNavigation value={value} onChange={handleChange} className={classes.root}>

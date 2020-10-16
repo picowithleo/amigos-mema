@@ -6,6 +6,7 @@ import React from 'react';
 const useStyles = makeStyles((theme) => ({
   margin: {
     margin: theme.spacing(0),
+    fontWeight: 'bold'
   },
 }));
 
@@ -17,7 +18,7 @@ const theme = createMuiTheme({
   },
 });
 
-const LoginButton = props => {
+const LoginButton = ({ handleOnClick }) => {
   const classes = useStyles();
 
   return (
@@ -28,7 +29,9 @@ const LoginButton = props => {
           fullWidth
           variant="contained"
           color="primary"
-          className={classes.margin}>
+          className={classes.margin}
+          onClick={handleOnClick}
+          >
           Login
         </Button>
       </ThemeProvider>

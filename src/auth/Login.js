@@ -10,6 +10,11 @@ import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import logo from '../assets/img/logo.jpg';
 import LoginButton from '../ui/LoginButton';
+import { login } from '../api/auth';
+import { setToken } from '../utils/auth';
+
+import { Button, Message } from 'semantic-ui-react';
+import './login.css';
 
 function Copyright() {
   return (
@@ -24,106 +29,179 @@ function Copyright() {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-    color: 'black',
-  },
-  welcome: {
-    color: '#BF8487',
+// const useStyles = makeStyles((theme) => ({
+//   paper: {
+//     marginTop: theme.spacing(8),
+//     display: 'flex',
+//     flexDirection: 'column',
+//     alignItems: 'center',
+//   },
+//   avatar: {
+//     margin: theme.spacing(1),
+//     backgroundColor: theme.palette.secondary.main,
+//   },
+//   form: {
+//     width: '100%', // Fix IE 11 issue.
+//     marginTop: theme.spacing(1),
+//   },
+//   submit: {
+//     margin: theme.spacing(3, 0, 2),
+//     color: 'black',
+//   },
+//   welcome: {
+//     color: '#BF8487',
+//   }
+// }));
+
+class Login extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: '',
+      error: null,
+      isLoading: false,
+      password: '',
+    };
   }
-}));
 
-// const Login = props => {
+  handleChange = event => {
+    const key = event.target.name;
+    const value = event.target.value;
+    this.setState({ [key]: value });
+  };
 
-export default function SignIn() {
-  const classes = useStyles();
+  handlelogin = async () => {
+    const { email, password } = this.state;
+    try {
+      this.setState({ isLoading: true });
+      const response = await login(email, password);
+      // console.log(response);
+      // debugger;
+      const jwtToken = response.data.token;
+      setToken(jwtToken);
+      // console.log(jwtToken);
+      // debugger;
+      const locationState = this.props.location.state;
+      const redirectTo = (locationState && locationState.from) || '/home';
+      this.props.history.replace(redirectTo);
 
-  return (
-    <Container component="main" maxWidth="xs">
-      {/* <CssBaseline /> */}
-      <div className={classes.paper}>
-        <Typography>
-          {/* <LockOutlinedIcon /> */}
-          <img src={logo} alt="logo" style={{ height: '150px' }} />
-        </Typography>
-        {/* <Typography className={classes.welcome} component="h1" variant="h5">
+    } catch (error) {
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      } else if (error.request) {
+        // The request was made but no response was received
+        // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+        // http.ClientRequest in node.js
+        console.log(error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        this.setState({ error: error.message })
+        console.log('Error', error.message);
+      }
+      console.log(error.config);
+
+    }
+    this.setState({ isLoading: false });
+  };
+
+  render() {
+
+    if (this.state.isLoading) return <div>isLoading...</div>
+    // const classes = useStyles();
+    return (
+
+      <Container component="main" maxWidth="xs">
+        {/* <CssBaseline /> */}
+        <div className="paper">
+          <Typography>
+            {/* <LockOutlinedIcon /> */}
+            <img src={logo} alt="logo" style={{ height: '150px' }} />
+          </Typography>
+          {/* <Typography className={classes.welcome} component="h1" variant="h5">
           WELCOME
         </Typography> */}
-        <Typography component="h1" variant="h5">
-          Sign in
+          <Typography component="h1" variant="h5">
+            Sign in
         </Typography>
-        <form className={classes.form} noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="username"
-            label="Username"
-            name="username"
-            autoComplete="username"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
+          <form className="form" noValidate
+            error={this.state.error && this.state.error}>
+            {this.state.error && <p style={{ color: "#ff0000" }}>{this.state.error}</p>}
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email"
+              name="email"
+              autoComplete="email"
+              autoFocus
+              onChange={this.handleChange}
+              value={this.state.email}
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              onChange={this.handleChange}
+              value={this.state.password}
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            {!!this.state.error && (
+              <Message
+                error
+                header="Login failed"
+                content="Please check your email and password"
+              />
+            )}
+            <LoginButton
+              // type="submit"
+              // fullWidth
+              // variant="contained"
+              // color= "secondary"
+              handleOnClick={() => { this.handlelogin() }}
+              // handleOnClick={this.handlelogin}
+              className="submit"
+            >
+              {/* Login */}
+            </LoginButton>
+          
 
-          <LoginButton
-            // type="submit"
-            // fullWidth
-            // variant="contained"
-            // color= "secondary"
-            className={classes.submit}
-          >
-            {/* Login */}
-          </LoginButton>
-
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
               </Link>
+              </Grid>
+              <Grid item>
+                <Link href={'/register'} variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
             </Grid>
-            <Grid item>
-              <Link href={'/register'} variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid>
-          </Grid>
-        </form>
-      </div>
-      <Box mt={8} style={{ marginTop: '115px' }}>
-        <Copyright />
-      </Box>
-    </Container>
-  );
+          </form>
+        </div>
+        <Box mt={8} style={{ marginTop: '115px' }}>
+          <Copyright />
+        </Box>
+      </Container>
+    );
+  }
 }
 
-// export default Login;
+export default Login;

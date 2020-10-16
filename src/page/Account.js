@@ -14,6 +14,14 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import user from '../assets/img/user.jpg';
+import { removeToken } from '../utils/auth';
+
+
+const logout = history => {
+	removeToken();
+	history.push('/login');
+};
+
 
 const useStyles = makeStyles((theme) => ({
 
@@ -84,7 +92,9 @@ const fontTheme = createMuiTheme({
         },
     },
 });
-export default function CustomizedInputBase() {
+// export default function CustomizedInputBase() {
+const CustomizedInputBase = ({ history }) => {
+    
     const classes = useStyles();
 
     return (
@@ -145,11 +155,15 @@ export default function CustomizedInputBase() {
                             <ListItemText primary="Rate this app" />
                             <ChevronRightIcon />
                         </ListItem>
-                        <ListItem button className={classes.indexrow} component={Link} to="/login">
-                            <ListItemIcon>
-                                <ExitToAppIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Log out" />
+                        <ListItem 
+                            button onClick={() => logout(history)}
+                            className={classes.indexrow} 
+                            // component={Link} to="/login"
+                            >
+                                <ListItemIcon>
+                                    <ExitToAppIcon />
+                                </ListItemIcon>
+                                    <ListItemText primary="Log out" />
                             <ChevronRightIcon />
                         </ListItem>
                     </List>
@@ -158,3 +172,5 @@ export default function CustomizedInputBase() {
         </ThemeProvider>
     );
 }
+
+export default CustomizedInputBase;

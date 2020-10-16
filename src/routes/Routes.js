@@ -21,41 +21,41 @@ import Rate from '../page/Rate';
 import Reviewpage from '../page/Reviewpage';
 import Setting from '../page/Setting';
 import Translatepage from '../page/Translatepage';
+import ProtectedRoute from '../routes/ProtectedRoute';
 
 const Routes = () => {
   return (
     <Switch>
-
       <Redirect exact from="/" to="/welcome" />
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
-      <Route exact path="/welcome" component={Welcome} />
+      <Route exact path="/welcome" component={Welcome} /> 
 
       {/* Home page related*/}
-      <Route exact path="/home" component={Home} />
-      <Route exact path="/Mema" component={Mema} />
-      <Route exact path="/Translatepage" component={Translatepage} />
-      <Route exact path="/learning" component={Learning} />
-      <Route exact path="/review" component={Reviewpage} />
+      <ProtectedRoute exact path="/home" component={Home} />
+      <ProtectedRoute exact path="/Mema" component={Mema} />
+      <ProtectedRoute exact path="/Translatepage" component={Translatepage} />
+      <ProtectedRoute exact path="/learning" component={Learning} />
+      <ProtectedRoute exact path="/review" component={Reviewpage} />
 
       {/* Learn page related */}
-      <Route exact path="/learn" component={Learn} />
-      <Route exact path="/learnpage1" component={Learnpage1} />
-      <Route exact path="/learnpage2" component={Learnpage2} />
+      <ProtectedRoute exact path="/learn" component={Learn} />
+      <ProtectedRoute exact path="/learnpage1" component={Learnpage1} />
+      <ProtectedRoute exact path="/learnpage2" component={Learnpage2} />
 
       {/* Discover page related */}
-      <Route exact path="/discover" component={Discover} />
-      <Route exact path="/Information" component={Information} />
-      <Route exact path="/Discover1" component={Discover1} />
-      <Route exact path="/Discover2" component={Discover2} />
+      <ProtectedRoute exact path="/discover" component={Discover} />
+      <ProtectedRoute exact path="/Information" component={Information} />
+      <ProtectedRoute exact path="/Discover1" component={Discover1} />
+      <ProtectedRoute exact path="/Discover2" component={Discover2} />
 
       {/* Account page related */}
-      <Route exact path="/profile" component={Profile} />
-      <Route exact path="/account" component={Account} />
-      <Route exact path="/setting" component={Setting} />
-      <Route exact path="/about" component={About} />
-      <Route exact path="/help" component={Help} />
-      <Route exact path="/rate" component={Rate} />
+      <ProtectedRoute exact path="/profile" component={Profile} />
+      <ProtectedRoute exact path="/account" component={Account} />
+      <ProtectedRoute exact path="/setting" component={Setting} />
+      <ProtectedRoute exact path="/about" component={About} />
+      <ProtectedRoute exact path="/help" component={Help} />
+      <ProtectedRoute exact path="/rate" component={Rate} />
 
     </Switch>
 
