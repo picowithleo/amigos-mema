@@ -77,9 +77,12 @@ class Login extends React.Component {
     try {
       this.setState({ isLoading: true });
       const response = await login(email, password);
-      console.log(response);
-      const jwtToken = response.data.data.token;
+      // console.log(response);
+      // debugger;
+      const jwtToken = response.data.token;
       setToken(jwtToken);
+      // console.log(jwtToken);
+      // debugger;
       const locationState = this.props.location.state;
       const redirectTo = (locationState && locationState.from) || '/home';
       this.props.history.replace(redirectTo);
@@ -177,17 +180,7 @@ class Login extends React.Component {
             >
               {/* Login */}
             </LoginButton>
-            <Button
-              size="large"
-              fluid
-              primary
-              onClick={this.handlelogin}
-            >
-              Login
-          </Button>
-
-            <button onClick={this.handlelogin} >login</button>
-
+          
 
             <Grid container>
               <Grid item xs>

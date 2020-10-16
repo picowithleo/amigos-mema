@@ -26,6 +26,7 @@ const REGISTER_URL = "/api/auths";
 // };
 
 export const login = async (email, password) => {
+    // debugger;
     return await post(LOGIN_URL, {
         email,
         password,

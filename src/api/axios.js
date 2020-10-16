@@ -7,7 +7,7 @@ import { getToken } from '../utils/auth';
 const BASE_URL = 'http://memaserver-env.eba-hgvg3c3g.ap-southeast-2.elasticbeanstalk.com';
 
 axios.defaults.baseURL = BASE_URL;
-console.log(axios.defaults.baseURL);
+// console.log(axios.defaults.baseURL);
 // export const get = (url, config = {}) =>
 //     axios.get(url, config);
 
@@ -34,6 +34,7 @@ export const get = (url, config = {}) =>
   axios.get(url, appendAuthToken(config));
 
 export const post = (url, data, config = {}) => {
+  // debugger;
   return axios.post(url, data, appendAuthToken(config));
 };
 
