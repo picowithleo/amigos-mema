@@ -114,7 +114,7 @@ export default function Profile() {
         <List className={classes.learnbackground}>
             <Grid className={classes.wordbackground}>
                 <Box className={classes.title}>
-                    <h><b>Profile Details</b></h>
+                    <b>Profile Details</b>
                 </Box>
             </Grid>    
         </List>
@@ -125,7 +125,7 @@ export default function Profile() {
 
         <List className={classes.dname}>
             <Box className={classes.yname}>
-                <h><b>Name</b></h>
+                <b>Name</b>
             </Box>
         </List>
 
@@ -194,7 +194,7 @@ export default function Profile() {
 
             <Grid className={classes.wordbackground}>
                 <Box className={classes.title}>
-                    <h><b>Profile Details</b></h>
+                    <b>Profile Details</b>
                 </Box>
             </Grid>
         </List>*/

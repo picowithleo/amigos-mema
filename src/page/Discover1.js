@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     text1: {
         color: "grey",
         fontSize: "20px",
-        padding: "30px",
+        padding: "15px",
         textAlign: "left"
     },
     button1: {
@@ -67,14 +67,17 @@ export default function Discover1() {
             </AppBar>
 
             <Box className={classes.text}>
-                <h>What to do:</h>
+                What to do:
             </Box>
 
             <Box className={classes.text1}>
-                <h>A word in your "My Words" will appear on the screen. Using the keyboard, type the English translation
-                    of the word on the screen.</h>
-                <h>Translate as many words as you can in the 1 minute time limit!</h>
+                A word in your "My Words" will appear on the screen. Using the keyboard, type the English translation
+                    of the word on the screen.
             </Box>
+            <Box className={classes.text1}>
+                Translate as many words as you can in the 1 minute time limit!
+            </Box>   
+            
 
             <Button variant="outlined" className={classes.button1} component={Link} to="/Discover2">Start</Button>
 

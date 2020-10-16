@@ -94,18 +94,18 @@ export default function CustomizedInputBase() {
 
                 <Grid className={classes.wordbackground}>
                     <Box className={classes.title}>
-                        <h><b>Word of Today</b></h>
+                        <b>Word of Today</b>
                     </Box>
                     <Box className={classes.wenzi}>
-                        <h><b style={{ fontSize: "25px" }}>pīn yīn</b></h>
+                        <b style={{ fontSize: "25px" }}>pīn yīn</b>
                         <br></br>
-                        <h><b>拼音</b></h>
+                        <b>拼音</b>
                     </Box>
                 </Grid>
             </List>
             <div className={classes.content1} component={Link} to="/Mema">
                 <Box className={classes.title}>
-                    <h><b>Talk to MEMA</b></h>
+                    <b>Talk to MEMA</b>
                 </Box>
                 <Typography>
                     <img className="mema" alt="" component={Link} to="/Mema" />
@@ -116,7 +116,7 @@ export default function CustomizedInputBase() {
             </div>
             <List className={classes.content2}>
                 <Box className={classes.title}>
-                    <h><b>Vocabulary Book</b></h>
+                    <b>Vocabulary Book</b>
                 </Box>
                 <Button variant="outlined" className={classes.button1} component={Link} to="/learning"></Button>
                 <Button variant="outlined" className={classes.button2} component={Link} to="/review"></Button>
