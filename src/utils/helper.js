@@ -27,7 +27,7 @@ export const errHandler = message => {
     // const type = message.split('"')[1] || "all";
     let err = {};
     const allType = ["email", "password"];
-    message = message.replace(/\"/g, "");
+    message = message.replace(/\\/g, "");
   
     allType.forEach(type => {
       if (isIncluded(message, type)) {
