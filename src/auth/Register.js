@@ -12,8 +12,9 @@ import logo from '../assets/img/logo.jpg';
 import SignupButton from '../ui/SignupButton';
 import { register } from '../api/auth';
 // import { setToken } from '../utils/auth';
-import { Message } from 'semantic-ui-react';
+// import { Message } from 'semantic-ui-react';
 import validator from "validator";
+import { errHandler } from "../utils/helper";
 
 function Copyright() {
   return (
@@ -57,7 +58,7 @@ class Register extends React.Component {
 
     this.state = {
       email: '',
-      error: null,
+      err: { type: "", msg: "" },
       isLoading: false,
       password: '',
       repeatPwd: "",
@@ -110,7 +111,7 @@ class Register extends React.Component {
     const { email, password } = this.state;
     if (this.registerValidator()) return;
     try {
-      this.setState({ isLoading: true });
+      this.setState({ err: {}, isLoading: true });
       register(email, password);  
       const locationState = this.props.location.state;
       const redirectTo = (locationState && locationState.from) || '/login';
@@ -123,14 +124,22 @@ class Register extends React.Component {
         console.log(error.response.data);
         console.log(error.response.status);
         console.log(error.response.headers);
+        const { message } = error.response.data;
+        this.setState({ err: errHandler(message), isLoading: false });
       } else if (error.request) {
         // The request was made but no response was received
         // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
         // http.ClientRequest in node.js
         console.log(error.request);
+        const { message } = error.request;
+        this.setState({ err: errHandler(message), isLoading: false });
       } else {
         // Something happened in setting up the request that triggered an Error
-        this.setState({ error: error.message })
+    
+        const { message } = error.message;
+        this.setState({ err: errHandler(message), isLoading: false });
+
+        // this.setState({ err: error.message })
         console.log('Error', error.message);
       }
       console.log(error.config);
@@ -156,8 +165,9 @@ class Register extends React.Component {
           Sign up
         </Typography>
         <form className="form" noValidate
-        error={this.state.error && this.state.error}>
-        {this.state.error && <p style={{ color: "#ff0000" }}>{this.state.error}</p>}
+        // err={this.state.err}
+        >
+        {/* {this.state.err && <p style={{ color: "#ff0000" }}>{this.state.err}</p>} */}
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
@@ -170,6 +180,7 @@ class Register extends React.Component {
                 autoComplete="email"
                 onChange={this.handleChange}
                 value={this.state.email}
+                err={this.state.err}
               />
             </Grid>
             <Grid item xs={12}>
@@ -184,6 +195,7 @@ class Register extends React.Component {
                 autoComplete="current-password"
                 onChange={this.handleChange}
                 value={this.state.password}
+                err={this.state.err}
               />
             </Grid>
             <Grid item xs={12}>
@@ -198,6 +210,7 @@ class Register extends React.Component {
                 autoComplete="comfirm-password"
                 onChange={this.handleChange}
                 value={this.state.repeatPwd}
+                err={this.state.err}
               />
             </Grid>
             <Grid item xs={12}>
@@ -209,13 +222,13 @@ class Register extends React.Component {
               />
             </Grid>
           </Grid>
-          {!!this.state.error && (
+          {/* {!!this.state.err && (
               <Message
                 error
                 header="Sign up failed"
                 content="Please check your email and password"
               />
-            )}
+            )} */}
           <SignupButton
             // type="submit"
             // fullWidth
