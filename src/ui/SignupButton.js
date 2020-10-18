@@ -18,7 +18,7 @@ const theme = createMuiTheme({
   },
 });
 
-const SignupButton = props => {
+const SignupButton = ({ handleOnClick }) => {
   const classes = useStyles();
 
   return (
@@ -29,8 +29,9 @@ const SignupButton = props => {
           fullWidth
           variant="contained"
           color="primary"
-          className={classes.margin}>
-
+          className={classes.margin}
+          onClick={handleOnClick}
+          >
           Sign Up
           </Button>
       </ThemeProvider>

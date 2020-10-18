@@ -40,6 +40,13 @@ export const login = async (email, password) => {
 };
 
 
-export const register = registerForm => {
-    return post(REGISTER_URL, registerForm);
+// export const register = registerForm => {
+//     return post(REGISTER_URL, registerForm);
+// };
+
+export const register = (email, password) => {
+    return post(REGISTER_URL, {
+        email,
+        password,
+    })
 };
