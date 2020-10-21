@@ -7,7 +7,7 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 import WidgetsIcon from '@material-ui/icons/Widgets';
 import React, { useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { isLoggedIn } from '../utils/auth';
+// import { isLoggedIn } from '../utils/auth';
 
 
 const useStyles = makeStyles({
