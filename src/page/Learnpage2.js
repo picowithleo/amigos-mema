@@ -21,6 +21,9 @@ import ShareIcon from '@material-ui/icons/Share';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faVolumeUp } from '@fortawesome/free-solid-svg-icons'
+import Speech from 'react-speech';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -92,6 +95,17 @@ const useStyles = makeStyles((theme) => ({
   BottomNavigation: {
     backgroundColor: '#eeeeee',
   },
+  BottomNavigationAction: {
+    padding: '0',
+    height: '24px',
+    position: 'absolute',
+    left: '0',
+    bottom: '47%',
+    width: '122px',
+    /* flex-direction: column; */
+    /* flex: auto; */
+    /* justify-content: flex-start; */
+  },
   separate: {
     backgroundColor: '#e0e0e0',
     height: '40px',
@@ -109,9 +123,60 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+const speakerstyle = {
+  container: {
+    flex: 'auto',
+   },
+  text: {
+    color: '#6D6D6D',
+    opacity: '1',
+    fontSize: '0.75rem',
+    transition: 'font-size 0.2s, opacity 0.2s',
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    transitionDelay: '0.1s',
+  },
+  buttons: {
+  },
+  play: {
+    hover: {
+      color: '#6D6D6D',
+    },
+    button: {
+      cursor: 'pointer',
+      pointerEvents: 'none',
+      outline: 'none',
+      backgroundColor: '#F0F0F0',
+      border: 'none',
+      color: '#6D6D6D',
+      left: '0%',
+      top: '52.6%',
+      padding: '0px 31.985px 10px',
+      position: 'absolute'
+      // flex: 1 1 auto;
+
+    },
+  },
+  pause: {
+    hover: {},
+    button: {},
+  },
+  stop: {
+    hover: {},
+    button: {},
+  },
+  resume: {
+    hover: {},
+    button: {},
+  },
+};
+
 
 export default function Learnpage1() {
   const classes = useStyles();
+  const [value, setValue] = React.useState('level1');
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
 
   return (
     <List>
@@ -164,7 +229,23 @@ export default function Learnpage1() {
         showLabels
         className={classes.BottomNavigation}
       >
-        <BottomNavigationAction label="Pronounce" icon={<VolumeUpIcon />} />
+        
+        <BottomNavigationAction icon={<VolumeUpIcon />}
+          className={classes.BottomNavigationAction}/>
+       
+        <Speech 
+          styles= {speakerstyle}
+          pitch="0.5"
+          rate="0.5"
+          volume="1"
+          stop={false}
+          resume={false}
+          pause={false}
+          textAsButton={true}
+          displayText="Pronounce"
+          text="食物"
+                  />
+            
         <BottomNavigationAction label="Bookmark" icon={<BookmarkIcon />} />
         <BottomNavigationAction label="Share" icon={<ShareIcon />} />
       </BottomNavigation>
@@ -174,7 +255,7 @@ export default function Learnpage1() {
           <Typography variant="h6">
             Level
       </Typography>
-          <RadioGroup row aria-label="position" name="position" defaultValue="level1"
+          <RadioGroup row aria-label="position" name="position" value={value} onChange={handleChange}
             style={{ marginLeft: '5%' }}>
             <FormControlLabel
               value="level0"
