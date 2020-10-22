@@ -5,7 +5,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import Paper from '@material-ui/core/Paper';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
@@ -18,6 +17,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
+import ShareIcon from '@material-ui/icons/Share';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -26,9 +26,6 @@ import Speech from 'react-speech';
 
 const useStyles = makeStyles((theme) => ({
 
-  iconButton: {
-    padding: 10,
-  },
   root: {
     position: 'relative',
     bottom: '30%',
@@ -54,20 +51,6 @@ const useStyles = makeStyles((theme) => ({
   foodtext: {
     paddingTop: '20px',
   },
-  BottomNavigation: {
-    backgroundColor: '#eeeeee',
-  },
-  BottomNavigationAction: {
-    padding: '0',
-    height: '24px',
-    position: 'absolute',
-    left: '0',
-    bottom: '44.6%',
-    width: '122px',
-    /* flex-direction: column; */
-    /* flex: auto; */
-    /* justify-content: flex-start; */
-  },
   separate: {
     backgroundColor: '#e0e0e0',
     height: '40px',
@@ -80,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
     width: '95%',
     top: '25%',
     height: '20%',
-
   },
 
 }));
@@ -110,7 +92,7 @@ const speakerstyle = {
       backgroundColor: '#F0F0F0',
       border: 'none',
       color: '#6D6D6D',
-      left: '14%',
+      left: '6.5%',
       top: '57%',
       // padding: '0px 31.985px 10px',
       position: 'absolute'
@@ -138,8 +120,7 @@ const StyledTableCell = withStyles((theme) => ({
     padding: 0,
     textAlign: "center",
     borderBottom: 0,
-    fontWeight: "150",
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    color: '#6D6D6D',
   },
 
 }))(TableCell);
@@ -193,13 +174,13 @@ export default function Word() {
       </Typography>
         </ListItem>
       </List>
-
-      <TableContainer component={Paper}>
-        <Table className={classes.table} aria-label="customized table">
+      <TableContainer style={{ marginBottom: "10px" }}>
+        <Table aria-label="customized table">
           <TableBody>
             <StyledTableRow>
               <StyledTableCell ><IconButton><VolumeUpIcon /></IconButton></StyledTableCell>
               <StyledTableCell ><IconButton> <BookmarkIcon /></IconButton></StyledTableCell>
+              <StyledTableCell ><IconButton> <ShareIcon /></IconButton></StyledTableCell>
             </StyledTableRow>
             <StyledTableRow>
               <StyledTableCell>
@@ -213,47 +194,15 @@ export default function Word() {
                   pause={false}
                   textAsButton={true}
                   displayText="Pronounce"
-                  text="字形"
-                /></StyledTableCell>
+                  text="字形" />
+              </StyledTableCell>
               <StyledTableCell >Bookmark</StyledTableCell>
+              <StyledTableCell >Share</StyledTableCell>
             </StyledTableRow>
-
           </TableBody>
         </Table>
       </TableContainer>
-      {/* <BottomNavigation
-        showLabels
-        className={classes.BottomNavigation}
-      >
 
-        <BottomNavigationAction icon={<VolumeUpIcon />}
-          className={classes.BottomNavigationAction}/>
-        <IconButton>
-          <VolumeUpIcon />
-        </IconButton>
-        <Speech
-          styles={speakerstyle}
-          pitch="0.5"
-          rate="0.5"
-          volume="1"
-          stop={false}
-          resume={false}
-          pause={false}
-          textAsButton={true}
-          displayText="Pronounce"
-          text="字形"
-        />
-
-        <IconButton>
-          <BookmarkIcon />
-        </IconButton>
-        <IconButton>
-          <ShareIcon />
-        </IconButton>
-                    
-        <BottomNavigationAction label="Bookmark" icon={<BookmarkIcon />} />
-        <BottomNavigationAction label="Share" icon={<ShareIcon />} />
-      </BottomNavigation> */}
       <Box className={classes.separate}></Box>
       <Box className={classes.progressbar}>
         <FormControl component="fieldset" className={classes.progress}>
