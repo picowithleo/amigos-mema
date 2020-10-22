@@ -5,7 +5,6 @@ import Box from '@material-ui/core/Box';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import IconButton from '@material-ui/core/IconButton';
-import InputBase from '@material-ui/core/InputBase';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Radio from '@material-ui/core/Radio';
@@ -15,8 +14,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
-import CloseIcon from '@material-ui/icons/Close';
-import SearchIcon from '@material-ui/icons/Search';
 import ShareIcon from '@material-ui/icons/Share';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import React from 'react';
@@ -27,44 +24,7 @@ import Speech from 'react-speech';
 
 
 const useStyles = makeStyles((theme) => ({
-  search: {
-    display: 'flex',
-    alignItems: 'center',
-    width: '80%',
-    top: '12%',
-    left: '10%',
-    position: 'relative',
-    backgroundColor: '#FFFFFF',
-  },
-  learn: {
-    textAlign: 'left',
-    fontSize: '30px',
-    color: '#000000',
-    position: 'relative',
-    fontStyle: 'bold',
-    width: '80%',
-    left: '5%',
-    height: '50px',
-  },
-  searchbackground: {
-    width: '100%',
-    right: '0%',
-    position: 'relative',
-    height: '50px',
-  },
-  searchbar: {
-    display: 'flex',
-  },
-  closeButton: {
-    right: '10%',
-    width: '40px',
-    height: '70px',
-  },
-
-  input: {
-    marginLeft: theme.spacing(1),
-    flex: 1,
-  },
+  
   iconButton: {
     padding: 10,
   },
@@ -82,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '20%',
     justifyContent: 'center',
+    margin: '50px 0px',
   },
   indexbar: {
     borderLeft: "100px",
@@ -100,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     height: '24px',
     position: 'absolute',
     left: '0',
-    bottom: '47%',
+    bottom: '44.6%',
     width: '122px',
     /* flex-direction: column; */
     /* flex: auto; */
@@ -149,7 +110,7 @@ const speakerstyle = {
       border: 'none',
       color: '#6D6D6D',
       left: '0%',
-      top: '52.6%',
+      top: '55.1%',
       padding: '0px 31.985px 10px',
       position: 'absolute'
       // flex: 1 1 auto;
@@ -171,7 +132,7 @@ const speakerstyle = {
 };
 
 
-export default function Learnpage1() {
+export default function Word() {
   const classes = useStyles();
   const [value, setValue] = React.useState('level1');
   const handleChange = (event) => {
@@ -184,7 +145,7 @@ export default function Learnpage1() {
         <AppBar className={classes.appbar} >
           <Toolbar>
             <IconButton edge="start" className={classes.menuButton}
-              aria-label="ArrowBackIos" component={Link} to="/learnpage1">
+              aria-label="ArrowBackIos" component={Link} to="/learn/Italian">
               <ArrowBackIosIcon />
             </IconButton>
             <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
@@ -192,36 +153,20 @@ export default function Learnpage1() {
              </Typography>
           </Toolbar>
         </AppBar>
-        <Box className={classes.searchbar}>
-          <List className={classes.searchbackground}>
-            <Box component="form" className={classes.search}>
-              <IconButton type="submit" className={classes.iconButton} aria-label="search">
-                <SearchIcon />
-              </IconButton>
-              <InputBase
-                className={classes.input}
-                placeholder="Food"
-                inputProps={{ 'aria-label': 'Search' }}
-              />
-            </Box>
-          </List>
-          <IconButton className={classes.closeButton} aria-label="Close">
-            <CloseIcon />
-          </IconButton>
-        </Box>
+
       </Box>
       <List className={classes.index}>
         <ListItem className={classes.indexbar}>
           <Typography variant="h5" color='textSecondary'>
-            shí wù
+          lavoro
       </Typography>
           <Typography variant="h3">
-            食物
+          lavoro
       </Typography>
         </ListItem>
         <ListItem className={classes.indexbar}>
           <Typography variant="h3" className={classes.foodtext}>
-            Food
+          Job
       </Typography>
         </ListItem>
       </List>
@@ -243,7 +188,7 @@ export default function Learnpage1() {
           pause={false}
           textAsButton={true}
           displayText="Pronounce"
-          text="食物"
+          text="lavoro"
                   />
             
         <BottomNavigationAction label="Bookmark" icon={<BookmarkIcon />} />
