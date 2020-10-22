@@ -7,7 +7,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
-import { makeStyles } from '@material-ui/core/styles';
+import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
@@ -26,16 +26,6 @@ const useStyles = makeStyles((theme) => ({
     left: '10%',
     position: 'relative',
     backgroundColor: '#FFFFFF',
-  },
-  learn: {
-    textAlign: 'left',
-    fontSize: '30px',
-    color: '#000000',
-    position: 'relative',
-    fontStyle: 'bold',
-    width: '80%',
-    left: '5%',
-    height: '50px',
   },
   searchbackground: {
     width: '100%',
@@ -67,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appbar: {
     position: 'fixed',
-    backgroundColor:'#8bc38c',
+    backgroundColor: '#8bc38c',
     // marginTop: '-8px',
   },
   index: {
@@ -81,123 +71,137 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const fontTheme = createMuiTheme({
+  overrides: {
+    MuiTypography: {
+      body1: {
+        fontSize: '1.75rem'
+      },
+      body2: {
+        fontSize: '1.5rem'
+      }
+    },
+  },
+});
 
 export default function Italian() {
   const classes = useStyles();
 
   return (
-    <List>
-      <Box className={classes.root}>
-        <AppBar className={classes.appbar} >
-          <Toolbar>
-            <IconButton edge="start" aria-label="ArrowBackIos" component={Link} to="/learn">
-              <ArrowBackIosIcon />
-            </IconButton>
-            <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
-            Italian
-             </Typography>
-          </Toolbar>
-        </AppBar>
-        <Box className={classes.searchbar}>
-          <List className={classes.searchbackground}>
-            <Box component="form" className={classes.search}>
-              <IconButton type="submit" className={classes.iconButton} aria-label="search">
-                <SearchIcon />
+    <ThemeProvider theme={fontTheme}>
+      <List>
+        <Box className={classes.root}>
+          <AppBar className={classes.appbar} >
+            <Toolbar>
+              <IconButton edge="start" aria-label="ArrowBackIos" component={Link} to="/learn">
+                <ArrowBackIosIcon />
               </IconButton>
-              <InputBase
-                className={classes.input}
-                placeholder="Search"
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </Box>
-          </List>
-          <IconButton className={classes.closeButton} aria-label="Close">
-            <CloseIcon />
-          </IconButton>
+              <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
+                Italian
+             </Typography>
+            </Toolbar>
+          </AppBar>
+          <Box className={classes.searchbar}>
+            <List className={classes.searchbackground}>
+              <Box component="form" className={classes.search}>
+                <IconButton type="submit" className={classes.iconButton} aria-label="search">
+                  <SearchIcon />
+                </IconButton>
+                <InputBase
+                  className={classes.input}
+                  placeholder="Search"
+                  inputProps={{ 'aria-label': 'search' }}
+                />
+              </Box>
+            </List>
+            <IconButton className={classes.closeButton} aria-label="Close">
+              <CloseIcon />
+            </IconButton>
+          </Box>
         </Box>
-      </Box>
-      <List className={classes.index}>
-        <ListItem className={classes.indexbar}component={Link} to="/learn/Italian/font">
-          <ListItemText primary="Font" secondary="font" />
-          <ListItemAvatar>
-            <Avatar>
-              <ArrowForwardIosIcon />
-            </Avatar>
-          </ListItemAvatar>
-        </ListItem>
-        <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/food">
-          <ListItemText primary="cibo" secondary="food" />
-          <ListItemAvatar>
-            <Avatar>
-              <ArrowForwardIosIcon />
-            </Avatar>
-          </ListItemAvatar>
-        </ListItem>
-        <ListItem className={classes.indexbar}component={Link} to="/learn/Italian/history">
-          <ListItemText primary="storia" secondary="history" />
-          <ListItemAvatar>
-            <Avatar>
-              <ArrowForwardIosIcon />
-            </Avatar>
-          </ListItemAvatar>
-        </ListItem>
-        <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/thanks">
-          <ListItemText primary="Grazie" secondary="thanks" />
-          <ListItemAvatar>
-            <Avatar>
-              <ArrowForwardIosIcon />
-            </Avatar>
-          </ListItemAvatar>
-        </ListItem>
-        <ListItem className={classes.indexbar}component={Link} to="/learn/Italian/product">
-          <ListItemText primary="Prodotto" secondary="product" />
-          <ListItemAvatar>
-            <Avatar>
-              <ArrowForwardIosIcon />
-            </Avatar>
-          </ListItemAvatar>
-        </ListItem>
-        <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/web">
-          <ListItemText primary="ragnatela" secondary="web" />
-          <ListItemAvatar>
-            <Avatar>
-              <ArrowForwardIosIcon />
-            </Avatar>
-          </ListItemAvatar>
-        </ListItem>
-        <ListItem className={classes.indexbar}component={Link} to="/learn/Italian/story">
-          <ListItemText primary="storia" secondary="story" />
-          <ListItemAvatar>
-            <Avatar>
-              <ArrowForwardIosIcon />
-            </Avatar>
-          </ListItemAvatar>
-        </ListItem>
-        <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/weather">
-          <ListItemText primary="tempo metereologico" secondary="weather" />
-          <ListItemAvatar>
-            <Avatar>
-              <ArrowForwardIosIcon />
-            </Avatar>
-          </ListItemAvatar>
-        </ListItem>
-        <ListItem className={classes.indexbar}component={Link} to="/learn/Italian/experience">
-          <ListItemText primary="Esperienza" secondary="experience" />
-          <ListItemAvatar>
-            <Avatar>
-              <ArrowForwardIosIcon />
-            </Avatar>
-          </ListItemAvatar>
-        </ListItem>
-        <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/job">
-          <ListItemText primary="lavoro" secondary="job" />
-          <ListItemAvatar>
-            <Avatar>
-              <ArrowForwardIosIcon />
-            </Avatar>
-          </ListItemAvatar>
-        </ListItem>
+        <List className={classes.index}>
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/font">
+            <ListItemText primary="Font" secondary="font" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/food">
+            <ListItemText primary="cibo" secondary="food" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/history">
+            <ListItemText primary="storia" secondary="history" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/thanks">
+            <ListItemText primary="Grazie" secondary="thanks" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/product">
+            <ListItemText primary="Prodotto" secondary="product" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/web">
+            <ListItemText primary="ragnatela" secondary="web" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/story">
+            <ListItemText primary="storia" secondary="story" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/weather">
+            <ListItemText primary="tempo metereologico" secondary="weather" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/experience">
+            <ListItemText primary="Esperienza" secondary="experience" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/job">
+            <ListItemText primary="lavoro" secondary="job" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </List>
       </List>
-    </List>
+    </ThemeProvider>
   );
 }
