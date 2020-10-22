@@ -2,6 +2,7 @@ import { post } from './axios';
 
 const LOGIN_URL = '/api/auth';
 const REGISTER_URL = "/api/auths";
+const USER_URL = '/api/users';
 
 // export const login = async (email, password) => {
 //     // debugger;
@@ -44,9 +45,34 @@ export const login = async (email, password) => {
 //     return post(REGISTER_URL, registerForm);
 // };
 
-export const register = (email, password) => {
+export const register = (email, password, username,
+    country,
+    language,
+    proficiencyLevel,
+    avatar) => {
     return post(REGISTER_URL, {
         email,
         password,
+        username,
+        country,
+        language,
+        proficiencyLevel,
+        avatar
+    })
+};
+
+export const users = (email, password, username,
+    country,
+    language,
+    proficiencyLevel,
+    avatar) => {
+    return post(USER_URL, {
+        email,
+        password,
+        username,
+        country,
+        language,
+        proficiencyLevel,
+        avatar
     })
 };
