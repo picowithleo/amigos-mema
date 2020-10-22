@@ -1,30 +1,31 @@
 import AppBar from '@material-ui/core/AppBar';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import Box from '@material-ui/core/Box';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import Paper from '@material-ui/core/Paper';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableRow from '@material-ui/core/TableRow';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
-import ShareIcon from '@material-ui/icons/Share';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faVolumeUp } from '@fortawesome/free-solid-svg-icons'
 import Speech from 'react-speech';
 
 
 const useStyles = makeStyles((theme) => ({
-  
+
   iconButton: {
     padding: 10,
   },
@@ -34,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appbar: {
     position: 'relative',
-    backgroundColor:'#8bc38c',
+    backgroundColor: '#8bc38c',
     marginTop: '-8px',
   },
   index: {
@@ -87,11 +88,11 @@ const useStyles = makeStyles((theme) => ({
 const speakerstyle = {
   container: {
     flex: 'auto',
-   },
+  },
   text: {
     color: '#6D6D6D',
     opacity: '1',
-    fontSize: '0.75rem',
+    fontSize: 12,
     transition: 'font-size 0.2s, opacity 0.2s',
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     transitionDelay: '0.1s',
@@ -109,9 +110,9 @@ const speakerstyle = {
       backgroundColor: '#F0F0F0',
       border: 'none',
       color: '#6D6D6D',
-      left: '0%',
-      top: '55.1%',
-      padding: '0px 31.985px 10px',
+      left: '14%',
+      top: '57%',
+      // padding: '0px 31.985px 10px',
       position: 'absolute'
       // flex: 1 1 auto;
 
@@ -131,6 +132,28 @@ const speakerstyle = {
   },
 };
 
+const StyledTableCell = withStyles((theme) => ({
+  body: {
+    fontSize: 12,
+    padding: 0,
+    textAlign: "center",
+    borderBottom: 0,
+    fontWeight: "150",
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+  },
+
+}))(TableCell);
+
+const StyledTableRow = withStyles((theme) => ({
+  root: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: "#F0F0F0",
+    },
+    '&:nth-of-type(even)': {
+      backgroundColor: "#F0F0F0",
+    },
+  },
+}))(TableRow);
 
 export default function Word() {
   const classes = useStyles();
@@ -158,28 +181,58 @@ export default function Word() {
       <List className={classes.index}>
         <ListItem className={classes.indexbar}>
           <Typography variant="h5" color='textSecondary'>
-          zì xíng
+            zì xíng
       </Typography>
           <Typography variant="h3">
-          字形
+            字形
       </Typography>
         </ListItem>
         <ListItem className={classes.indexbar}>
           <Typography variant="h3" className={classes.foodtext}>
-          Font
+            Font
       </Typography>
         </ListItem>
       </List>
-      <BottomNavigation
+
+      <TableContainer component={Paper}>
+        <Table className={classes.table} aria-label="customized table">
+          <TableBody>
+            <StyledTableRow>
+              <StyledTableCell ><IconButton><VolumeUpIcon /></IconButton></StyledTableCell>
+              <StyledTableCell ><IconButton> <BookmarkIcon /></IconButton></StyledTableCell>
+            </StyledTableRow>
+            <StyledTableRow>
+              <StyledTableCell>
+                <Speech
+                  styles={speakerstyle}
+                  pitch="0.5"
+                  rate="0.5"
+                  volume="1"
+                  stop={false}
+                  resume={false}
+                  pause={false}
+                  textAsButton={true}
+                  displayText="Pronounce"
+                  text="字形"
+                /></StyledTableCell>
+              <StyledTableCell >Bookmark</StyledTableCell>
+            </StyledTableRow>
+
+          </TableBody>
+        </Table>
+      </TableContainer>
+      {/* <BottomNavigation
         showLabels
         className={classes.BottomNavigation}
       >
-        
+
         <BottomNavigationAction icon={<VolumeUpIcon />}
           className={classes.BottomNavigationAction}/>
-       
-        <Speech 
-          styles= {speakerstyle}
+        <IconButton>
+          <VolumeUpIcon />
+        </IconButton>
+        <Speech
+          styles={speakerstyle}
           pitch="0.5"
           rate="0.5"
           volume="1"
@@ -189,11 +242,18 @@ export default function Word() {
           textAsButton={true}
           displayText="Pronounce"
           text="字形"
-                  />
-            
+        />
+
+        <IconButton>
+          <BookmarkIcon />
+        </IconButton>
+        <IconButton>
+          <ShareIcon />
+        </IconButton>
+                    
         <BottomNavigationAction label="Bookmark" icon={<BookmarkIcon />} />
         <BottomNavigationAction label="Share" icon={<ShareIcon />} />
-      </BottomNavigation>
+      </BottomNavigation> */}
       <Box className={classes.separate}></Box>
       <Box className={classes.progressbar}>
         <FormControl component="fieldset" className={classes.progress}>
