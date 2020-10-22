@@ -93,7 +93,7 @@ const speakerstyle = {
       border: 'none',
       color: '#6D6D6D',
       left: '6.5%',
-      top: '57%',
+      top: '56.1%',
       // padding: '0px 31.985px 10px',
       position: 'absolute'
       // flex: 1 1 auto;
