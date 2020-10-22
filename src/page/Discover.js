@@ -1,3 +1,4 @@
+import { ListItem } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
@@ -20,11 +21,11 @@ const useStyles = makeStyles((theme) => ({
 
     },
     appbar: {
-        position: 'relative',
+        position: 'fixed',
         backgroundColor:'#8bc38c',
     },
     content: {
-        marginTop: "20px",
+        marginTop: "5px",
         position: 'relative',
         left: "10%",
         width: '80%',
@@ -44,7 +45,9 @@ const useStyles = makeStyles((theme) => ({
     disIcon: {
         left: '130px',
     },
-
+    list: {
+        marginTop: '50px',
+    },
 }));
 
 export default function CustomizedInputBase() {
@@ -66,16 +69,20 @@ export default function CustomizedInputBase() {
                     </Toolbar>
                 </AppBar>
             </Box>
-            <List className={classes.content}>
+            <List className={classes.list}>
+                <ListItem className={classes.content}>
                 <Button variant="outlined" className={classes.button} component={Link} to="/Information"></Button>
-            </List>
-            <List className={classes.content}>
+                </ListItem>
+                <ListItem className={classes.content}>
+          
                 <Button variant="outlined" className={classes.button}
                     style={{ backgroundImage: 'url(' + challenge + ')' }} component={Link} to="/Discover1"></Button>
-            </List>
-            <List className={classes.content}>
+            </ListItem>
+             
+             <ListItem className={classes.content}>
                 <Button variant="outlined" className={classes.button}
                     style={{ backgroundImage: 'url(' + community + ')' }}></Button>
+             </ListItem>
             </List>
         </Box>
 
