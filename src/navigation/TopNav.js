@@ -1,12 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { Link } from 'react-router-dom';
-
 // import './topNav.scss';
-
-
-
 
 const NavContainer = styled.ul`
     display: flex;
@@ -22,22 +18,19 @@ const NavContainer = styled.ul`
 
 const TopNav = () => {
 
-    
 
 
+    // 暂时放在top的连接到登陆跟注册的导航，等到时候找到地方放的就改
     return (
         <nav>
             {/* <ul className="nav"> */}
             <NavContainer isRed>
                 <li><Link to="/login">Login</Link></li>
                 <li><Link to="/register">Register</Link></li>
-                <li><Link to="/home">Home</Link></li>
-                <li><Link to="/profile">Profile</Link></li>
-
             </NavContainer>
             {/* </ul> */}
         </nav>
-        
+
     );
 };
 
