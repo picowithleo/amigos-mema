@@ -183,16 +183,16 @@ export default function Korean() {
               </Avatar>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Korean/experience">
-            <ListItemText primary="gyeongheom 경험" secondary="experience" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Korean/family">
+            <ListItemText primary="gajog 가족" secondary="family" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
               </Avatar>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Korean/job">
-            <ListItemText primary="il 일" secondary="job" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Korean/company">
+            <ListItemText primary="hoesa 회사" secondary="company" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />

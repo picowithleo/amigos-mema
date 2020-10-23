@@ -55,11 +55,11 @@ import JStory from '../page/dictionary/language/japanese/Story';
 import JFamily from '../page/dictionary/language/japanese/Family';
 import JWeather from '../page/dictionary/language/japanese/Weather';
 import JWeb from '../page/dictionary/language/japanese/Web';
-import KExperience from '../page/dictionary/language/korean/Experience';
+import KFamily from '../page/dictionary/language/korean/Family';
 import KFont from '../page/dictionary/language/korean/Font';
 import KFood from '../page/dictionary/language/korean/Food';
 import KHistory from '../page/dictionary/language/korean/History';
-import KJob from '../page/dictionary/language/korean/Job';
+import KCompany from '../page/dictionary/language/korean/Company';
 import KProduct from '../page/dictionary/language/korean/Product';
 import KStory from '../page/dictionary/language/korean/Story';
 import KThanks from '../page/dictionary/language/korean/Thanks';
@@ -144,9 +144,9 @@ const Routes = () => {
 
       <ProtectedRoute exact path="/learn/Korean/food" component={KFood} />
       <ProtectedRoute exact path="/learn/Korean/font" component={KFont} />
-      <ProtectedRoute exact path="/learn/Korean/experience" component={KExperience} />
+      <ProtectedRoute exact path="/learn/Korean/family" component={KFamily} />
       <ProtectedRoute exact path="/learn/Korean/history" component={KHistory} />
-      <ProtectedRoute exact path="/learn/Korean/job" component={KJob} />
+      <ProtectedRoute exact path="/learn/Korean/company" component={KCompany} />
       <ProtectedRoute exact path="/learn/Korean/weather" component={KWeather} />
       <ProtectedRoute exact path="/learn/Korean/web" component={KWeb} />
       <ProtectedRoute exact path="/learn/Korean/story" component={KStory} />
