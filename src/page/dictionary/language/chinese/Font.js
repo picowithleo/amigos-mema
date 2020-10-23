@@ -74,7 +74,7 @@ const speakerstyle = {
   text: {
     color: '#6D6D6D',
     opacity: '1',
-    fontSize: 12,
+    fontSize: 14,
     transition: 'font-size 0.2s, opacity 0.2s',
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     transitionDelay: '0.1s',
@@ -94,10 +94,8 @@ const speakerstyle = {
       color: '#6D6D6D',
       left: '6.5%',
       top: '56.1%',
-      // padding: '0px 31.985px 10px',
+      padding: '5px',
       position: 'absolute'
-      // flex: 1 1 auto;
-
     },
   },
   pause: {
@@ -116,7 +114,7 @@ const speakerstyle = {
 
 const StyledTableCell = withStyles((theme) => ({
   body: {
-    fontSize: 12,
+    fontSize: 14,
     padding: 0,
     textAlign: "center",
     borderBottom: 0,
@@ -162,25 +160,25 @@ export default function Word() {
       <List className={classes.index}>
         <ListItem className={classes.indexbar}>
           <Typography variant="h5" color='textSecondary'>
-            zì xíng
+            jiàn kāng
       </Typography>
           <Typography variant="h3">
-            字形
+            健康
       </Typography>
         </ListItem>
         <ListItem className={classes.indexbar}>
           <Typography variant="h3" className={classes.foodtext}>
-            Font
+            Health
       </Typography>
         </ListItem>
       </List>
       <TableContainer style={{ marginBottom: "10px" }}>
         <Table aria-label="customized table">
           <TableBody>
-            <StyledTableRow>
-              <StyledTableCell ><IconButton><VolumeUpIcon /></IconButton></StyledTableCell>
-              <StyledTableCell ><IconButton> <BookmarkIcon /></IconButton></StyledTableCell>
-              <StyledTableCell ><IconButton> <ShareIcon /></IconButton></StyledTableCell>
+            <StyledTableRow >
+              <StyledTableCell ><IconButton><VolumeUpIcon fontSize="large" /></IconButton></StyledTableCell>
+              <StyledTableCell ><IconButton> <BookmarkIcon fontSize="large" /></IconButton></StyledTableCell>
+              <StyledTableCell ><IconButton> <ShareIcon fontSize="large" /></IconButton></StyledTableCell>
             </StyledTableRow>
             <StyledTableRow>
               <StyledTableCell>
@@ -194,7 +192,7 @@ export default function Word() {
                   pause={false}
                   textAsButton={true}
                   displayText="Pronounce"
-                  text="字形" />
+                  text="健康" />
               </StyledTableCell>
               <StyledTableCell >Bookmark</StyledTableCell>
               <StyledTableCell >Share</StyledTableCell>
