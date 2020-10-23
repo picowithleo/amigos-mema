@@ -5,6 +5,72 @@ import Register from '../auth/Register';
 import Welcome from '../auth/Welcome';
 import About from '../page/About';
 import Account from '../page/Account';
+import CData from '../page/dictionary/language/chinese/Data';
+import CFood from '../page/dictionary/language/chinese/Food';
+import CHealth from '../page/dictionary/language/chinese/Health';
+import CHistory from '../page/dictionary/language/chinese/History';
+import CJob from '../page/dictionary/language/chinese/Job';
+import CProduct from '../page/dictionary/language/chinese/Product';
+import CStory from '../page/dictionary/language/chinese/Story';
+import CThanks from '../page/dictionary/language/chinese/Thanks';
+import CWeather from '../page/dictionary/language/chinese/Weather';
+import CWeb from '../page/dictionary/language/chinese/Web';
+import FFamily from '../page/dictionary/language/french/Family';
+import FFood from '../page/dictionary/language/french/Food';
+import FHealth from '../page/dictionary/language/french/Health';
+import FHistory from '../page/dictionary/language/french/History';
+import FJob from '../page/dictionary/language/french/Job';
+import FProduct from '../page/dictionary/language/french/Product';
+import FStory from '../page/dictionary/language/french/Story';
+import FThanks from '../page/dictionary/language/french/Thanks';
+import FWeather from '../page/dictionary/language/french/Weather';
+import FWeb from '../page/dictionary/language/french/Web';
+import GFamily from '../page/dictionary/language/german/Family';
+import GFilm from '../page/dictionary/language/german/Film';
+import GJob from '../page/dictionary/language/german/Job';
+import GMarket from '../page/dictionary/language/german/Market';
+import GMoney from '../page/dictionary/language/german/Money';
+import GPicture from '../page/dictionary/language/german/Picture';
+import GProduct from '../page/dictionary/language/german/Product';
+import GThanks from '../page/dictionary/language/german/Thanks';
+import GWeather from '../page/dictionary/language/german/Weather';
+import GWeb from '../page/dictionary/language/german/Web';
+import IExperience from '../page/dictionary/language/italian/Experience';
+import IFont from '../page/dictionary/language/italian/Font';
+import IFood from '../page/dictionary/language/italian/Food';
+import IHistory from '../page/dictionary/language/italian/History';
+import IJob from '../page/dictionary/language/italian/Job';
+import IProduct from '../page/dictionary/language/italian/Product';
+import IStory from '../page/dictionary/language/italian/Story';
+import IThanks from '../page/dictionary/language/italian/Thanks';
+import IWeather from '../page/dictionary/language/italian/Weather';
+import IWeb from '../page/dictionary/language/italian/Web';
+import JExperience from '../page/dictionary/language/japanese/Experience';
+import JFont from '../page/dictionary/language/japanese/Font';
+import JFood from '../page/dictionary/language/japanese/Food';
+import JHistory from '../page/dictionary/language/japanese/History';
+import JJob from '../page/dictionary/language/japanese/Job';
+import JProduct from '../page/dictionary/language/japanese/Product';
+import JStory from '../page/dictionary/language/japanese/Story';
+import JThanks from '../page/dictionary/language/japanese/Thanks';
+import JWeather from '../page/dictionary/language/japanese/Weather';
+import JWeb from '../page/dictionary/language/japanese/Web';
+import KExperience from '../page/dictionary/language/korean/Experience';
+import KFont from '../page/dictionary/language/korean/Font';
+import KFood from '../page/dictionary/language/korean/Food';
+import KHistory from '../page/dictionary/language/korean/History';
+import KJob from '../page/dictionary/language/korean/Job';
+import KProduct from '../page/dictionary/language/korean/Product';
+import KStory from '../page/dictionary/language/korean/Story';
+import KThanks from '../page/dictionary/language/korean/Thanks';
+import KWeather from '../page/dictionary/language/korean/Weather';
+import KWeb from '../page/dictionary/language/korean/Web';
+import Chinese from '../page/dictionary/list/Chinese';
+import French from '../page/dictionary/list/French';
+import German from '../page/dictionary/list/German';
+import Italian from '../page/dictionary/list/Italian';
+import Japanese from '../page/dictionary/list/Japanese';
+import Korean from '../page/dictionary/list/Korean';
 import Discover from '../page/Discover';
 import Discover1 from '../page/Discover1';
 import Discover2 from '../page/Discover2';
@@ -13,80 +79,6 @@ import Home from '../page/Home';
 import Information from '../page/Information';
 import Learn from '../page/Learn';
 import Learning from '../page/Learning';
-import Chinese from '../page/dictionary/list/Chinese';
-import Japanese from '../page/dictionary/list/Japanese';
-import Korean from '../page/dictionary/list/Korean';
-import French from '../page/dictionary/list/French';
-import Italian from '../page/dictionary/list/Italian';
-import German from '../page/dictionary/list/German';
-
-import CFood from '../page/dictionary/language/chinese/Food';
-import CHealth from '../page/dictionary/language/chinese/Health';
-import CData from '../page/dictionary/language/chinese/Data';
-import CHistory from '../page/dictionary/language/chinese/History';
-import CJob from '../page/dictionary/language/chinese/Job';
-import CWeather from '../page/dictionary/language/chinese/Weather';
-import CWeb from '../page/dictionary/language/chinese/Web';
-import CStory from '../page/dictionary/language/chinese/Story';
-import CThanks from '../page/dictionary/language/chinese/Thanks';
-import CProduct from '../page/dictionary/language/chinese/Product';
-
-import JFood from '../page/dictionary/language/japanese/Food';
-import JFont from '../page/dictionary/language/japanese/Font';
-import JExperience from '../page/dictionary/language/japanese/Experience';
-import JHistory from '../page/dictionary/language/japanese/History';
-import JJob from '../page/dictionary/language/japanese/Job';
-import JWeather from '../page/dictionary/language/japanese/Weather';
-import JWeb from '../page/dictionary/language/japanese/Web';
-import JStory from '../page/dictionary/language/japanese/Story';
-import JThanks from '../page/dictionary/language/japanese/Thanks';
-import JProduct from '../page/dictionary/language/japanese/Product';
-
-import KFood from '../page/dictionary/language/korean/Food';
-import KFont from '../page/dictionary/language/korean/Font';
-import KExperience from '../page/dictionary/language/korean/Experience';
-import KHistory from '../page/dictionary/language/korean/History';
-import KJob from '../page/dictionary/language/korean/Job';
-import KWeather from '../page/dictionary/language/korean/Weather';
-import KWeb from '../page/dictionary/language/korean/Web';
-import KStory from '../page/dictionary/language/korean/Story';
-import KThanks from '../page/dictionary/language/korean/Thanks';
-import KProduct from '../page/dictionary/language/korean/Product';
-
-import FFood from '../page/dictionary/language/french/Food';
-import FHealth from '../page/dictionary/language/french/Health';
-import FFamily from '../page/dictionary/language/french/Family';
-import FHistory from '../page/dictionary/language/french/History';
-import FJob from '../page/dictionary/language/french/Job';
-import FWeather from '../page/dictionary/language/french/Weather';
-import FWeb from '../page/dictionary/language/french/Web';
-import FStory from '../page/dictionary/language/french/Story';
-import FThanks from '../page/dictionary/language/french/Thanks';
-import FProduct from '../page/dictionary/language/french/Product';
-
-import GFood from '../page/dictionary/language/german/Food';
-import GFont from '../page/dictionary/language/german/Font';
-import GExperience from '../page/dictionary/language/german/Experience';
-import GHistory from '../page/dictionary/language/german/History';
-import GJob from '../page/dictionary/language/german/Job';
-import GWeather from '../page/dictionary/language/german/Weather';
-import GWeb from '../page/dictionary/language/german/Web';
-import GStory from '../page/dictionary/language/german/Story';
-import GThanks from '../page/dictionary/language/german/Thanks';
-import GProduct from '../page/dictionary/language/german/Product';
-
-import IFood from '../page/dictionary/language/italian/Food';
-import IFont from '../page/dictionary/language/italian/Font';
-import IExperience from '../page/dictionary/language/italian/Experience';
-import IHistory from '../page/dictionary/language/italian/History';
-import IJob from '../page/dictionary/language/italian/Job';
-import IWeather from '../page/dictionary/language/italian/Weather';
-import IWeb from '../page/dictionary/language/italian/Web';
-import IStory from '../page/dictionary/language/italian/Story';
-import IThanks from '../page/dictionary/language/italian/Thanks';
-import IProduct from '../page/dictionary/language/italian/Product';
-
-
 import Mema from '../page/Mema';
 import Profile from '../page/Profile';
 import Rate from '../page/Rate';
@@ -95,13 +87,21 @@ import Setting from '../page/Setting';
 import Translatepage from '../page/Translatepage';
 import ProtectedRoute from '../routes/ProtectedRoute';
 
+
+
+
+
+
+
+
+
 const Routes = () => {
   return (
     <Switch>
       <Redirect exact from="/" to="/welcome" />
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
-      <Route exact path="/welcome" component={Welcome} /> 
+      <Route exact path="/welcome" component={Welcome} />
 
       {/* Home page related*/}
       <ProtectedRoute exact path="/home" component={Home} />
@@ -164,14 +164,14 @@ const Routes = () => {
       <ProtectedRoute exact path="/learn/French/thanks" component={FThanks} />
       <ProtectedRoute exact path="/learn/French/product" component={FProduct} />
 
-      <ProtectedRoute exact path="/learn/German/food" component={GFood} />
-      <ProtectedRoute exact path="/learn/German/font" component={GFont} />
-      <ProtectedRoute exact path="/learn/German/experience" component={GExperience} />
-      <ProtectedRoute exact path="/learn/German/history" component={GHistory} />
+      <ProtectedRoute exact path="/learn/German/money" component={GMoney} />
+      <ProtectedRoute exact path="/learn/German/family" component={GFamily} />
+      <ProtectedRoute exact path="/learn/German/picture" component={GPicture} />
+      <ProtectedRoute exact path="/learn/German/market" component={GMarket} />
       <ProtectedRoute exact path="/learn/German/job" component={GJob} />
       <ProtectedRoute exact path="/learn/German/weather" component={GWeather} />
       <ProtectedRoute exact path="/learn/German/web" component={GWeb} />
-      <ProtectedRoute exact path="/learn/German/story" component={GStory} />
+      <ProtectedRoute exact path="/learn/German/film" component={GFilm} />
       <ProtectedRoute exact path="/learn/German/thanks" component={GThanks} />
       <ProtectedRoute exact path="/learn/German/product" component={GProduct} />
 
