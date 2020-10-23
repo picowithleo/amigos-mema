@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     ratebar: {
-        marginTop: "40%",
+        margin: "40% 5% 0 5%",
         backgroundColor: '#ffffff',
         padding: "15% 0 10% 0",
     }

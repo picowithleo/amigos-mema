@@ -1,6 +1,4 @@
 import AppBar from '@material-ui/core/AppBar';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import Box from '@material-ui/core/Box';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -9,7 +7,12 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableRow from '@material-ui/core/TableRow';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
@@ -18,23 +21,17 @@ import ShareIcon from '@material-ui/icons/Share';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faVolumeUp } from '@fortawesome/free-solid-svg-icons'
 import Speech from 'react-speech';
 
-
 const useStyles = makeStyles((theme) => ({
-  
-  iconButton: {
-    padding: 10,
-  },
+
   root: {
     position: 'relative',
     bottom: '30%',
   },
   appbar: {
     position: 'relative',
-    backgroundColor:'#8bc38c',
+    backgroundColor: '#8bc38c',
     marginTop: '-8px',
   },
   index: {
@@ -53,20 +50,6 @@ const useStyles = makeStyles((theme) => ({
   foodtext: {
     paddingTop: '20px',
   },
-  BottomNavigation: {
-    backgroundColor: '#eeeeee',
-  },
-  BottomNavigationAction: {
-    padding: '0',
-    height: '24px',
-    position: 'absolute',
-    left: '0',
-    bottom: '44.6%',
-    width: '122px',
-    /* flex-direction: column; */
-    /* flex: auto; */
-    /* justify-content: flex-start; */
-  },
   separate: {
     backgroundColor: '#e0e0e0',
     height: '40px',
@@ -79,7 +62,6 @@ const useStyles = makeStyles((theme) => ({
     width: '95%',
     top: '25%',
     height: '20%',
-
   },
 
 }));
@@ -87,11 +69,11 @@ const useStyles = makeStyles((theme) => ({
 const speakerstyle = {
   container: {
     flex: 'auto',
-   },
+  },
   text: {
     color: '#6D6D6D',
     opacity: '1',
-    fontSize: '0.75rem',
+    fontSize: 14,
     transition: 'font-size 0.2s, opacity 0.2s',
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     transitionDelay: '0.1s',
@@ -109,12 +91,10 @@ const speakerstyle = {
       backgroundColor: '#F0F0F0',
       border: 'none',
       color: '#6D6D6D',
-      left: '0%',
-      top: '55.1%',
-      padding: '0px 31.985px 10px',
+      left: '6.5%',
+      top: '56.1%',
+      padding: '5px',
       position: 'absolute'
-      // flex: 1 1 auto;
-
     },
   },
   pause: {
@@ -131,6 +111,27 @@ const speakerstyle = {
   },
 };
 
+const StyledTableCell = withStyles((theme) => ({
+  body: {
+    fontSize: 14,
+    padding: 0,
+    textAlign: "center",
+    borderBottom: 0,
+    color: '#6D6D6D',
+  },
+
+}))(TableCell);
+
+const StyledTableRow = withStyles((theme) => ({
+  root: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: "#F0F0F0",
+    },
+    '&:nth-of-type(even)': {
+      backgroundColor: "#F0F0F0",
+    },
+  },
+}))(TableRow);
 
 export default function Word() {
   const classes = useStyles();
@@ -158,42 +159,46 @@ export default function Word() {
       <List className={classes.index}>
         <ListItem className={classes.indexbar}>
           <Typography variant="h5" color='textSecondary'>
-          U~ebu
+            U~ebu
       </Typography>
           <Typography variant="h3">
-          ウェブ
+            ウェブ
       </Typography>
         </ListItem>
         <ListItem className={classes.indexbar}>
           <Typography variant="h3" className={classes.foodtext}>
-          Web
+            Web
       </Typography>
         </ListItem>
       </List>
-      <BottomNavigation
-        showLabels
-        className={classes.BottomNavigation}
-      >
-        
-        <BottomNavigationAction icon={<VolumeUpIcon />}
-          className={classes.BottomNavigationAction}/>
-       
-        <Speech 
-          styles= {speakerstyle}
-          pitch="0.5"
-          rate="0.5"
-          volume="1"
-          stop={false}
-          resume={false}
-          pause={false}
-          textAsButton={true}
-          displayText="Pronounce"
-          text="U~ebu"
-                  />
-            
-        <BottomNavigationAction label="Bookmark" icon={<BookmarkIcon />} />
-        <BottomNavigationAction label="Share" icon={<ShareIcon />} />
-      </BottomNavigation>
+      <TableContainer style={{ marginBottom: "10px" }}>
+        <Table aria-label="customized table">
+          <TableBody>
+            <StyledTableRow >
+              <StyledTableCell ><IconButton><VolumeUpIcon fontSize="large" /></IconButton></StyledTableCell>
+              <StyledTableCell ><IconButton> <BookmarkIcon fontSize="large" /></IconButton></StyledTableCell>
+              <StyledTableCell ><IconButton> <ShareIcon fontSize="large" /></IconButton></StyledTableCell>
+            </StyledTableRow>
+            <StyledTableRow>
+              <StyledTableCell>
+                <Speech
+                  styles={speakerstyle}
+                  pitch="0.5"
+                  rate="0.5"
+                  volume="1"
+                  stop={false}
+                  resume={false}
+                  pause={false}
+                  textAsButton={true}
+                  displayText="Pronounce"
+                  text="U~ebu" />
+              </StyledTableCell>
+              <StyledTableCell >Bookmark</StyledTableCell>
+              <StyledTableCell >Share</StyledTableCell>
+            </StyledTableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
       <Box className={classes.separate}></Box>
       <Box className={classes.progressbar}>
         <FormControl component="fieldset" className={classes.progress}>
