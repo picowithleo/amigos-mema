@@ -51,6 +51,8 @@ function Copyright() {
 //     color: '#BF8487',
 //   }
 // }));
+export var userEmail;
+export var userPassword;
 
 class Login extends React.Component {
 
@@ -75,6 +77,8 @@ class Login extends React.Component {
     const { email, password } = this.state;
     try {
       this.setState({ isLoading: true });
+      userEmail = email;
+      userPassword = password;
       const response = await login(email, password);
       // console.log(response);
       // debugger;
