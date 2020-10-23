@@ -191,7 +191,7 @@ export default function Word() {
                   pause={false}
                   textAsButton={true}
                   displayText="Pronounce"
-                  text="字形" />
+                  text="食物" />
               </StyledTableCell>
               <StyledTableCell >Bookmark</StyledTableCell>
               <StyledTableCell >Share</StyledTableCell>

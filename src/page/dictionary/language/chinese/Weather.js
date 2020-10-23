@@ -194,7 +194,7 @@ export default function Word() {
                   pause={false}
                   textAsButton={true}
                   displayText="Pronounce"
-                  text="字形" />
+                  text="天气" />
               </StyledTableCell>
               <StyledTableCell >Bookmark</StyledTableCell>
               <StyledTableCell >Share</StyledTableCell>

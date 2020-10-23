@@ -96,8 +96,6 @@ const speakerstyle = {
       top: '56.1%',
       padding: '5px',
       position: 'absolute'
-      // flex: 1 1 auto;
-
     },
   },
   pause: {
@@ -162,15 +160,15 @@ export default function Word() {
       <List className={classes.index}>
         <ListItem className={classes.indexbar}>
           <Typography variant="h5" color='textSecondary'>
-            zì xíng
+            jiàn kāng
       </Typography>
           <Typography variant="h3">
-            字形
+            健康
       </Typography>
         </ListItem>
         <ListItem className={classes.indexbar}>
           <Typography variant="h3" className={classes.foodtext}>
-            Font
+            Health
       </Typography>
         </ListItem>
       </List>
@@ -194,7 +192,7 @@ export default function Word() {
                   pause={false}
                   textAsButton={true}
                   displayText="Pronounce"
-                  text="字形" />
+                  text="健康" />
               </StyledTableCell>
               <StyledTableCell >Bookmark</StyledTableCell>
               <StyledTableCell >Share</StyledTableCell>
