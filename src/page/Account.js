@@ -15,6 +15,7 @@ import React from 'react';
 import user from '../assets/img/user.jpg'
 import { Link } from 'react-router-dom';
 import { removeToken } from '../utils/auth';
+import { name } from './Setting'
 import { userEmail } from '../auth/Login'
 
 const logout = history => {
@@ -46,12 +47,11 @@ const useStyles = makeStyles((theme) => ({
         width: theme.spacing(15),
         height: theme.spacing(15),
         marginLeft: '60%',
-        marginTop: '-125px',
+        marginTop: '-100px',
     },
     info: {
         color: '#000000',
         fontSize: '18px',
-        marginTop: '35px',
     },
     mainarea: {
         width: '90%',
@@ -105,7 +105,9 @@ const CustomizedInputBase = ({ history }) => {
                         <Box className={classes.title}>
                             <h style={{ fontSize: '2.5rem' }}><b>Account</b></h>
                             <div className={classes.info}>
-                            <h style={{ fontWeight: "bold", fontSize: '25px' }}>{userEmail}</h>
+                            <h style={{ fontWeight: "bold", fontSize: '25px', paddingBottom: '20px' }}>{userEmail}</h>
+                            <br></br>
+                            <h style={{fontWeight: 'bold', fontSize: '15px', paddingBottom: '20px'}}>Username: {name}</h>
                             </div>
                             <Avatar alt="User avatar" className={classes.large} src={user} />
                         </Box>
