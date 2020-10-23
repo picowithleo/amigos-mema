@@ -74,7 +74,7 @@ const speakerstyle = {
   text: {
     color: '#6D6D6D',
     opacity: '1',
-    fontSize: 12,
+    fontSize: 14,
     transition: 'font-size 0.2s, opacity 0.2s',
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     transitionDelay: '0.1s',
@@ -94,7 +94,7 @@ const speakerstyle = {
       color: '#6D6D6D',
       left: '6.5%',
       top: '56.1%',
-      // padding: '0px 31.985px 10px',
+      padding: '5px',
       position: 'absolute'
       // flex: 1 1 auto;
 
@@ -116,7 +116,7 @@ const speakerstyle = {
 
 const StyledTableCell = withStyles((theme) => ({
   body: {
-    fontSize: 12,
+    fontSize: 14,
     padding: 0,
     textAlign: "center",
     borderBottom: 0,
@@ -177,10 +177,10 @@ export default function Word() {
       <TableContainer style={{ marginBottom: "10px" }}>
         <Table aria-label="customized table">
           <TableBody>
-            <StyledTableRow>
-              <StyledTableCell ><IconButton><VolumeUpIcon /></IconButton></StyledTableCell>
-              <StyledTableCell ><IconButton> <BookmarkIcon /></IconButton></StyledTableCell>
-              <StyledTableCell ><IconButton> <ShareIcon /></IconButton></StyledTableCell>
+            <StyledTableRow >
+              <StyledTableCell ><IconButton><VolumeUpIcon fontSize="large" /></IconButton></StyledTableCell>
+              <StyledTableCell ><IconButton> <BookmarkIcon fontSize="large" /></IconButton></StyledTableCell>
+              <StyledTableCell ><IconButton> <ShareIcon fontSize="large" /></IconButton></StyledTableCell>
             </StyledTableRow>
             <StyledTableRow>
               <StyledTableCell>
