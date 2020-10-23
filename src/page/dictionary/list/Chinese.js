@@ -119,8 +119,8 @@ export default function Chinese() {
           </Box>
         </Box>
         <List className={classes.index}>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/font">
-            <ListItemText primary="zì xíng 字形" secondary="font" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/health">
+            <ListItemText primary="jiàn kāng 健康" secondary="health" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
@@ -183,8 +183,8 @@ export default function Chinese() {
               </Avatar>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/experience">
-            <ListItemText primary="jīng yàn 经验" secondary="experience" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/data">
+            <ListItemText primary="shù jù 数据" secondary="data" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />

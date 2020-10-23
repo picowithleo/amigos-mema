@@ -119,8 +119,8 @@ export default function Japanese() {
           </Box>
         </Box>
         <List className={classes.index}>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Japanese/font">
-            <ListItemText primary="Fonto フォント" secondary="font" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Japanese/film">
+            <ListItemText primary="Eiga 映画" secondary="film" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
@@ -143,8 +143,8 @@ export default function Japanese() {
               </Avatar>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Japanese/thanks">
-            <ListItemText primary="Arigatō ありがとう" secondary="thanks" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Japanese/family">
+            <ListItemText primary="Kazoku 家族" secondary="family" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
@@ -183,8 +183,8 @@ export default function Japanese() {
               </Avatar>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Japanese/experience">
-            <ListItemText primary="Keiken 経験" secondary="experience" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Japanese/health">
+            <ListItemText primary="Kenkō 健康" secondary="health" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />

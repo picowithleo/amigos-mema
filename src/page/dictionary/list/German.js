@@ -119,24 +119,24 @@ export default function German() {
           </Box>
         </Box>
         <List className={classes.index}>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/German/font">
-            <ListItemText primary="Schriftart" secondary="font" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/German/family">
+            <ListItemText primary="Familie" secondary="family" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
               </Avatar>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/German/food">
-            <ListItemText primary="Lebensmittel" secondary="food" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/German/money">
+            <ListItemText primary="Geld" secondary="money" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
               </Avatar>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/German/history">
-            <ListItemText primary="Geschichte" secondary="history" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/German/market">
+            <ListItemText primary="Markt" secondary="market" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
@@ -144,7 +144,7 @@ export default function German() {
             </ListItemAvatar>
           </ListItem>
           <ListItem className={classes.indexbar} component={Link} to="/learn/German/thanks">
-            <ListItemText primary="Vielen Dank" secondary="thanks" />
+            <ListItemText primary="danke" secondary="thanks" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
@@ -167,8 +167,8 @@ export default function German() {
               </Avatar>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/German/story">
-            <ListItemText primary="Geschichte" secondary="story" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/German/film">
+            <ListItemText primary="Film" secondary="film" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
@@ -183,8 +183,8 @@ export default function German() {
               </Avatar>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/German/experience">
-            <ListItemText primary="Erfahrung" secondary="experience" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/German/picture">
+            <ListItemText primary="Bild" secondary="picture" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />

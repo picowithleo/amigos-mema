@@ -152,8 +152,8 @@ export default function Italian() {
               </Avatar>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/product">
-            <ListItemText primary="Prodotto" secondary="product" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/hand">
+            <ListItemText primary="mano" secondary="hand" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
@@ -168,24 +168,24 @@ export default function Italian() {
               </Avatar>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/story">
-            <ListItemText primary="storia" secondary="story" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/piano">
+            <ListItemText primary="piano" secondary="piano" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
               </Avatar>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/weather">
-            <ListItemText primary="tempo metereologico" secondary="weather" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/book">
+            <ListItemText primary="libro" secondary="book" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
               </Avatar>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/experience">
-            <ListItemText primary="Esperienza" secondary="experience" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Italian/air">
+            <ListItemText primary="aria" secondary="air" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />

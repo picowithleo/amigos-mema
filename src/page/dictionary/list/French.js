@@ -119,8 +119,8 @@ export default function French() {
           </Box>
         </Box>
         <List className={classes.index}>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/French/font">
-            <ListItemText primary="Police de caractère" secondary="font" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/French/health">
+            <ListItemText primary="santé" secondary="health" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
@@ -160,7 +160,7 @@ export default function French() {
             </ListItemAvatar>
           </ListItem>
           <ListItem className={classes.indexbar} component={Link} to="/learn/French/web">
-            <ListItemText primary="la toile" secondary="web" />
+            <ListItemText primary="réseau" secondary="web" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
@@ -183,8 +183,8 @@ export default function French() {
               </Avatar>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/French/experience">
-            <ListItemText primary="expérience" secondary="experience" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/French/family">
+            <ListItemText primary="famille" secondary="family" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
@@ -192,7 +192,7 @@ export default function French() {
             </ListItemAvatar>
           </ListItem>
           <ListItem className={classes.indexbar} component={Link} to="/learn/French/job">
-            <ListItemText primary="emploi" secondary="job" />
+            <ListItemText primary="métier" secondary="job" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
