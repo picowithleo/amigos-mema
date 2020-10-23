@@ -108,23 +108,28 @@ export default function CustomizedInputBase() {
           <ListItem className={classes.langbox} component={Link} to="/learnpage1"
             style={{ backgroundImage: 'url(' + China + ')' }}>
           </ListItem>
-          <ListItem className={classes.langbox} style={{ backgroundImage: 'url(' + Japan + ')' }}>
+          <ListItem className={classes.langbox} component={Link} to="/learnpage3" 
+            style={{ backgroundImage: 'url(' + Japan + ')' }}>
           </ListItem>
         </List>
       </Box>
       <Box>
         <List className={classes.langlist}>
-          <ListItem className={classes.langbox} style={{ backgroundImage: 'url(' + Korea + ')' }}>
+          <ListItem className={classes.langbox} component={Link} to="/learnpage4" 
+            style={{ backgroundImage: 'url(' + Korea + ')' }}>
           </ListItem>
-          <ListItem className={classes.langbox} style={{ backgroundImage: 'url(' + France + ')' }}>
+          <ListItem className={classes.langbox} component={Link} to="/learnpage5" 
+            style={{ backgroundImage: 'url(' + France + ')' }}>
           </ListItem>
         </List>
       </Box>
       <Box>
         <List className={classes.langlist}>
-          <ListItem className={classes.langbox} style={{ backgroundImage: 'url(' + Italy + ')' }}>
+          <ListItem className={classes.langbox} component={Link} to="/learnpage6" 
+            style={{ backgroundImage: 'url(' + Italy + ')' }}>
           </ListItem>
-          <ListItem className={classes.langbox} style={{ backgroundImage: 'url(' + Germany + ')' }}>
+          <ListItem className={classes.langbox} component={Link} to="/learnpage7" 
+            style={{ backgroundImage: 'url(' + Germany + ')' }}>
           </ListItem>
         </List>
       </Box>

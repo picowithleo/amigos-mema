@@ -39,7 +39,7 @@ const Welcome = props => {
     return (
         <React.Fragment>
             <CssBaseline />
-            <Container maxWidth={false} className={classes.root} component={Link} to="/home" style={{ textDecoration: 'none', color: 'black' }}>
+            <Container maxWidth={false} className={classes.root} style={{ textDecoration: 'none', color: 'black' }}>
                 {/* <Typography /> */}
                 {/* <h4>Welcome to MeMa!</h4> */}
                 <div>
