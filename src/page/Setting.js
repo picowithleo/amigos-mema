@@ -51,6 +51,7 @@ class Setting extends React.Component {
   
       this.state = {
         email: "",
+        password: "",
         isLoading: false,
         username: "",
         country: "",
@@ -67,12 +68,12 @@ class Setting extends React.Component {
       };
   
       handlesubmit = () => {
-          const { username, country, language, proficiencyLevel } = this.state;
+          const { username, password,country, language, proficiencyLevel } = this.state;
           try {
             this.setState({ err: {}, isLoading: true });
-            users(userEmail, userPassword, username, country, language, proficiencyLevel, "aaa");
+            users(userEmail, password, username, country, language, proficiencyLevel, "aaa");
             const locationState = this.props.location.state;
-            const redirectTo = (locationState && locationState.from) || '/home';
+            const redirectTo = (locationState && locationState.from) || '/account';
             this.props.history.replace(redirectTo);
       
           } catch (error) {
@@ -145,6 +146,27 @@ class Setting extends React.Component {
                                 name="username"
                                 autoComplete="username"
                                 value={this.state.username}
+                                onChange={this.handleChange}/>
+                            </form>
+                        </ListItem>
+                        <ListItem style={{border: "1px solid #e0e0e0", fontSize: '2rem'}}>
+                            <ListItemIcon>
+                                <AssignmentIndIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Password" />
+                        </ListItem>
+                        <ListItem>
+                            <form style={{margin: '1px', width: '100%', marginLeft: '-1px',
+                            }} >
+                                <TextField
+                                variant="outlined"
+                                required
+                                fullWidth
+                                id="password"
+                                label="password"
+                                name="password"
+                                autoComplete="password"
+                                value={this.state.password}
                                 onChange={this.handleChange}/>
                             </form>
                         </ListItem>
