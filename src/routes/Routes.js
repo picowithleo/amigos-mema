@@ -21,8 +21,8 @@ import Italian from '../page/dictionary/list/Italian';
 import German from '../page/dictionary/list/German';
 
 import CFood from '../page/dictionary/language/chinese/Food';
-import CFont from '../page/dictionary/language/chinese/Font';
-import CExperience from '../page/dictionary/language/chinese/Experience';
+import CHealth from '../page/dictionary/language/chinese/Health';
+import CData from '../page/dictionary/language/chinese/Data';
 import CHistory from '../page/dictionary/language/chinese/History';
 import CJob from '../page/dictionary/language/chinese/Job';
 import CWeather from '../page/dictionary/language/chinese/Weather';
@@ -120,8 +120,8 @@ const Routes = () => {
       <ProtectedRoute exact path="/learn/German" component={German} />
 
       <ProtectedRoute exact path="/learn/Chinese/food" component={CFood} />
-      <ProtectedRoute exact path="/learn/Chinese/font" component={CFont} />
-      <ProtectedRoute exact path="/learn/Chinese/experience" component={CExperience} />
+      <ProtectedRoute exact path="/learn/Chinese/health" component={CHealth} />
+      <ProtectedRoute exact path="/learn/Chinese/data" component={CData} />
       <ProtectedRoute exact path="/learn/Chinese/history" component={CHistory} />
       <ProtectedRoute exact path="/learn/Chinese/job" component={CJob} />
       <ProtectedRoute exact path="/learn/Chinese/weather" component={CWeather} />
