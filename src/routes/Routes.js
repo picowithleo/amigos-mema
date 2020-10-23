@@ -54,8 +54,8 @@ import KThanks from '../page/dictionary/language/korean/Thanks';
 import KProduct from '../page/dictionary/language/korean/Product';
 
 import FFood from '../page/dictionary/language/french/Food';
-import FFont from '../page/dictionary/language/french/Font';
-import FExperience from '../page/dictionary/language/french/Experience';
+import FHealth from '../page/dictionary/language/french/Health';
+import FFamily from '../page/dictionary/language/french/Family';
 import FHistory from '../page/dictionary/language/french/History';
 import FJob from '../page/dictionary/language/french/Job';
 import FWeather from '../page/dictionary/language/french/Weather';
@@ -154,8 +154,8 @@ const Routes = () => {
       <ProtectedRoute exact path="/learn/Korean/product" component={KProduct} />
 
       <ProtectedRoute exact path="/learn/French/food" component={FFood} />
-      <ProtectedRoute exact path="/learn/French/font" component={FFont} />
-      <ProtectedRoute exact path="/learn/French/experience" component={FExperience} />
+      <ProtectedRoute exact path="/learn/French/health" component={FHealth} />
+      <ProtectedRoute exact path="/learn/French/family" component={FFamily} />
       <ProtectedRoute exact path="/learn/French/history" component={FHistory} />
       <ProtectedRoute exact path="/learn/French/job" component={FJob} />
       <ProtectedRoute exact path="/learn/French/weather" component={FWeather} />
