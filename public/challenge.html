@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style1.css">
+    <script defer src="script.js"></script>
+    <title></title>
+</head>
+
+<body class="body">
+
+    <div class="box">
+
+        <div class="block content">
+
+            <div class="wrapper">
+
+                <form id='result' class="hide" >
+                    <div class="SP-box">
+                        <div class="modalText">Congratulation!</div>
+                        <div class="modalText1">Right answers:</div>
+
+    
+                        <div class="resText"><span id="right-answers"> xxx </span> of <span id="all-questions">5 </span>
+                            (<span id="answerpct"></span>%)</div>
+                    </div>
+                </form>
+
+                <div id="question-box" class="hide">
+                    <div class="questionBox">Question <span id="current-question"></span> of <span
+                            id="all-questions2"></span></div>
+                    <div id="question"></div>
+                    <div class="header">
+
+                        <form id="frm">
+                            Time Left：<div id="time"></div>
+                        </form>
+
+                        <div onload="calTime()">
+
+                            <form name="form1">
+                            </form>
+
+                        </div>
+
+                    </div>
+                    <div id="answerBtns">
+                        <button class="btn">Answer 1</button>
+                        <button class="btn">Answer 2</button>
+                        <button class="btn">Answer 3</button>
+                        <button class="btn">Answer 4</button>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button id="start-btn" class="start-btn">Ready</button>
+                    <button id="next-btn" class="next-btn hide">Next</button>
+                    <button id="back-btn" class="back-btn">Back</button> 
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

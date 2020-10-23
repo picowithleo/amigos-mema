@@ -10,6 +10,7 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const useStyles = makeStyles((theme) => ({
 
     tittle: {
@@ -33,17 +34,24 @@ const useStyles = makeStyles((theme) => ({
     text1: {
         color: "grey",
         fontSize: "20px",
-        padding: "15px",
-        textAlign: "left"
+        padding: "45px",
+        textAlign: "left",
+ 
     },
     button1: {
-        position: 'relative',
-        width: '40%',
-        marginTop: "200px",
-        marginRight: "-5px",
-        height: "80px",
+        position:"relative",
+        color:'white',
+        
         backgroundColor:'#8bc38c',
-        fontSize: "20px",
+        fontSize: "30px",
+        textDecoration:'none',
+        borderRadius:'10px',
+        padding:'20px ' ,
+        paddingLeft:'35px',
+        paddingRight:'35px',
+        fontWeight:'bold'
+       
+        
     }
 
 }));
@@ -79,7 +87,10 @@ export default function Discover1() {
             </Box>   
             
 
-            <Button variant="outlined" className={classes.button1} component={Link} to="/Discover2">Start</Button>
+            {/* <Button variant="outlined" className={classes.button1} component={Link} to={"/challenge.html"}>Start</Button> */}
+            <a  className={classes.button1} href= "/challenge.html">  
+                start
+            </a>
 
         </List>
 
