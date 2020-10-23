@@ -1,6 +1,5 @@
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import { makeStyles } from '@material-ui/core/styles';
@@ -9,7 +8,6 @@ import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 
 const useStyles = makeStyles((theme) => ({
 
@@ -23,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
     appbar: {
         position: 'relative',
-        backgroundColor:'#8bc38c',
+        backgroundColor: '#8bc38c',
         marginTop: '-8px',
     },
     text: {
@@ -36,22 +34,22 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "20px",
         padding: "45px",
         textAlign: "left",
- 
+
     },
     button1: {
-        position:"relative",
-        color:'white',
-        
-        backgroundColor:'#8bc38c',
+        position: "relative",
+        color: 'white',
+
+        backgroundColor: '#8bc38c',
         fontSize: "30px",
-        textDecoration:'none',
-        borderRadius:'10px',
-        padding:'20px ' ,
-        paddingLeft:'35px',
-        paddingRight:'35px',
-        fontWeight:'bold'
-       
-        
+        textDecoration: 'none',
+        borderRadius: '10px',
+        padding: '20px ',
+        paddingLeft: '35px',
+        paddingRight: '35px',
+        fontWeight: 'bold'
+
+
     }
 
 }));
@@ -80,15 +78,15 @@ export default function Discover1() {
 
             <Box className={classes.text1}>
                 A word in your "My Words" will appear on the screen. Using the keyboard, type the English translation
-                    of the word on the screen.
+                of the word on the screen.
             </Box>
             <Box className={classes.text1}>
                 Translate as many words as you can in the 1 minute time limit!
-            </Box>   
-            
+            </Box>
+
 
             {/* <Button variant="outlined" className={classes.button1} component={Link} to={"/challenge.html"}>Start</Button> */}
-            <a  className={classes.button1} href= "/challenge.html">  
+            <a className={classes.button1} href="/challenge.html">
                 start
             </a>
 
