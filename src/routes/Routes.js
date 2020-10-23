@@ -35,15 +35,15 @@ import GProduct from '../page/dictionary/language/german/Product';
 import GThanks from '../page/dictionary/language/german/Thanks';
 import GWeather from '../page/dictionary/language/german/Weather';
 import GWeb from '../page/dictionary/language/german/Web';
-import IExperience from '../page/dictionary/language/italian/Experience';
+import IAir from '../page/dictionary/language/italian/Air';
+import IBook from '../page/dictionary/language/italian/Book';
 import IFont from '../page/dictionary/language/italian/Font';
 import IFood from '../page/dictionary/language/italian/Food';
+import IHand from '../page/dictionary/language/italian/Hand';
 import IHistory from '../page/dictionary/language/italian/History';
 import IJob from '../page/dictionary/language/italian/Job';
-import IProduct from '../page/dictionary/language/italian/Product';
-import IStory from '../page/dictionary/language/italian/Story';
+import IPiano from '../page/dictionary/language/italian/Piano';
 import IThanks from '../page/dictionary/language/italian/Thanks';
-import IWeather from '../page/dictionary/language/italian/Weather';
 import IWeb from '../page/dictionary/language/italian/Web';
 import JExperience from '../page/dictionary/language/japanese/Experience';
 import JFont from '../page/dictionary/language/japanese/Font';
@@ -177,14 +177,14 @@ const Routes = () => {
 
       <ProtectedRoute exact path="/learn/Italian/food" component={IFood} />
       <ProtectedRoute exact path="/learn/Italian/font" component={IFont} />
-      <ProtectedRoute exact path="/learn/Italian/experience" component={IExperience} />
+      <ProtectedRoute exact path="/learn/Italian/air" component={IAir} />
       <ProtectedRoute exact path="/learn/Italian/history" component={IHistory} />
       <ProtectedRoute exact path="/learn/Italian/job" component={IJob} />
-      <ProtectedRoute exact path="/learn/Italian/weather" component={IWeather} />
+      <ProtectedRoute exact path="/learn/Italian/book" component={IBook} />
       <ProtectedRoute exact path="/learn/Italian/web" component={IWeb} />
-      <ProtectedRoute exact path="/learn/Italian/story" component={IStory} />
+      <ProtectedRoute exact path="/learn/Italian/piano" component={IPiano} />
       <ProtectedRoute exact path="/learn/Italian/thanks" component={IThanks} />
-      <ProtectedRoute exact path="/learn/Italian/product" component={IProduct} />
+      <ProtectedRoute exact path="/learn/Italian/hand" component={IHand} />
 
       {/* Discover page related */}
       <ProtectedRoute exact path="/discover" component={Discover} />
