@@ -1,4 +1,4 @@
-import { post } from './axios';
+import { post,put } from './axios';
 
 const LOGIN_URL = '/api/auth';
 const REGISTER_URL = "/api/auths";
@@ -57,7 +57,7 @@ export const users = (email, password, username,
     language,
     proficiencyLevel,
     avatar) => {
-    return post(USER_URL, {
+    return put(USER_URL, {
         email,
         password,
         username,

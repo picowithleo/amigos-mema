@@ -12,10 +12,10 @@ import InfoIcon from '@material-ui/icons/Info';
 import RateReviewIcon from '@material-ui/icons/RateReview';
 import SettingsIcon from '@material-ui/icons/Settings';
 import React from 'react';
+import user from '../assets/img/user.jpg'
 import { Link } from 'react-router-dom';
-import user from '../assets/img/user.jpg';
 import { removeToken } from '../utils/auth';
-
+import { userEmail } from '../auth/Login'
 
 const logout = history => {
 	removeToken();
@@ -105,9 +105,7 @@ const CustomizedInputBase = ({ history }) => {
                         <Box className={classes.title}>
                             <h style={{ fontSize: '2.5rem' }}><b>Account</b></h>
                             <div className={classes.info}>
-                                <h style={{ fontWeight: "bold", fontSize: '25px' }}>Frank Baker</h>
-                                <br></br>
-                                <h>Joined on July 2020</h>
+                            <h style={{ fontWeight: "bold", fontSize: '25px' }}>{userEmail}</h>
                             </div>
                             <Avatar alt="User avatar" className={classes.large} src={user} />
                         </Box>
