@@ -45,14 +45,14 @@ import IJob from '../page/dictionary/language/italian/Job';
 import IPiano from '../page/dictionary/language/italian/Piano';
 import IThanks from '../page/dictionary/language/italian/Thanks';
 import IWeb from '../page/dictionary/language/italian/Web';
-import JExperience from '../page/dictionary/language/japanese/Experience';
-import JFont from '../page/dictionary/language/japanese/Font';
+import JHealth from '../page/dictionary/language/japanese/Health';
+import JFilm from '../page/dictionary/language/japanese/Film';
 import JFood from '../page/dictionary/language/japanese/Food';
 import JHistory from '../page/dictionary/language/japanese/History';
 import JJob from '../page/dictionary/language/japanese/Job';
 import JProduct from '../page/dictionary/language/japanese/Product';
 import JStory from '../page/dictionary/language/japanese/Story';
-import JThanks from '../page/dictionary/language/japanese/Thanks';
+import JFamily from '../page/dictionary/language/japanese/Family';
 import JWeather from '../page/dictionary/language/japanese/Weather';
 import JWeb from '../page/dictionary/language/japanese/Web';
 import KExperience from '../page/dictionary/language/korean/Experience';
@@ -131,14 +131,14 @@ const Routes = () => {
       <ProtectedRoute exact path="/learn/Chinese/product" component={CProduct} />
 
       <ProtectedRoute exact path="/learn/Japanese/food" component={JFood} />
-      <ProtectedRoute exact path="/learn/Japanese/font" component={JFont} />
-      <ProtectedRoute exact path="/learn/Japanese/experience" component={JExperience} />
+      <ProtectedRoute exact path="/learn/Japanese/film" component={JFilm} />
+      <ProtectedRoute exact path="/learn/Japanese/health" component={JHealth} />
       <ProtectedRoute exact path="/learn/Japanese/history" component={JHistory} />
       <ProtectedRoute exact path="/learn/Japanese/job" component={JJob} />
       <ProtectedRoute exact path="/learn/Japanese/weather" component={JWeather} />
       <ProtectedRoute exact path="/learn/Japanese/web" component={JWeb} />
       <ProtectedRoute exact path="/learn/Japanese/story" component={JStory} />
-      <ProtectedRoute exact path="/learn/Japanese/thanks" component={JThanks} />
+      <ProtectedRoute exact path="/learn/Japanese/family" component={JFamily} />
       <ProtectedRoute exact path="/learn/Japanese/product" component={JProduct} />
 
 
