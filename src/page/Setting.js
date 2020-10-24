@@ -134,7 +134,7 @@ class Setting extends React.Component {
                             <ListItemIcon>
                                 <AssignmentIndIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Name" />
+                            <ListItemText primary="Username" />
                         </ListItem>
                         <ListItem>
                             <form style={{margin: '1px', width: '100%', marginLeft: '-1px',
