@@ -19,7 +19,8 @@ import { removeToken } from '../utils/auth';
 
 const logout = history => {
 	removeToken();
-	history.push('/login');
+    history.push('/login');
+    window.Kommunicate.logout();
 };
 
 
