@@ -1,0 +1,25 @@
+.appbar {
+    position: relative;
+    background-color:#8bc38c;
+}
+
+/* // 小黄人图标 */
+.memaicon {
+    position: relative;
+    margin-top: 80px;
+}
+/* // 需要翻译的文字背景 */
+.wordbackground {
+    position: relative;
+    margin-top: 30px;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 10px;
+
+}
+/* // 需要翻译的文字设置 */
+.instrction {
+    /* // position: 'relative'; */
+    font-size: 30px;
+
+}

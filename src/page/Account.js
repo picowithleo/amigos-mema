@@ -20,7 +20,8 @@ import { userEmail } from '../auth/Login'
 
 const logout = history => {
 	removeToken();
-	history.push('/login');
+    history.push('/login');
+    window.Kommunicate.logout();
 };
 
 

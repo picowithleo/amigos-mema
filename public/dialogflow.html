@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <title></title>
+</head>
+
+<body class="diabody">
+
+    <div class="box">
+        <div class="blocker">
+            Talk to MeMa
+            <!-- <img src="../src/assets/img/mema.jpg" alt="Mema Logo" class="mema_img"> -->
+        </div>
+        <div class="br"> </div>
+        <div class="wrapper">
+    
+        
+        <div class="header">
+            <df-messenger
+                chat-title="Talk-to-MeMa"
+                agent-id="0db72c18-e0d4-4ba7-9468-70f8909f8cb1"
+                language-code="en"
+            ></df-messenger>
+                
+            <iframe class="iframe"
+                width="414" 
+                height="550" 
+                allow="microphone;" 
+                src="https://console.dialogflow.com/api-client/demo/embedded/0db72c18-e0d4-4ba7-9468-70f8909f8cb1">
+            </iframe>
+           
+                
+
+        </div>
+
+        <button id="back-btn" class="back_btn-mema">Back</button> 
+
+
+    </div>
+    <script>
+        const backBtn =document.getElementById('back-btn');
+        backBtn.addEventListener('click', backpage );
+        function backpage(){
+            window.location.href="Mema"
+        }
+    </script>
+
+</body>
+
+</html>
