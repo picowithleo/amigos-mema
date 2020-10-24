@@ -127,8 +127,8 @@ export default function Learning() {
           </Box>
         </Box>
         <List className={classes.index}>
-          <ListItem className={classes.indexbar}>
-            <ListItemText primary="zì tǐ 字体" secondary="font" />
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/product">
+            <ListItemText primary="chǎn pǐn 产品" secondary="product" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
@@ -137,6 +137,30 @@ export default function Learning() {
           </ListItem>
           <ListItem className={classes.indexbar} component={Link} to="/learnpage2">
             <ListItemText primary="shí wù 食物" secondary="food" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/story">
+            <ListItemText primary="gù shì 故事" secondary="story" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className={classes.indexbar} component={Link} to="/learn/French/thanks">
+            <ListItemText primary="Merci" secondary="thanks" />
+            <ListItemAvatar>
+              <Avatar>
+                <ArrowForwardIosIcon />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+          <ListItem className={classes.indexbar} component={Link} to="/learn/French/family">
+            <ListItemText primary="famille" secondary="family" />
             <ListItemAvatar>
               <Avatar>
                 <ArrowForwardIosIcon />
