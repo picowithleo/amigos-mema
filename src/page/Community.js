@@ -1,7 +1,6 @@
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
-import InputBase from '@material-ui/core/InputBase';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
@@ -10,11 +9,9 @@ import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/sty
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import CloseIcon from '@material-ui/icons/Close';
-import SearchIcon from '@material-ui/icons/Search';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { userEmail } from '../auth/Login'
+import { userEmail } from '../auth/Login';
 
 const useStyles = makeStyles((theme) => ({
   search: {
@@ -67,6 +64,11 @@ const useStyles = makeStyles((theme) => ({
     border: "2px solid #9CCC9D",
     backgroundColor: 'white',
   },
+
+  youbar: {
+    border: "2px solid #9CCC9D",
+    backgroundColor: '#b2698c',
+  },
 }));
 
 const fontTheme = createMuiTheme({
@@ -91,7 +93,7 @@ export default function Community() {
         <Box className={classes.root}>
           <AppBar className={classes.appbar} >
             <Toolbar>
-              <IconButton edge="start" aria-label="ArrowBackIos" component={Link} to="/community">
+              <IconButton edge="start" aria-label="ArrowBackIos" component={Link} to="/discover">
                 <ArrowBackIosIcon />
               </IconButton>
               <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
@@ -99,89 +101,66 @@ export default function Community() {
              </Typography>
             </Toolbar>
           </AppBar>
-          <Box className={classes.searchbar}>
-            <List className={classes.searchbackground}>
-              <Box component="form" className={classes.search}>
-                <IconButton type="submit" className={classes.iconButton} aria-label="search">
-                  <SearchIcon />
-                </IconButton>
-                <InputBase
-                  className={classes.input}
-                  placeholder="Search"
-                  inputProps={{ 'aria-label': 'search' }}
-                />
-              </Box>
-            </List>
-            <IconButton className={classes.closeButton} aria-label="Close">
-              <CloseIcon />
-            </IconButton>
-          </Box>
         </Box>
         <List className={classes.index}>
-        <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/story">
-            <ListItemText primary= {userEmail + "(You)"} secondary="200 words" />
-            <ListItemAvatar>
-            <h2 style={{color:'black'}}>7</h2>
-            </ListItemAvatar>
-          </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/font">
+          <ListItem className={classes.indexbar} >
             <ListItemText primary="Anna" secondary="415 words" />
             <ListItemAvatar>
-              <h2 style={{color:'black'}}>1</h2>
+              <h2 style={{ color: 'black' }}>1</h2>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/food">
+          <ListItem className={classes.indexbar} >
             <ListItemText primary="Susan" secondary="351 words" />
             <ListItemAvatar>
-                <h2 style={{color:'black'}}>2</h2>
+              <h2 style={{ color: 'black' }}>2</h2>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/history">
+          <ListItem className={classes.indexbar} >
             <ListItemText primary="Tom" secondary="289 words" />
             <ListItemAvatar>
-            <h2 style={{color:'black'}}>3</h2>
+              <h2 style={{ color: 'black' }}>3</h2>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/thanks">
+          <ListItem className={classes.indexbar} >
             <ListItemText primary="Kim" secondary="256 words" />
             <ListItemAvatar>
-            <h2 style={{color:'black'}}>4</h2>
+              <h2 style={{ color: 'black' }}>4</h2>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/product">
+          <ListItem className={classes.indexbar}>
             <ListItemText primary="Rescal" secondary="241 words" />
             <ListItemAvatar>
-            <h2 style={{color:'black'}}>5</h2>
+              <h2 style={{ color: 'black' }}>5</h2>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/web">
+          <ListItem className={classes.indexbar} >
             <ListItemText primary="Pico" secondary="213 words" />
             <ListItemAvatar>
-            <h2 style={{color:'black'}}>6</h2>
+              <h2 style={{ color: 'black' }}>6</h2>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/story">
-            <ListItemText primary= {userEmail  + "(You)"} secondary="200" />
+          <ListItem className={classes.youbar} >
+            <ListItemText primary={userEmail + "(You)"} secondary="200" />
             <ListItemAvatar>
-            <h2 style={{color:'black'}}>7</h2>
+              <h2 style={{ color: 'black' }}>7</h2>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/weather">
+          <ListItem className={classes.indexbar} >
             <ListItemText primary="Lura" secondary="185 words" />
             <ListItemAvatar>
-            <h2 style={{color:'black'}}>8</h2>
+              <h2 style={{ color: 'black' }}>8</h2>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/experience">
+          <ListItem className={classes.indexbar} >
             <ListItemText primary="kewen" secondary="156 words" />
             <ListItemAvatar>
-            <h2 style={{color:'black'}}>9</h2>
+              <h2 style={{ color: 'black' }}>9</h2>
             </ListItemAvatar>
           </ListItem>
-          <ListItem className={classes.indexbar} component={Link} to="/learn/Chinese/job">
+          <ListItem className={classes.indexbar}>
             <ListItemText primary="Sona" secondary="142 words" />
             <ListItemAvatar>
-            <h2 style={{color:'black'}}>10</h2>
+              <h2 style={{ color: 'black' }}>10</h2>
             </ListItemAvatar>
           </ListItem>
         </List>
