@@ -81,7 +81,7 @@ export default function CustomizedInputBase() {
              
              <ListItem className={classes.content}>
                 <Button variant="outlined" className={classes.button}
-                    style={{ backgroundImage: 'url(' + community + ')' }}></Button>
+                    style={{ backgroundImage: 'url(' + community + ')' }} component={Link} to="/community"></Button>
              </ListItem>
             </List>
         </Box>

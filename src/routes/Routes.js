@@ -92,6 +92,7 @@ import Profile from '../page/Profile';
 import Rate from '../page/Rate';
 import Reviewpage from '../page/Reviewpage';
 import Setting from '../page/Setting';
+import Communnity from '../page/Community';
 import Translatepage from '../page/Translatepage';
 import ProtectedRoute from '../routes/ProtectedRoute';
 
@@ -191,6 +192,7 @@ const Routes = () => {
       <ProtectedRoute exact path="/Information" component={Information} />
       <ProtectedRoute exact path="/Discover1" component={Discover1} />
       <ProtectedRoute exact path="/Discover2" component={Discover2} />
+      <ProtectedRoute exact path="/community" component={Communnity} />
 
       {/* Account page related */}
       <ProtectedRoute exact path="/profile" component={Profile} />
