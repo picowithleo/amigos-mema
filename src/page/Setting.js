@@ -44,6 +44,8 @@ const fontTheme = createMuiTheme({
     },
 });
 
+export var name;
+
 class Setting extends React.Component {
 
     constructor(props) {
@@ -67,12 +69,13 @@ class Setting extends React.Component {
       };
   
       handlesubmit = () => {
-          const { username, country, language, proficiencyLevel } = this.state;
+          const { username,country, language, proficiencyLevel } = this.state;
           try {
             this.setState({ err: {}, isLoading: true });
             users(userEmail, userPassword, username, country, language, proficiencyLevel, "aaa");
+            name = username;
             const locationState = this.props.location.state;
-            const redirectTo = (locationState && locationState.from) || '/home';
+            const redirectTo = (locationState && locationState.from) || '/account';
             this.props.history.replace(redirectTo);
       
           } catch (error) {
