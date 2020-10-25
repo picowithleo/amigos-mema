@@ -118,7 +118,7 @@ const Welcome = props => {
                         id={id}
                         open={open}
                         anchorReference="anchorPosition"
-                        anchorPosition={{top:100, left:100}}
+                        anchorPosition={{top:100, left:140}}
                         onClose={handleClose}
                         anchorOrigin={{
                         vertical: 'center',
