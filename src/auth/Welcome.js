@@ -56,7 +56,8 @@ const useStyles = makeStyles((theme) => ({
         // bottom: '30%',
         width: '100%',
         backgroundColor: '#deefe0',
-        height: '100vh'
+        height: '100vh',
+        padding: '0'
     },
     img: {
         height: 500,
@@ -65,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'block',
         width: '100%',
       },
+
 }));
 const Welcome = props => {
 
@@ -97,7 +99,7 @@ const Welcome = props => {
     return (
         <React.Fragment>
             <CssBaseline />
-            <Container maxWidth={false} className={classes.root} style={{ textDecoration: 'none', color: 'black' }}>
+            <Container maxWidth={false} aria-describedby={id} variant="contained" onClick={handleClick} className={classes.root} style={{ textDecoration: 'none', color: 'black' }}>
                 {/* <Typography /> */}
                 {/* <h4>Welcome to MeMa!</h4> */}
                 <div>
@@ -111,9 +113,9 @@ const Welcome = props => {
                         Let's learn languages and improve memory together！</h4>
                 </div>
                 <div>
-                    <Button aria-describedby={id} variant="contained" onClick={handleClick} style={{backgroundColor:'#deefe0'}}>
+                {/* <Button aria-describedby={id} variant="contained" onClick={handleClick} style={{backgroundColor:'#deefe0'}}>
                         <b>Instructions</b>
-                    </Button>
+                    </Button> */}
                     <Popover
                         id={id}
                         open={open}
@@ -131,7 +133,7 @@ const Welcome = props => {
                     >
                         <div style={{position:'relative'}}>
                             <Paper square elevation={0} className={classes.header}>
-                                <Typography style={{textAlign:'center'}}>Instructions on main pages</Typography>
+                                <Typography style={{textAlign:'center', paddingTop: '12px',fontWeight: 'bold', height:'50px'}}>Instructions on main pages</Typography>
                             </Paper>
                             <img
                                 className={classes.img}
@@ -157,7 +159,7 @@ const Welcome = props => {
                         </div>
 
                         <div style={{backgroundColor:'#deefe0', margin:theme.spacing(1)}}>
-                            <Button href="/login" style={{left:'35%'}}>I'm Ready</Button>
+                            <Button href="/login" style={{width:"100%", height:"100%",fontWeight: 'bold'}}>Continue</Button>
                         </div>
 
                     </Popover>
