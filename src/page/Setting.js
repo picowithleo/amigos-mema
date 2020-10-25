@@ -1,7 +1,6 @@
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
-import Collapse from '@material-ui/core/Collapse';
 import FormControl from '@material-ui/core/FormControl';
 import IconButton from '@material-ui/core/IconButton';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -11,70 +10,21 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
-import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
-import EmailIcon from '@material-ui/icons/Email';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
 import GTranslateIcon from '@material-ui/icons/GTranslate';
 import PublicIcon from '@material-ui/icons/Public';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { users } from '../api/auth';
+import { errHandler } from "../utils/helper";
+import { userEmail, userPassword } from '../auth/Login'
 
-
-const useStyles = makeStyles((theme) => ({
-
-    root: {
-        position: 'relative',
-        bottom: '30%',
-
-    },
-    appbar: {
-        position: 'relative',
-        backgroundColor: '#8bc38c',
-        marginTop: '-8px',
-    },
-    index: {
-        width: '90%',
-        marginLeft: '5%',
-        marginTop: '10px',
-    },
-    indexrow: {
-        border: "1px solid #e0e0e0",
-        fontSize: '2rem',
-    },
-
-    input: {
-        '& > *': {
-            margin: theme.spacing(1),
-            width: '100%',
-            marginLeft: '-1px',
-        },
-    },
-
-    formControl: {
-        margin: theme.spacing(1),
-        // minWidth: 120,
-        width: '100%',
-        marginLeft: '-1px',
-    },
-    selectEmpty: {
-        marginTop: theme.spacing(2),
-    },
-
-    submit: {
-        width: '90%',
-        marginTop: '5px',
-        height: '43px',
-        fontSize: '1.5rem',
-    }
-
-}));
 
 const navTheme = createMuiTheme({
     palette: {
@@ -94,56 +44,80 @@ const fontTheme = createMuiTheme({
     },
 });
 
-export default function CustomizedInputBase() {
-    const classes = useStyles();
+export var name;
 
-    const [open, setOpen] = React.useState(false);
-    const handleClick = () => {
-        setOpen(!open);
-    };
+class Setting extends React.Component {
 
-    const [open2, setOpen2] = React.useState(false);
-    const handleClick2 = () => {
-        setOpen2(!open2);
-    };
+    constructor(props) {
+      super(props);
+  
+      this.state = {
+        email: "",
+        isLoading: false,
+        username: "",
+        country: "",
+        language: "",
+        proficiencyLevel: "",
+        avatar:""
+      };
+    }
+  
+      handleChange = event => {
+        const key = event.target.name;
+        const value = event.target.value;
+        this.setState({ [key]: value });
+      };
+  
+      handlesubmit = () => {
+          const { username,country, language, proficiencyLevel } = this.state;
+          try {
+            this.setState({ err: {}, isLoading: true });
+            users(userEmail, userPassword, username, country, language, proficiencyLevel, "aaa");
+            name = username;
+            const locationState = this.props.location.state;
+            const redirectTo = (locationState && locationState.from) || '/account';
+            this.props.history.replace(redirectTo);
+      
+          } catch (error) {
+            if (error.response) {
+              // The request was made and the server responded with a status code
+              // that falls out of the range of 2xx
+              console.log(error.response.data);
+              console.log(error.response.status);
+              console.log(error.response.headers);
+              const { message } = error.response.data;
+              this.setState({ err: errHandler(message), isLoading: false });
+            } else if (error.request) {
+              // The request was made but no response was received
+              // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+              // http.ClientRequest in node.js
+              console.log(error.request);
+              const { message } = error.request;
+              this.setState({ err: errHandler(message), isLoading: false });
+            } else {
+              // Something happened in setting up the request that triggered an Error
+          
+              const { message } = error.message;
+              this.setState({ err: errHandler(message), isLoading: false });
+      
+              // this.setState({ err: error.message })
+              console.log('Error', error.message);
+            }
+            console.log(error.config);
+      
+          }
+          this.setState({ isLoading: false });
+        };
 
-    const [open3, setOpen3] = React.useState(false);
-    const handleClick3 = () => {
-        setOpen3(!open3);
-    };
-
-    const [open4, setOpen4] = React.useState(false);
-    const handleClick4 = () => {
-        setOpen4(!open4);
-    };
-
-    const [open5, setOpen5] = React.useState(false);
-    const handleClick5 = () => {
-        setOpen5(!open5);
-    };
-
-    const [country, setcountry] = React.useState('');
-    const handleChange = (event) => {
-        setcountry(event.target.value);
-    };
-
-    const [language, setlang] = React.useState('');
-    const handleChange1 = (event) => {
-        setlang(event.target.value);
-    };
-
-    const [level, setlevel] = React.useState('');
-    const handleChange2 = (event) => {
-        setlevel(event.target.value);
-    };
-
+    render() {
     return (
         <ThemeProvider theme={fontTheme}>
             <List style={{ marginBottom: '15%' }}>
-                <Box className={classes.root}>
-                    <AppBar className={classes.appbar} >
+                <Box style={{position: 'relative', bottom: '30%'}}>
+                    <AppBar style={{position: 'relative', backgroundColor: '#8bc38c',
+                    marginTop: '-8px'}}>
                         <Toolbar>
-                            <IconButton edge="start" className={classes.menuButton}
+                            <IconButton edge="start"
                                 aria-label="ArrowBackIos" component={Link} to="/account">
                                 <ArrowBackIosIcon />
                             </IconButton>
@@ -154,104 +128,118 @@ export default function CustomizedInputBase() {
                     </AppBar>
                 </Box>
                 <Box>
-                    <List component="nav" aria-label="main mailbox folders" className={classes.index}>
-                        <ListItem button className={classes.indexrow} onClick={handleClick}>
+                    <List component="nav" aria-label="main mailbox folders" style={{width: '90%',
+                    marginLeft: '5%', marginTop: '10px'}}>
+                        <ListItem style={{border: "1px solid #e0e0e0", fontSize: '2rem'}}>
                             <ListItemIcon>
                                 <AssignmentIndIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Name" />
-                            {open ? <ExpandLess /> : <ExpandMore />}
+                            <ListItemText primary="Username" />
                         </ListItem>
-                        <Collapse in={open} timeout="auto" unmountOnExit>
-                            <form className={classes.input} noValidate autoComplete="off">
-                                <TextField id="filled-basic" label="Input your name" variant="filled" />
+                        <ListItem>
+                            <form style={{margin: '1px', width: '100%', marginLeft: '-1px',
+                            }} >
+                                <TextField
+                                variant="outlined"
+                                required
+                                fullWidth
+                                id="username"
+                                label="username"
+                                name="username"
+                                autoComplete="username"
+                                value={this.state.username}
+                                onChange={this.handleChange}/>
                             </form>
-                        </Collapse>
-                        <ListItem button className={classes.indexrow} onClick={handleClick2}>
-                            <ListItemIcon>
-                                <EmailIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Email" />
-                            {open2 ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
-                        <Collapse in={open2} timeout="auto" unmountOnExit>
-                            <form className={classes.input} noValidate autoComplete="off">
-                                <TextField id="filled-basic" label="Input your email" variant="filled" />
-                            </form>
-                        </Collapse>
-                        <ListItem button className={classes.indexrow} onClick={handleClick3}>
+                        <ListItem style={{border: "1px solid #e0e0e0", fontSize: '2rem'}}>
                             <ListItemIcon>
                                 <PublicIcon />
                             </ListItemIcon>
                             <ListItemText primary="Country" />
-                            {open3 ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
-                        <Collapse in={open3} timeout="auto" unmountOnExit>
-                            <FormControl variant="filled" className={classes.formControl}>
+                        <ListItem>
+                            <FormControl variant="filled" style={{margin: '1px',  width: '100%',
+                            marginLeft: '-1px',}}>
                                 <InputLabel id="demo-simple-select-filled-label">Select your country</InputLabel>
                                 <Select
-                                    labelId="demo-simple-select-filled-label"
-                                    id="demo-simple-select-filled"
-                                    value={country}
-                                    onChange={handleChange}
+                                    variant="outlined"
+                                    required
+                                    fullWidth
+                                    id="country"
+                                    label="country"
+                                    name="country"
+                                    autoComplete="country"
+                                    value={this.state.country}
+                                    onChange={this.handleChange}
                                 >
-                                    <MenuItem value={10}>Australia</MenuItem>
-                                    <MenuItem value={20}>China</MenuItem>
-                                    <MenuItem value={30}>New Zealand</MenuItem>
+                                    <MenuItem value={"Australia"}>Australia</MenuItem>
+                                    <MenuItem value={"China"}>China</MenuItem>
+                                    <MenuItem value={"New Zealand"}>New Zealand</MenuItem>
                                 </Select>
                             </FormControl>
-                        </Collapse>
-                        <ListItem button className={classes.indexrow} onClick={handleClick4}>
+                        </ListItem>
+                        <ListItem style={{border: "1px solid #e0e0e0", fontSize: '2rem'}}>
                             <ListItemIcon>
                                 <GTranslateIcon />
                             </ListItemIcon>
                             <ListItemText primary="Language" />
-                            {open4 ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
-                        <Collapse in={open4} timeout="auto" unmountOnExit>
-                            <FormControl variant="filled" className={classes.formControl}>
+                        <ListItem>
+                            <FormControl variant="filled" style={{margin: '1px', width: '100%',
+                            marginLeft: '-1px',}}>
                                 <InputLabel id="demo-simple-select-filled-label">Select your language</InputLabel>
                                 <Select
-                                    labelId="demo-simple-select-filled-label"
-                                    id="demo-simple-select-filled"
-                                    value={language}
-                                    onChange={handleChange1}
+                                    variant="outlined"
+                                    required
+                                    fullWidth
+                                    id="language"
+                                    label="language"
+                                    name="language"
+                                    autoComplete="language"
+                                    value={this.state.language}
+                                    onChange={this.handleChange}
                                 >
-                                    <MenuItem value={10}>Chinese</MenuItem>
-                                    <MenuItem value={20}>English</MenuItem>
-                                    <MenuItem value={30}>Korean</MenuItem>
-                                    <MenuItem value={40}>Japanese</MenuItem>
+                                    <MenuItem value={"Chinese"}>Chinese</MenuItem>
+                                    <MenuItem value={"English"}>English</MenuItem>
+                                    <MenuItem value={"Korean"}>Korean</MenuItem>
+                                    <MenuItem value={"Japanese"}>Japanese</MenuItem>
                                 </Select>
                             </FormControl>
-                        </Collapse>
-                        <ListItem button className={classes.indexrow} onClick={handleClick5}>
+                        </ListItem>
+                        <ListItem style={{border: "1px solid #e0e0e0", fontSize: '2rem'}}>
                             <ListItemIcon>
                                 <AssessmentIcon />
                             </ListItemIcon>
                             <ListItemText primary="Proficiency level" />
-                            {open5 ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
-                        <Collapse in={open5} timeout="auto" unmountOnExit>
-                            <FormControl variant="filled" className={classes.formControl}>
+                        <ListItem>
+                            <FormControl variant="filled" style={{margin: '1px', width: '100%',
+                            marginLeft: '-1px',}}>
                                 <InputLabel id="demo-simple-select-filled-label">Select your level</InputLabel>
                                 <Select
-                                    labelId="demo-simple-select-filled-label"
-                                    id="demo-simple-select-filled"
-                                    value={level}
-                                    onChange={handleChange2}
+                                    variant="outlined"
+                                    required
+                                    fullWidth
+                                    id= "proficiencyLevel"
+                                    label="proficiencyLevel"
+                                    name="proficiencyLevel"
+                                    autoComplete="proficiencyLevel"
+                                    value={this.state.proficiencyLevel}
+                                    onChange={this.handleChange}
                                 >
-                                    <MenuItem value={10}>Level 1</MenuItem>
-                                    <MenuItem value={20}>Level 2</MenuItem>
-                                    <MenuItem value={30}>Level 3</MenuItem>
-                                    <MenuItem value={40}>Level 4</MenuItem>
-                                    <MenuItem value={50}>Level 5</MenuItem>
+                                    <MenuItem value={"Level 1"}>Level 1</MenuItem>
+                                    <MenuItem value={"Level 2"}>Level 2</MenuItem>
+                                    <MenuItem value={"Level 3"}>Level 3</MenuItem>
+                                    <MenuItem value={"Level 4"}>Level 4</MenuItem>
+                                    <MenuItem value={"Level 5"}>Level 5</MenuItem>
                                 </Select>
                             </FormControl>
-                        </Collapse>
+                        </ListItem>
                     </List>
                 </Box>
                 <ThemeProvider theme={navTheme}>
-                    <Button variant="contained" color="primary" disableElevation className={classes.submit} >
+                    <Button variant="contained" color="primary" disableElevation style={{width: '90%',
+                    marginTop: '5px', height: '43px', fontSize: '1.5rem',}} onClick={this.handlesubmit}>
                         Submit
                 </Button>
                 </ThemeProvider>
@@ -259,4 +247,7 @@ export default function CustomizedInputBase() {
         </ThemeProvider>
 
     );
+    }
 }
+
+export default Setting;

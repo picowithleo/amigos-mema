@@ -8,7 +8,9 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import MicIcon from '@material-ui/icons/Mic';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TalktoMema from '../groupByFeature/component/chat';
 import '../page/Home.css';
+import '../groupByFeature/component/chat.css';
 
 const useStyles = makeStyles((theme) => ({
     // mema 导航
@@ -55,6 +57,7 @@ export default function CustomizedInputBase() {
                     </Typography>
                 </Toolbar>
             </AppBar>
+            <TalktoMema className="kommunicate-custom-iframe"/>
             <div>
                 <Typography className={classes.memaicon}>
                     <img className="mema" alt="" component={Link} to="/Mema" />
@@ -62,12 +65,18 @@ export default function CustomizedInputBase() {
             </div>
             <div className={classes.wordbackground}>
                 <text className={classes.instrction} >
-                    Tap on the button below and talk to MeMa !
+                Let's have a conversation with MeMa
                 </text>
             </div>
             <div>
-                <IconButton type="speech" className={classes.micbutton} aria-label="speech" component={Link} to="/Translatepage" >
+                <IconButton type="speech" 
+                    className={classes.micbutton} 
+                    aria-label="speech" 
+                    href="/dialogflow.html"
+                    // component={Link} to="/Translatepage" 
+                >
                     <MicIcon style={{ fontSize: 40 }} />
+            
                 </IconButton>
             </div>
         </Box>
