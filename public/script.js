@@ -181,7 +181,7 @@ const questions = [
     question: 'how to say "history" in Chinese??',
     answers: [
       { text: 'tiān qì 天气 ', correct: false },
-      { text: 'gōng zuò 工作', correct: true },
+      { text: 'gōng zuò 工作', correct: false },
       { text: 'lì shǐ 历史', correct: true },
       { text: 'wǎng lù 网路', correct: false },
     ]
