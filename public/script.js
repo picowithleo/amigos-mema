@@ -138,58 +138,111 @@ function restart(element) {
 
 const questions = [
   {
-    question: 'how to say "apple" in Chinese?',
+    question: 'how to say "health" in Chinese?',
     answers: [
-      { text: 'ping guo ', correct: true },
-      { text: 'xiang jiao  ', correct: false },
-      { text: 'xi gua', correct: false },
-      { text: ' niu you guo ', correct: false },
+      { text: 'jian kang 健康', correct: true },
+      { text: 'shi wu 食物  ', correct: false },
+      { text: 'li shi 历史', correct: false },
+      { text: 'xie xie 谢谢', correct: false },
     ]
   },
 
     {
-    question: 'how to say "watermelon" in Chinese??',
+    question: 'how to say "food" in Chinese??',
     answers: [
-      { text: 'ping guo  ', correct: false },
-      { text: 'xiang jiao ', correct: false },
-      { text: 'ju zi ', correct: false },
-      { text: 'xi gua ', correct: true },
+      { text: ' weather 天气 ', correct: false },
+      { text: 'gu shi 故事 ', correct: false },
+      { text: 'chan pin 产品', correct: false },
+      { text: 'shi wu 食物', correct: true },
     ]
   },
 
   {
-    question: 'how to say "orange" in Chinese??',
+    question: 'how to say "job" in Chinese??',
     answers: [
-      { text: 'ping guo ', correct: false },
-      { text: 'xiang jiao  ', correct: false },
-      { text: 'ju zi ', correct: true },
-      { text: 'xi gua ', correct: false },
+      { text: ' weather 天气 ', correct: false },
+      { text: 'gong zuo  工作', correct: true },
+      { text: 'chan pin 产品', correct: false },
+      { text: 'shi wu 食物', correct: false },
     ]
   },
   
   {
-    question: 'how to say "avocado" in Chinese??',
+    question: 'how to say "data" in Chinese??',
     answers: [
-      { text: 'ping guo', correct: false },
-      { text: 'xiang jiao ', correct: false },
-      { text: 'niu you guo ', correct: true },
-      { text: 'xi gua ', correct: false },
+      { text: 'li shi 历史', correct: false },
+      { text: 'xie xie 谢谢', correct: false },
+      { text: ' weather 天气 ', correct: false },
+      { text: 'shuju 数据', correct: true },
     ]
   },
   
   {
-    question: 'how to say "mango" in Chinese??',
+    question: 'how to say "history" in Chinese??',
     answers: [
-      { text: 'ping guo ', correct: false },
-      { text: 'niu you guo ', correct: false },
-      { text: 'mang guo', correct: true },
-      { text: 'xi gua ', correct: false },
+      { text: ' tian qi 天气 ', correct: false },
+      { text: 'gong zuo  工作', correct: true },
+      { text: 'li shi 历史', correct: true },
+      { text: 'wang luo 网络 ', correct: false },
     ]
   },
+////////////////////////////////////////////////////////////////////////////////////////
+  //japanese question
+  // {
+  //   question: 'how to say "film" in Japanese??',
+  //   answers: [
+  //     { text: ' eiga  映画 ', correct: true },
+  //     { text: 'shokumotsu 食物', correct: false },
+  //     { text: 'Rekishi 歷史', correct: false },
+  //     { text: 'kazoku 家族 ', correct: false },
+  //   ]
+  // },
+
+  // {
+  //   question: 'how to say "shokumotsu" in  Japanese??',
+  //   answers: [
+  //     { text: ' shokumotsu 食物', correct: true },
+  //     { text: 'Seihin 製品', correct: false },
+  //     { text: 'Rekishi 歷史', correct: false },
+  //     { text: 'kazoku 家族 ', correct: false },
+  //   ]
+  // },
+
+  // {
+  //   question: 'how to say "story" in  Japanese??',
+  //   answers: [
+  //     { text: ' shokumotsu 食物', correct: false},
+  //     { text: 'Seihin 製品', correct: false },
+  //     { text: 'Rekishi 歷史', correct: false },
+  //     { text: 'monogatari 物语' , correct: true},
 
 
+  //   ]
+  // },
 
+  // {
+  //   question: 'how to say "health" in  Japanese??',
+  //   answers: [
+  //     { text: ' shokumotsu 食物', correct: false},
+  //     { text: 'Seihin 製品', correct: false },
+  //     { text: 'monogatari 物语', correct: false },
+  //     { text: 'kenko 健康' , correct: true},
 
+      
+  //   ]
+  // },
+
+  // {
+  //   question: 'how to say "weather" in  Japanese??',
+  //   answers: [
+  //     { text: ' shokumotsu 食物', correct: false},
+  //     { text: 'Seihin 製品', correct: false },
+  //     { text: 'monogatari 物语', correct: false },
+  //     { text: 'tenki 天氣' , correct: true},
+
+      
+  //   ]
+  // },
 ]
 
 
@@ -210,7 +263,7 @@ const questions = [
                 window.clearInterval(timeObj);
                 return;
             }
-            var t = Math.floor(times/60) +"min"+times%60+"sec"
+            var t = Math.floor(times/60) +" min "+times%60+" sec "
             timeDiv.innerHTML = t;
             times --;
         }
