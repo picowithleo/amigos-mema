@@ -18,16 +18,25 @@
 
             <div class="wrapper">
 
-                <form id='result' class="hide" >
+                <form id='result' class="hide">
                     <div class="SP-box">
-                        <div class="modalText">Congratulation!</div>
+                        <div class="modalText">Result</div>
+                    
+                        <img class="conpic"
+                        src="picture.png" />
                         <div class="modalText1">Right answers:</div>
+                    
+                      
 
-    
                         <div class="resText"><span id="right-answers"> xxx </span> of <span id="all-questions">5 </span>
                             (<span id="answerpct"></span>%)</div>
+
+                            <div class="modalText2">Do you want one more game? </div>
                     </div>
+      
+
                 </form>
+      
 
                 <div id="question-box" class="hide">
                     <div class="questionBox">Question <span id="current-question"></span> of <span
@@ -36,15 +45,17 @@
                     <div class="header">
 
                         <form id="frm">
-                            Time Left：<div id="time"></div>
+                            <P id=timetext>Time Left: </P>
+                            <div id="time"></div>
+                            
                         </form>
 
-                        <div onload="calTime()">
+                        <!-- <div onload="calTime()">
 
                             <form name="form1">
                             </form>
 
-                        </div>
+                        </div> -->
 
                     </div>
                     <div id="answerBtns">
@@ -57,7 +68,7 @@
                 <div class="buttons">
                     <button id="start-btn" class="start-btn">Ready</button>
                     <button id="next-btn" class="next-btn hide">Next</button>
-                    <button id="back-btn" class="back-btn">Back</button> 
+                    <button id="back-btn" class="back-btn">Back</button>
                 </div>
 
             </div>
