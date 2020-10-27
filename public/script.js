@@ -1,7 +1,7 @@
 const startBtn = document.getElementById('start-btn');
 const nextBtn = document.getElementById('next-btn');
 const questionbox = document.getElementById('question-box');
-const backBtn =document.getElementById('back-btn')
+const backBtn = document.getElementById('back-btn')
 const questionText = document.getElementById('question');
 const answerBtn = document.getElementById('answerBtns');
 const result = document.getElementById('result');
@@ -15,30 +15,30 @@ const result = document.getElementById('result');
 startBtn.addEventListener('click', ChallengeStart);
 
 nextBtn.addEventListener('click', () => {
-  document.getElementById('answerBtns'); 
+  document.getElementById('answerBtns');
 
-  currentQuestionIndex++; 
+  currentQuestionIndex++;
   NextChallenge();
 
-  currentQuestion++; 
+  currentQuestion++;
   document.getElementById('current-question').innerHTML = currentQuestion;
 })
 
-backBtn.addEventListener('click', backpage );
+backBtn.addEventListener('click', backpage);
 
-function backpage(){
-  window.location.href="Discover1"
+function backpage() {
+  window.location.href = "Discover1"
 }
 
 function ChallengeStart() {
- 
+
 
   startBtn.classList.add('hide');
   result.classList.add('hide');
   backBtn.classList.add('hide');
- 
- 
-  ramdomQuestions = questions.sort (() => Math.random() -0.5) 
+
+
+  ramdomQuestions = questions.sort(() => Math.random() - 0.5)
   currentQuestionIndex = 0;
   questionbox.classList.remove('hide');
   NextChallenge();
@@ -50,26 +50,26 @@ function ChallengeStart() {
   countRightAnswers = 0;
 
   document.getElementById('all-questions2').innerHTML = questions.length;
-  
+
 }
 
 
 function NextChallenge() {
-  resetState(); 
+  resetState();
   showQuestion(ramdomQuestions[currentQuestionIndex])
 }
 
 function showQuestion(question) {
-  questionText.innerText = question.question; 
+  questionText.innerText = question.question;
   question.answers.forEach(answer => {
-    const button = document.createElement('button'); 
-    button.innerText = answer.text;  
-    button.classList.add('btn'); 
-    if (answer.correct){ 
+    const button = document.createElement('button');
+    button.innerText = answer.text;
+    button.classList.add('btn');
+    if (answer.correct) {
       button.dataset.correct = answer.correct;
     }
     button.addEventListener('click', selectAnswer);
-    answerBtn.appendChild(button); 
+    answerBtn.appendChild(button);
   });
 }
 
@@ -93,15 +93,15 @@ function selectAnswer(e) {
   } else {
     result.classList.remove('hide');
     questionbox.classList.add('hide');
-  
-    startBtn.innerText = 'Repeat'; 
-    startBtn.classList.remove('hide'); 
-  
 
-    backBtn.innerText='Back';
+    startBtn.innerText = 'Repeat';
+    startBtn.classList.remove('hide');
+
+
+    backBtn.innerText = 'Back';
     backBtn.classList.remove('hide');
 
-   
+
 
 
   }
@@ -112,15 +112,15 @@ function selectAnswer(e) {
   }
 
   //5. to show the score inside <span>
-  document.getElementById('right-answers').innerHTML = countRightAnswers; 
-  document.getElementById('answerpct').innerHTML = ((100 * countRightAnswers)/questions.length).toFixed(0);
+  document.getElementById('right-answers').innerHTML = countRightAnswers;
+  document.getElementById('answerpct').innerHTML = ((100 * countRightAnswers) / questions.length).toFixed(0);
 
 
 
 }
 
 
-function TickOrCross(element, correct) { 
+function TickOrCross(element, correct) {
   restart(element)
   if (correct) {
     element.classList.add('correct');
@@ -138,55 +138,55 @@ function restart(element) {
 
 const questions = [
   {
-    question: 'how to say "health" in Chinese?',
+    question: 'How to say "health" in Chinese?',
     answers: [
-      { text: 'jian kang 健康', correct: true },
-      { text: 'shi wu 食物  ', correct: false },
-      { text: 'li shi 历史', correct: false },
-      { text: 'xie xie 谢谢', correct: false },
-    ]
-  },
-
-    {
-    question: 'how to say "food" in Chinese??',
-    answers: [
-      { text: ' weather 天气 ', correct: false },
-      { text: 'gu shi 故事 ', correct: false },
-      { text: 'chan pin 产品', correct: false },
-      { text: 'shi wu 食物', correct: true },
+      { text: 'jiàn kāng 健康', correct: true },
+      { text: 'shí wù 食物', correct: false },
+      { text: 'lì shǐ 历史', correct: false },
+      { text: 'xiè xiè 谢谢', correct: false },
     ]
   },
 
   {
-    question: 'how to say "job" in Chinese??',
+    question: 'How to say "food" in Chinese??',
     answers: [
-      { text: ' weather 天气 ', correct: false },
-      { text: 'gong zuo  工作', correct: true },
-      { text: 'chan pin 产品', correct: false },
-      { text: 'shi wu 食物', correct: false },
+      { text: 'tiān qì 天气', correct: false },
+      { text: 'gù shì 故事', correct: false },
+      { text: 'chǎn pǐn 产品', correct: false },
+      { text: 'shí wù 食物', correct: true },
     ]
   },
-  
+
   {
-    question: 'how to say "data" in Chinese??',
+    question: 'How to say "job" in Chinese??',
     answers: [
-      { text: 'li shi 历史', correct: false },
-      { text: 'xie xie 谢谢', correct: false },
-      { text: ' weather 天气 ', correct: false },
-      { text: 'shuju 数据', correct: true },
+      { text: 'shù jù 数据', correct: false },
+      { text: 'gōng zuò 工作', correct: true },
+      { text: 'chǎn pǐn 产品', correct: false },
+      { text: 'lì shǐ 历史', correct: false },
     ]
   },
-  
+
+  {
+    question: 'How to say "data" in Chinese??',
+    answers: [
+      { text: 'lì shǐ 历史', correct: false },
+      { text: 'xiè xiè 谢谢', correct: false },
+      { text: 'gù shì 故事', correct: false },
+      { text: 'shù jù 数据', correct: true },
+    ]
+  },
+
   {
     question: 'how to say "history" in Chinese??',
     answers: [
-      { text: ' tian qi 天气 ', correct: false },
-      { text: 'gong zuo  工作', correct: true },
-      { text: 'li shi 历史', correct: true },
-      { text: 'wang luo 网络 ', correct: false },
+      { text: 'tiān qì 天气 ', correct: false },
+      { text: 'gōng zuò 工作', correct: true },
+      { text: 'lì shǐ 历史', correct: true },
+      { text: 'wǎng lù 网路', correct: false },
     ]
   },
-////////////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////////////
   //japanese question
   // {
   //   question: 'how to say "film" in Japanese??',
@@ -228,7 +228,7 @@ const questions = [
   //     { text: 'monogatari 物语', correct: false },
   //     { text: 'kenko 健康' , correct: true},
 
-      
+
   //   ]
   // },
 
@@ -240,7 +240,7 @@ const questions = [
   //     { text: 'monogatari 物语', correct: false },
   //     { text: 'tenki 天氣' , correct: true},
 
-      
+
   //   ]
   // },
 ]
@@ -253,19 +253,18 @@ const questions = [
 
 
 
-        var times = 60;
-        var timeDiv = document.getElementById("time");
-        var timeObj = null;
-        function timer(){
-            if(times == 0){
-          
-                document.getElementById("frm").submit();
-                window.clearInterval(timeObj);
-                return;
-            }
-            var t = Math.floor(times/60) +" min "+times%60+" sec "
-            timeDiv.innerHTML = t;
-            times --;
-        }
-        timeObj = window.setInterval(timer,1000);
-  
+var times = 60;
+var timeDiv = document.getElementById("time");
+var timeObj = null;
+function timer() {
+  if (times == 0) {
+
+    document.getElementById("frm").submit();
+    window.clearInterval(timeObj);
+    return;
+  }
+  var t = Math.floor(times / 60) + " min " + times % 60 + " sec "
+  timeDiv.innerHTML = t;
+  times--;
+}
+timeObj = window.setInterval(timer, 1000);
