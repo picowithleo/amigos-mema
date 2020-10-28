@@ -44,16 +44,24 @@ const useStyles = makeStyles((theme) => ({
         bottom: '30%',
     },
     appbar: {
-        position: 'relative',
+        position: 'fixed',
         backgroundColor:'#8bc38c',
         marginTop: '-8px',
     },
     about: {
-        margin: '2%',
+        marginTop: '50px',
         backgroundColor: '#ffffff',
         textAlign: 'left',
         fontSize: '1.2rem'
     },
+
+    about1: {
+        backgroundColor: '#ffffff',
+        textAlign: 'left',
+        fontSize: '1.2rem',
+        margin: '2%',
+    },
+
     header: {
         display: 'flex',
         alignItems: 'center',
@@ -138,7 +146,7 @@ export default function Help() {
                 />
             </div>
 
-            <Typography className={classes.about}>
+            <Typography className={classes.about1}>
                 <div style={{ margin: '2%' }}>
                     <p style={{fontFamily: 'verdana', fontSize: '120%'}}>Getting Stuck? </p>
                     <p>--Click on the 4 icons in the bottom will lead you back to our main pages!</p>

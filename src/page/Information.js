@@ -20,6 +20,12 @@ const useStyles = makeStyles((theme) => ({
 
   root1: {
     padding: "20px",
+    marginTop: '20px',
+  },
+
+  root2: {
+    padding: '20px',
+    marginTop: '40px',
   },
 
   root: {
@@ -28,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '5px'
   },
   appbar: {
-    position: 'relative',
+    position: 'fixed',
     backgroundColor:'#8bc38c',
     color: '#FFFFFF',
     fontSize: "30px",
@@ -64,13 +70,13 @@ export default function Information() {
             aria-label="ArrowBackIos" component={Link} to="/Discover">
             <ArrowBackIosIcon />
           </IconButton>
-          <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px' }}>
+          <Typography style={{ fontSize: '2.5rem', fontWeight: 'bold', marginLeft: '5px'}}>
             Information
           </Typography>
         </Toolbar>
       </AppBar>
 
-      <Card className={classes.root1}>
+      <Card className={classes.root2}>
         <a href={information[0].link} className="a">
         <CardActionArea className={classes.root}>
           <Typography style={{ fontSize: '1.1rem', fontWeight: 'bold', textAlign: 'justify'}}>
@@ -105,7 +111,7 @@ export default function Information() {
         </CardActionArea>
         </a>
       </Card>
-
+      <br></br>
     </List>
 
   );
